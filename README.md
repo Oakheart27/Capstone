@@ -3,6 +3,6 @@ This respository is used to share the project between the SciKids team members. 
 ## Project Description
 ## Team Information
 **Title:** Gesture-based engagement station for STEM recruiting in K-12
-- **Sponser:** Elizabeth Glass
+- **Sponsor:** Elizabeth Glass
 - **Mentor:** Austin Sanders
 - **Team Members:** Samantha Earl, Claudia Coronel, Gwen Morris
