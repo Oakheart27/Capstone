@@ -1,37 +1,32 @@
 Base path: D:/NAU/Editor/Data
 Cmd: initializeCompiler
-Cmd: preprocess
-  insize=1151 outsize=981 ok=1
-Cmd: preprocess
-  insize=807 outsize=711 ok=1
-Cmd: preprocess
-  insize=1898 outsize=1077 ok=1
-Cmd: preprocess
-  insize=1892 outsize=1033 ok=1
-Cmd: preprocess
-  insize=1163 outsize=993 ok=1
-Cmd: preprocess
-  insize=1952 outsize=1181 ok=1
-Cmd: preprocess
-  insize=1461 outsize=652 ok=1
-Cmd: preprocess
-  insize=795 outsize=699 ok=1
-Cmd: preprocess
-  insize=3882 outsize=875 ok=1
-Cmd: preprocess
-  insize=797 outsize=701 ok=1
-Cmd: preprocess
-  insize=1169 outsize=999 ok=1
-Cmd: preprocess
-  insize=700 outsize=604 ok=1
-Cmd: preprocess
-  insize=922 outsize=752 ok=1
-Cmd: preprocess
-  insize=660 outsize=1025 ok=1
-Cmd: preprocess
-  insize=809 outsize=713 ok=1
-Cmd: preprocess
-  insize=3983 outsize=804 ok=1
-Cmd: preprocess
-  insize=1149 outsize=979 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
 Cmd: initializeCompiler
