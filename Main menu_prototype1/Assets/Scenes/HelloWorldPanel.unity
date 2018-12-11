@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameField: {fileID: 882266651}
   passwordField: {fileID: 916536870}
-  submitButton: {fileID: 1481878272}
+  submitButton: {fileID: 2030922477}
 --- !u!114 &165374267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,8 +1926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863bce3d87cf097418fb2ddcf94ce25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 2081172185}
-  selectedObject: {fileID: 632522423}
+  eventSystem: {fileID: 0}
+  selectedObject: {fileID: 0}
 --- !u!1 &1185441307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,8 +2048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863bce3d87cf097418fb2ddcf94ce25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 2081172185}
-  selectedObject: {fileID: 2055248294}
+  eventSystem: {fileID: 0}
+  selectedObject: {fileID: 0}
 --- !u!1 &1259558197
 GameObject:
   m_ObjectHideFlags: 0
