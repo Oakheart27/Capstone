@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Registration : MonoBehaviour {
 
+    // Initialization of Variables
+    public Text errorDisplay;
+
     public InputField nameField;
     public InputField passwordField;
 
@@ -33,6 +36,7 @@ public class Registration : MonoBehaviour {
         else
         {
             Debug.Log("User creation failed. Error #" + www.text);
+            errorDisplay.text = "Error #" + www.text;
         }
 
     }

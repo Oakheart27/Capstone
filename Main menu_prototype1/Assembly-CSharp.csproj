@@ -125,10 +125,15 @@
      <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\BackTextureCreator.cs" />
      <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\RGBCalibrationVisualizer.cs" />
      <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\SensorDisconnectChecker.cs" />
+     <Compile Include="Assets\Scripts\DBManager.cs" />
+     <Compile Include="Assets\Scripts\GameI.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
+     <Compile Include="Assets\Scripts\Login.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\Registration.cs" />
      <Compile Include="Assets\Scripts\SelectOnInput.cs" />
+     <Compile Include="Assets\Scripts\TabBetween.cs" />
      <Compile Include="Assets\Unity Sample UI\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Unity Sample UI\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Unity Sample UI\Scripts\ChangeColor.cs" />
@@ -140,6 +145,7 @@
      <Compile Include="Assets\Unity Sample UI\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Unity Sample UI\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Unity Sample UI\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\WebTest.cs" />
      <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\NuitrackSDK\Platform Changer\Manifests\GearVR\AndroidManifest_GearVR.xml" />

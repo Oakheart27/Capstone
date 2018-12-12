@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Drag and drop functionality 
 public class mouseDrag : MonoBehaviour {
 
     float distance = 10;
