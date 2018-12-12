@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameField: {fileID: 882266651}
   passwordField: {fileID: 916536870}
-  submitButton: {fileID: 2030922477}
+  submitButton: {fileID: 1481878272}
 --- !u!114 &165374267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,9 +2159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33509e3c0687646875297f93144237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameField: {fileID: 0}
-  passwordField: {fileID: 0}
-  submitButton: {fileID: 0}
+  nameField: {fileID: 882266651}
+  passwordField: {fileID: 916536870}
+  submitButton: {fileID: 2030922477}
 --- !u!1 &1315296025
 GameObject:
   m_ObjectHideFlags: 0

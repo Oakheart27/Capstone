@@ -22,7 +22,7 @@ public class Registration : MonoBehaviour {
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
 
-        WWW www = new WWW("http://localhost/sqlconnect/register.php");
+        WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
         yield return www;
         
         if (www.text == "0")
