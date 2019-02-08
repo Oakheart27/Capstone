@@ -45,11 +45,13 @@ public class LogIn : MonoBehaviour {
                 errorDisplay.text = "Login Successful. Welcome back " + nameField.text;
 
                 id = getID(nameField.text, dbconn);
+
                 Debug.Log("ID: " + id);
             }
             else
             {
-                Debug.Log("Couldn't find account");
+                errorDisplay.text = "Incorrect username or password";
+                
             }
         }
     }
@@ -72,8 +74,6 @@ public class LogIn : MonoBehaviour {
 
         if (UCount == 0 || PCount == 0) // If username or password is not found, return false
         {
-            errorDisplay.text = "Incorrect username or password";
-
             return false;
         }
 
@@ -96,7 +96,7 @@ public class LogIn : MonoBehaviour {
         {
             return "URI=file:" + Application.dataPath + "/Plugins/prototypedb.s3db;";
         }
-        // TODO: Get build to find database
+        
         else
         {
             return "URI=file:" + Application.persistentDataPath + "/prototypedb.s3db;";

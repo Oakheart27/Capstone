@@ -61,8 +61,73 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Advanced\NuitrackAvatar.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Advanced\NuitrackAvatarAdvanced.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Advanced\RiggedAvatarAdvanced.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\CalibrationRotationScripts\CalibrationInfo.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\CalibrationRotationScripts\CamRotation.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\CalibrationRotationScripts\For ios\CameraRotation.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\CalibrationRotationScripts\For ios\SensorRotation.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\CalibrationRotationScripts\TPoseCalibration.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\CurrentUserTracker.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\DrawColorFrame.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\DrawSegment.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\HandPressure.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\ModelJoint.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\NuitrackLoader.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\NuitrackManager.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\NuitrackUtils.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\SimpleSkeletonAvatar.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\SimpleSkeletonAvatar3d.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\SkeletonAvatar.cs" />
+    <Compile Include="Assets\NuitrackSDK\Nuitrack\Scripts\SkeletonController.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\FPSCounter\FPSCounter.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\Debug\WristsPositionsDebug.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\DebugDepth.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\EmergencyExit.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ExceptionsLogger.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\IssuesProcessor.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModulesUI.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\GesturesVisualization.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\HandTrackerVisualization.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\SkeletonsVisualization.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\SkeletonVisualization2.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\UserTrackerVisMesh.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\ModuleVisualisations\UserTrackerVisualization.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\NuitrackModules.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\SkeletonExample.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\TouchCameraControls.cs" />
+    <Compile Include="Assets\NuitrackSDK\NuitrackDemos\Scripts\UserTrackerExample.cs" />
+    <Compile Include="Assets\NuitrackSDK\Platform Changer\EnviromentSwitcher.cs" />
+    <Compile Include="Assets\NuitrackSDK\Platform Changer\GameVersion.cs" />
+    <Compile Include="Assets\NuitrackSDK\Platform Changer\PlatformSetsData.cs" />
+    <Compile Include="Assets\NuitrackSDK\Pointer\PointerPassing.cs" />
+    <Compile Include="Assets\NuitrackSDK\Pointer\PointerRotation.cs" />
+    <Compile Include="Assets\NuitrackSDK\Pointer\PointerVisuals.cs" />
+    <Compile Include="Assets\NuitrackSDK\Pointer\VVRInput.cs" />
+    <Compile Include="Assets\NuitrackSDK\SafetyGrid\SensorPointReplacer.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\Avatar Animation\Scripts\RiggedAvatar.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\FaceTracker\FinalAssets\Scripts\FaceController.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\FaceTracker\FinalAssets\Scripts\FaceInfo.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\FaceTracker\FinalAssets\Scripts\FaceManager.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\FaceTracker\FinalAssets\Scripts\FaceSwitcher.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\First Project\NativeAvatar.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\HandTracker\Scripts\GalleryControl.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\HandTracker\Scripts\ImageItem.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\HandTracker\Scripts\Pointer.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\Point Cloud\MouseOrbitImproved.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\Point Cloud\PointCloud.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\FallingObject.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\GameColliders.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\GameProgress.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\ObjectSpawner.cs" />
+    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\SegmentPaint.cs" />
+    <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\BackTextureCreator.cs" />
+    <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\RGBCalibrationVisualizer.cs" />
+    <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\SensorDisconnectChecker.cs" />
     <Compile Include="Assets\Scripts\aReturn.cs" />
     <Compile Include="Assets\Scripts\goHome.cs" />
+    <Compile Include="Assets\Scripts\HandCursor.cs" />
     <Compile Include="Assets\Scripts\LogIn.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Module.cs" />
@@ -101,24 +166,45 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+    <None Include="Assets\NuitrackSDK\Platform Changer\Manifests\GearVR\AndroidManifest_GearVR.xml" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\NuitrackSDK\Platform Changer\Manifests\Default\AndroidManifest_default.xml" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\license.txt" />
+    <None Include="Assets\NuitrackSDK\Nuitrack\Shaders\ui_zignore_image.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+    <None Include="Assets\NuitrackSDK\Nuitrack\Shaders\GvrUnlitTransparentOverlayColor.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+    <None Include="Assets\NuitrackSDK\Nuitrack\Shaders\ui_zigonre_font.shader" />
+    <None Include="Assets\StreamingAssets\build_info.txt" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+    <None Include="Assets\NuitrackSDK\NuitrackDemos\Shaders\DepthSegmentationCustom.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\NuitrackSDK\NuitrackDemos\Shaders\DiffuseVertexColored.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Materials\Unlit-GS.shader" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\NuitrackSDK\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\NuitrackSDK\NuitrackDemos\Shaders\CustomMesh.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
@@ -338,6 +424,18 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.1f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="nuitrack.net">
+      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/NuitrackSDK/Nuitrack/NuitrackAssembly/nuitrack.net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data">
+      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/Mono.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/System.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -346,15 +444,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/System.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data">
-      <HintPath>D:/NAU/Capstone/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/Mono.Data.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
