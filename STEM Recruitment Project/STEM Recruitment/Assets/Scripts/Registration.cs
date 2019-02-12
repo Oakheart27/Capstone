@@ -81,26 +81,58 @@ public class Registration : MonoBehaviour
 
         addUserQuery.ExecuteNonQuery();
 
-        Debug.Log("Added to database. New entries are: "); // Test
+        //Debug.Log("Added to database. New entries are: "); // Test
 
         errorDisplay.text = "Account added. Welcome " + username;
 
-        returnAll(dbconn); // Test
+        //returnAll(dbconn); // Test
 
     } // end addAccount
 
     string LoadConnectionString()
     {
-        if (Application.isEditor)
+        if (Application.isEditor) // If using editor, go to database in plugins folder
         {
             return "URI=file:" + Application.dataPath + "/Plugins/prototypedb.s3db;";
         }
-        // TODO: Get build to find database
-        else
+        else // If using build, get filepath (in Users/<your_name>/AppData/LocalLow/SciKids)
         {
-            return "URI=file:" + Application.persistentDataPath + "/prototypedb.s3db;";
+            string filePath = Application.persistentDataPath + "/prototypedb.s3db";
+
+            if (!File.Exists(filePath)) //if database doesn't exit, create database
+            {
+                Debug.Log(Application.persistentDataPath);
+
+                makeDatabase(filePath);
+
+            }
+
+            return "URI=file:" + filePath;
         }
     } // end LoadConnectionString()
+
+    // Creates the database if doesn't exist
+    void makeDatabase(string filePath)
+    {
+        SqliteConnection.CreateFile(filePath);
+
+        SqliteConnection dbconn = new SqliteConnection("URI=file:" + filePath);
+
+        dbconn.Open();
+
+        // Create 1st table - users
+        string command = "CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, username VARCHAR(30) NOT NULL, password VARCHAR(30) NOT NULL);";
+
+        Debug.Log(command);
+
+        SqliteCommand makeTableQuery = dbconn.CreateCommand();
+
+        makeTableQuery.CommandText = command;
+
+        makeTableQuery.ExecuteNonQuery();
+
+        dbconn.Close();
+    } // end makeDatabase()
 
     bool verifyInputs(string username, string password, IDbConnection dbconn)
     {
