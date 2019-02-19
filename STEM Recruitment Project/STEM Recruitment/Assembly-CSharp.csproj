@@ -116,13 +116,13 @@
     <Compile Include="Assets\NuitrackSDK\Tutorials\HandTracker\Scripts\Pointer.cs" />
     <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\FallingObject.cs" />
     <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\GameColliders.cs" />
-    <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\GameProgress.cs" />
     <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\NuitrackSDK\Tutorials\SegmentExample\Scripts\SegmentPaint.cs" />
     <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\BackTextureCreator.cs" />
     <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\RGBCalibrationVisualizer.cs" />
     <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\SensorDisconnectChecker.cs" />
     <Compile Include="Assets\Scripts\aReturn.cs" />
+    <Compile Include="Assets\Scripts\GameProgress.cs" />
     <Compile Include="Assets\Scripts\goHome.cs" />
     <Compile Include="Assets\Scripts\HandCursor.cs" />
     <Compile Include="Assets\Scripts\LogIn.cs" />
@@ -402,6 +402,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="nuitrack.net">
+      <HintPath>C:/Users/Claudia Rosas/Desktop/Repo/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/NuitrackSDK/Nuitrack/NuitrackAssembly/nuitrack.net.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Data">
       <HintPath>C:/Users/Claudia Rosas/Desktop/Repo/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/Plugins/Mono.Data.dll</HintPath>
     </Reference>
@@ -419,9 +422,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/Claudia Rosas/Desktop/Repo/Capstone/STEM Recruitment Project/STEM Recruitment/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="nuitrack.net">
-      <HintPath>C:/Users/Claudia Rosas/Desktop/Repo/Capstone/STEM Recruitment Project/STEM Recruitment/Assets/NuitrackSDK/Nuitrack/NuitrackAssembly/nuitrack.net.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

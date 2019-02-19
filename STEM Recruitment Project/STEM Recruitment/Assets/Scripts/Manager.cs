@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     public GameObject microscope, calc, microscope_outline, calc_outline;
     Vector2 microscopeInitialPos, calcInitialPos;
     public Outline outline_color;
-
+    int scoreValue = 10;
 
     public void Start()
     {
@@ -37,6 +37,7 @@ public class Manager : MonoBehaviour
             outline_color = microscope_outline.GetComponent<Outline>();
             microscope.transform.position = microscope_outline.transform.position;
             outline_color.effectColor = Color.green;
+            GameProgress.instance.AddScore(scoreValue);
         }
         else
         {
@@ -52,6 +53,7 @@ public class Manager : MonoBehaviour
             outline_color = calc_outline.GetComponent<Outline>();
             calc.transform.position = calc_outline.transform.position;
             outline_color.effectColor = Color.green;
+            GameProgress.instance.AddScore(scoreValue);
         }
         else
         {
