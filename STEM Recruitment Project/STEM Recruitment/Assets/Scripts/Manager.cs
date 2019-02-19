@@ -9,7 +9,12 @@ public class Manager : MonoBehaviour
     public GameObject microscope, calc, microscope_outline, calc_outline;
     Vector2 microscopeInitialPos, calcInitialPos;
     public Outline outline_color;
-    int scoreValue = 10;
+    public int scoreValue = 10;
+    public AudioSource source;
+    public AudioClip correct;
+    public AudioClip incorrect;
+
+
 
     public void Start()
     {
@@ -38,10 +43,14 @@ public class Manager : MonoBehaviour
             microscope.transform.position = microscope_outline.transform.position;
             outline_color.effectColor = Color.green;
             GameProgress.instance.AddScore(scoreValue);
+            source.clip = correct;
+            source.Play();
         }
         else
         {
             microscope.transform.position = microscopeInitialPos;
+            source.clip = incorrect;
+            source.Play();
         }
     }
 
@@ -54,10 +63,14 @@ public class Manager : MonoBehaviour
             calc.transform.position = calc_outline.transform.position;
             outline_color.effectColor = Color.green;
             GameProgress.instance.AddScore(scoreValue);
+            source.clip = correct;
+            source.Play();
         }
         else
         {
             calc.transform.position = calcInitialPos;
+            source.clip = incorrect;
+            source.Play();
         }
     }
 }
