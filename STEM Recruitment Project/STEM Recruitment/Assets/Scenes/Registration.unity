@@ -348,10 +348,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655248668}
-  - component: {fileID: 655248667}
-  - component: {fileID: 655248666}
   - component: {fileID: 655248665}
   - component: {fileID: 655248664}
+  - component: {fileID: 655248666}
   m_Layer: 0
   m_Name: Register
   m_TagString: Untagged
@@ -388,6 +387,7 @@ MonoBehaviour:
   nameField: {fileID: 716060284}
   passwordField: {fileID: 1974750797}
   submitButton: {fileID: 681727484}
+  userID: 0
 --- !u!114 &655248666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,26 +397,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 655248663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 971a0e844112a8444ae1c4378b0157bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d1f10e6c0fb5df4ba901e734aaa4711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backBtn: {fileID: 1650306021}
---- !u!114 &655248667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655248663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a113dd1615551584aa19a709c9599536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameField: {fileID: 716060284}
-  passwordField: {fileID: 1974750797}
-  errorDisplay: {fileID: 1940314225}
-  submitButton: {fileID: 681727484}
 --- !u!4 &655248668
 Transform:
   m_ObjectHideFlags: 0

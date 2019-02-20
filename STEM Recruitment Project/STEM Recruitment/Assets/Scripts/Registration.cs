@@ -15,15 +15,41 @@ public class Registration : MonoBehaviour
     public InputField nameField;
     public InputField passwordField;
     public Button submitButton;
+    DBManager dbManage;
+    public int userID;
 
     // Start is called before the first frame update
     void Start()
     {
-        submitButton.onClick.AddListener(TaskOnClick);
+        DBManager dbManage = GetComponent<DBManager>();
+
+        if(dbManage.getStatus())
+        {
+            // Display username
+            errorDisplay.text = "Welcome " + dbManage.getUsername();
+
+            // Deactivate fields    
+            nameField.DeactivateInputField();
+            passwordField.DeactivateInputField();
+            submitButton.GetComponent<Button>().interactable = false;
+
+        }
+        else
+        {
+            // make password show up as astrisks
+            passwordField.contentType = InputField.ContentType.Password;
+
+            // Go to TaskOnclick when button is pressed
+            submitButton.onClick.AddListener(TaskOnClick);
+        }
+        
+
     } // end start()
 
     void TaskOnClick()
     {
+        DBManager dbManage = GetComponent<DBManager>();
+
         string conn = LoadConnectionString(); // Once button is clicked, open database
 
         Debug.Log(conn);
@@ -44,6 +70,7 @@ public class Registration : MonoBehaviour
             if (verifyInputs(nameField.text, passwordField.text, dbconn)) // Make sure inputs have correct character length and do not already exist in database
             {
                 addAccount(nameField.text, passwordField.text, dbconn);
+                
             }
             else
             {
@@ -62,7 +89,7 @@ public class Registration : MonoBehaviour
 
         IDbCommand command = dbconn.CreateCommand();
 
-        command.CommandText = "SELECT * FROM users";
+        command.CommandText = "SELECT * FROM user";
 
         reader = command.ExecuteReader();
 
@@ -77,30 +104,99 @@ public class Registration : MonoBehaviour
     {
         IDbCommand addUserQuery = dbconn.CreateCommand();
 
-        addUserQuery.CommandText = "INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "');";
+        addUserQuery.CommandText = "INSERT INTO user (username, password) VALUES ('" + username + "', '" + password + "');";
 
         addUserQuery.ExecuteNonQuery();
 
-        Debug.Log("Added to database. New entries are: "); // Test
-
         errorDisplay.text = "Account added. Welcome " + username;
 
-        returnAll(dbconn); // Test
+        int temp = returnID(username, dbconn);
 
     } // end addAccount
 
+    int returnID(string username, IDbConnection dbconn)
+    {
+        IDbCommand command = dbconn.CreateCommand();
+
+        command.CommandText = "SELECT id FROM user WHERE username = '" + username + "';";
+
+        int id = Convert.ToInt32(command.ExecuteScalar());
+
+        userID = id;
+        
+        DBManager dbManage = GetComponent<DBManager>();
+
+        dbManage.writeID(id);
+
+        return id;
+    }
     string LoadConnectionString()
     {
-        if (Application.isEditor)
+        if (Application.isEditor) // If using editor, go to database in plugins folder
         {
             return "URI=file:" + Application.dataPath + "/Plugins/prototypedb.s3db;";
         }
-        // TODO: Get build to find database
-        else
+        else // If using build, get filepath (in Users/<your_name>/AppData/LocalLow/SciKids)
         {
-            return "URI=file:" + Application.persistentDataPath + "/prototypedb.s3db;";
+            string filePath = Application.persistentDataPath + "/prototypedb.s3db";
+
+            if (!File.Exists(filePath)) //if database doesn't exit, create database
+            {
+                Debug.Log(Application.persistentDataPath);
+
+                makeDatabase(filePath);
+
+            }
+
+            return "URI=file:" + filePath;
         }
     } // end LoadConnectionString()
+
+    // Creates the database if doesn't exist
+    void makeDatabase(string filePath)
+    {
+        SqliteConnection.CreateFile(filePath);
+
+        SqliteConnection dbconn = new SqliteConnection("URI=file:" + filePath);
+
+        dbconn.Open();
+
+        // Create 1st table - user
+        string command = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY, " +
+            "username VARCHAR(30) NOT NULL, " +
+            "password VARCHAR(30) NOT NULL);";
+
+        SqliteCommand makeTableQuery1 = dbconn.CreateCommand();
+        makeTableQuery1.CommandText = command;
+        makeTableQuery1.ExecuteNonQuery();
+
+        // Create 2nd table - score
+        string command2 = "CREATE TABLE IF NOT EXISTS score(" +
+            "gameID INTEGER PRIMARY KEY," +
+            "userID INTEGER," +
+            "userScore INTEGER," +
+            "FOREIGN KEY(userID) REFERENCES user(id));";
+
+        SqliteCommand makeTableQuery2 = dbconn.CreateCommand();
+        makeTableQuery2.CommandText = command2;
+        makeTableQuery2.ExecuteNonQuery();
+
+        // Create 3rd table - module
+        string command3 = "CREATE TABLE IF NOT EXISTS module(" +
+             "modID INTEGER PRIMARY KEY," +
+             "userID INTEGER," +
+             "gameID INTEGER," +
+             "FOREIGN KEY(userID) REFERENCES user(id)," +
+             "FOREIGN KEY(gameID) REFERENCES score(gameID));";
+
+        SqliteCommand makeTableQuery3 = dbconn.CreateCommand();
+        makeTableQuery3.CommandText = command3;
+        makeTableQuery3.ExecuteNonQuery();
+
+        Debug.Log(command);
+
+        dbconn.Close();
+    } // end makeDatabase()
 
     bool verifyInputs(string username, string password, IDbConnection dbconn)
     {
@@ -130,14 +226,14 @@ public class Registration : MonoBehaviour
         // Counting all instances of given username
         IDbCommand checkUName = dbconn.CreateCommand();
 
-        checkUName.CommandText = "SELECT count(*) FROM users WHERE username = '" + username + "';";
+        checkUName.CommandText = "SELECT count(*) FROM user WHERE username = '" + username + "';";
 
         int UCount = Convert.ToInt32(checkUName.ExecuteScalar());
 
         // Counting all instances of given password
         IDbCommand checkPass = dbconn.CreateCommand();
 
-        checkPass.CommandText = "SELECT count(*) FROM users WHERE password = '" + password + "';";
+        checkPass.CommandText = "SELECT count(*) FROM user WHERE password = '" + password + "';";
 
         int PCount = Convert.ToInt32(checkPass.ExecuteScalar());
 
