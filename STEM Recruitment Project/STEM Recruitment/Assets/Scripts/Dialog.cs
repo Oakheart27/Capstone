@@ -7,6 +7,7 @@ public class Dialog : MonoBehaviour
 {
     // Intsance variables 
     public string[] sentences;
+    public string[] followup; 
     private int index;
     public int counter;  
     public float typingSpeed;
@@ -15,9 +16,11 @@ public class Dialog : MonoBehaviour
     // Objects in Unity 
     public GameObject continueBtn;
     public GameObject choiceBtn;
-    public GameObject p1Btn;
-    public GameObject p2Btn;
-    public GameObject p3Btn;
+    public GameObject p1, p2; 
+
+    //public Button p1Btn;
+    //public Button p2Btn;
+    //public Button p3Btn;
     public Text textDisplay;
 
     // Start is called before the first frame update
@@ -36,9 +39,12 @@ public class Dialog : MonoBehaviour
             continueBtn.SetActive(true);
 
         }
-        if (counter % 4 == 0 )
+
+        if (counter == size)
         {
-            choiceBtn.SetActive(true);
+            print("Inside the if");
+            p1.SetActive(false);
+            p2.SetActive(false); 
         }
     }
 
@@ -69,32 +75,28 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public int getCount()
-    {
-        return counter; 
-    }
-
     public void ButtonClick(Button btn)
     {
-        if (btn == p1Btn)
+        if (btn.name == "p1Btn")
         {
             person1 += 1;
             print("Updated player 1");
         }
-        if (btn == p2Btn) 
+        else if (btn.name == "p2Btn") 
         {
             person2 += 1;
             print("Updtated Player 2");
         }
-        if (btn == p3Btn)
+        else if (btn.name == "p3Btn")
         {
             person3 += 1;
             print("Updated Player 3");
         }
-    }
-    public void bPress()
-    {
-        counter++;
-        print("count"); 
+        else
+        {
+            print("No button press detected"); 
+        }
+
+        Debug.Log(person1 + ", " +  person2 + ", " + person3);
     }
 }
