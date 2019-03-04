@@ -1,18 +1,8 @@
 Win64
 PlayerPath?
-D:/NAU/Capstone/Builds/SplashBranch/STEM Recruitment.exe
+C:/Users/Gwen M/Documents/builds/STEM Recruitment.exe
 SceneListBegin?
-Assets/Scenes/SplashLogoScene.unity
-Assets/Scenes/Home.unity
-Assets/Scenes/Registration.unity
-Assets/Scenes/AboutUs.unity
-Assets/Scenes/LogIn.unity
-Assets/Scenes/Modules.unity
-Assets/Scenes/Settings.unity
-Assets/Scenes/k5.unity
-Assets/Scenes/5_6.unity
-Assets/Scenes/CC.unity
-Assets/Scenes/GameMatching.unity
+Assets/Scenes/mcq.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -69,8 +59,6 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -267,4 +255,6 @@ fd976c8714fadfacb4d13a86c18526a3 Assembly-CSharp.dll:.SkeletonsVisualization
 bf1df8dfb160df6a1921ed69fe9df5cd Assembly-CSharp.dll:.PointerVisuals
 fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.GameProgress
 1e6fc008d4d0361539bb8f5518b7099c Assembly-CSharp.dll:.RGBCalibrationVisualizer
+da9d4d8d10f6da9ade8a9702c2430c01 Assembly-CSharp.dll:.panelChange
 eaac10e5307947527438a3b83605c81d Assembly-CSharp.dll:.CameraRotation
+8fcbc930a62e53d045556a06d3cf742b Assembly-CSharp.dll:.Dialog
