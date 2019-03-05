@@ -35,8 +35,6 @@ public class LogIn : MonoBehaviour
             nameField.DeactivateInputField();
             passwordField.DeactivateInputField();
             submitButton.GetComponent<Button>().interactable = false;
-
-            dbTest();
             
         }
         else
@@ -82,11 +80,13 @@ public class LogIn : MonoBehaviour
         {
             if (accountExists(nameField.text, passwordField.text, dbconn))
             {
-                errorDisplay.text = "Login Successful. Welcome back " + nameField.text;
+                //errorDisplay.text = "Login Successful. Welcome back " + nameField.text;
 
                 id = getID(nameField.text, dbconn);
            
                 dbManage.writeID(id);
+
+                SceneManager.LoadScene("Home");
             }
             else
             {

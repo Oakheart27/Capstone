@@ -172,7 +172,7 @@ public class Registration : MonoBehaviour
 
         // Create 2nd table - score
         string command2 = "CREATE TABLE IF NOT EXISTS score(" +
-            "gameID INTEGER PRIMARY KEY," +
+            "gameID INTEGER," +
             "userID INTEGER," +
             "userScore INTEGER," +
             "FOREIGN KEY(userID) REFERENCES user(id));";

@@ -200,4 +200,28 @@ public class DBManager : MonoBehaviour
         }
     }
 
+    public int getHighScore(int userID, int gameID)
+    {
+        if(getStatus() == false)
+        {
+            return -1;
+        }
+
+        string path = loadConnectionString();
+
+        IDbConnection dbconn = new SqliteConnection(path);
+
+        dbconn.Open();
+
+        IDbCommand getScoreCmd = dbconn.CreateCommand();
+
+        getScoreCmd.CommandText = "SELECT userScore FROM score WHERE userID = " + userID + ";";
+
+        int score = Convert.ToInt32(getScoreCmd.ExecuteScalar());
+
+        return score;
+
+
+    }
+
 }

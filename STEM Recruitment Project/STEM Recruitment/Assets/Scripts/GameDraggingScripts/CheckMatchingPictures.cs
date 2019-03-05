@@ -7,6 +7,7 @@ public class CheckMatchingPictures : MonoBehaviour
 {
 
     public GameObject picture, picture_outline;
+   
     private Outline outline_color;
     private int scoreValue = 10;
     bool firstTime = true;
@@ -14,8 +15,9 @@ public class CheckMatchingPictures : MonoBehaviour
 
     void Start()
     {
-        initialPos = picture.transform.position;
+        initialPos = picture.transform.position;    
     }
+
     // Update is called once per frame
     void Update()
     {
