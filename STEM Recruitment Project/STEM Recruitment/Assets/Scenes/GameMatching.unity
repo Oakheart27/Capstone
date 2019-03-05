@@ -279,8 +279,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338254144}
-  - component: {fileID: 338254143}
   - component: {fileID: 338254145}
+  - component: {fileID: 338254143}
+  - component: {fileID: 338254146}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -297,18 +298,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 338254142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc25049765a0a441b15a19c97c474cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d6983ebaf9d32745a84c2eb8ec408cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microscope: {fileID: 1392925985}
-  calc: {fileID: 680223862}
-  microscope_outline: {fileID: 588376193}
-  calc_outline: {fileID: 1389963310}
-  outline_color: {fileID: 0}
-  scoreValue: 10
-  source: {fileID: 338254145}
-  correct: {fileID: 8300000, guid: eb29844b03df258489a10c01c6e51552, type: 3}
-  incorrect: {fileID: 8300000, guid: a7696a2bf114ed3438fefac35ec6ec66, type: 3}
+  picture: {fileID: 1392925985}
+  picture_outline: {fileID: 588376193}
 --- !u!4 &338254144
 Transform:
   m_ObjectHideFlags: 0
@@ -419,6 +413,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &338254146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338254142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6983ebaf9d32745a84c2eb8ec408cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  picture: {fileID: 680223862}
+  picture_outline: {fileID: 1389963310}
 --- !u!1 &432818122
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +623,7 @@ GameObject:
   - component: {fileID: 680223866}
   m_Layer: 5
   m_Name: caculator
-  m_TagString: Untagged
+  m_TagString: UIDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,7 +701,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 338254143}
+        - m_Target: {fileID: 0}
           m_MethodName: DragCalc
           m_Mode: 1
           m_Arguments:
@@ -710,7 +718,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 338254143}
+        - m_Target: {fileID: 0}
           m_MethodName: DropCalc
           m_Mode: 1
           m_Arguments:
@@ -1348,7 +1356,7 @@ GameObject:
   - component: {fileID: 1392925990}
   m_Layer: 5
   m_Name: microscope
-  m_TagString: Untagged
+  m_TagString: UIDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1426,7 +1434,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 338254143}
+        - m_Target: {fileID: 0}
           m_MethodName: DragMicro
           m_Mode: 1
           m_Arguments:
@@ -1443,7 +1451,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 338254143}
+        - m_Target: {fileID: 0}
           m_MethodName: DropMicro
           m_Mode: 1
           m_Arguments:
@@ -1481,6 +1489,8 @@ GameObject:
   - component: {fileID: 1594501966}
   - component: {fileID: 1594501965}
   - component: {fileID: 1594501968}
+  - component: {fileID: 1594501969}
+  - component: {fileID: 1594501970}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1565,3 +1575,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 432818124}
+--- !u!114 &1594501969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594501964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452a89c7b9bd2a04d8f3ed9ad22dc745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1594501970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594501964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1f10e6c0fb5df4ba901e734aaa4711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

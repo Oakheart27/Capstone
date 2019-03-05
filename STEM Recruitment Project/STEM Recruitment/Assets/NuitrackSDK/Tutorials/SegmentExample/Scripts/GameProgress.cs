@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameProgress : MonoBehaviour
@@ -25,8 +26,14 @@ public class GameProgress : MonoBehaviour
 
     public void AddScore(int val)
     {
+        DBManager dbManage = GetComponent<DBManager>();
         currentScore += val;
         UpdateScoreText();
+
+        int sceneID = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(sceneID);
+        dbManage.addScoreToDB(currentScore, dbManage.getID(), sceneID);
+
     }
 
     public void RemoveScore(int val)

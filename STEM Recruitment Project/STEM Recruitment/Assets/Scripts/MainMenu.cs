@@ -1,26 +1,26 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-    //DBManager dbManage;
-    public TextMeshProUGUI welcomeMessage;
+    public UnityEngine.UI.Button logInButton; 
+    public TextMeshProUGUI salutation; 
 
     // Use this for initialization
     void Start()
     {
         DBManager dbManage = GetComponent<DBManager>();
-        welcomeMessage = GetComponent<TextMeshProUGUI>();
-
-        Debug.Log("Status: " + dbManage.getStatus());
-
-       /* if(dbManage.getStatus())
+        
+        if (dbManage.getStatus())
         {
-            welcomeMessage.text += dbManage.getUsername(dbManage.getID());
-        }*/
+            salutation.text = "Welcome " + dbManage.getUsername();
+
+            logInButton.GetComponentInChildren<TextMeshProUGUI>().text = "Log Out";
+        }
 
     }
     // Functions to load new scenes 
@@ -33,9 +33,22 @@ public class MainMenu : MonoBehaviour {
 
     public void LogIn()
     {
-        // Call to new scene
-        SceneManager.LoadScene("LogIn");
+        DBManager dbManage = GetComponent<DBManager>();
 
+        if(!dbManage.getStatus())
+        {
+            SceneManager.LoadScene("LogIn");
+        }
+        // Call to new scene
+        else
+        {
+            dbManage.logOut();
+
+            // Reload scene
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+        }
+    
     }
 
     public void Register()

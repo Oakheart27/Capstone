@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Dialog : MonoBehaviour
 {
     // Intsance variables 
+    public int size;
     public string[] sentences;
     public string[] followup; 
     private int index;
