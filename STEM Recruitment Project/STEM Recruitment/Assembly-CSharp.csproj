@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\DBManager.cs" />
     <Compile Include="Assets\Scripts\Dialog.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\CheckMatchingPictures.cs" />
+    <Compile Include="Assets\Scripts\GameDraggingScripts\DragWithHand.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\ItemDragHandler.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\MatchingGameDB.cs" />
     <Compile Include="Assets\Scripts\goHome.cs" />

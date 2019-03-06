@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 351883582}
   - component: {fileID: 351883581}
   - component: {fileID: 351883580}
+  - component: {fileID: 351883583}
   m_Layer: 5
   m_Name: BackBtn
   m_TagString: Untagged
@@ -292,7 +293,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3, y: -180}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351883580
 MonoBehaviour:
@@ -314,7 +315,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0.20000002, b: 0.40000004, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.2, b: 0.4, a: 1}
+  m_Color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -384,6 +385,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351883578}
   m_CullTransparentMesh: 0
+--- !u!114 &351883583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351883578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd62923beb0ab9479399e98533335c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &554606839
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,3 +1012,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529299097}
   m_CullTransparentMesh: 0
+--- !u!1001 &1847159365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 101342, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_Name
+      value: NuitrackScripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: gesturesRecognizerModuleOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: handsTrackerModuleOn
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e999ace05c586574fa1b964016f28531, type: 3}

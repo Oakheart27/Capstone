@@ -21,44 +21,28 @@ public class ItemDragHandler : MonoBehaviour
     List<RaycastResult> hitObjects = new List<RaycastResult>();
 
     // NUITRACK STUFF
- /*   bool active = false;
+    bool active = false;
     bool press = false;
     bool pressed = false;
-    */
+    
     void Start()
     {
         Application.runInBackground = true;
-       // NuitrackManager.onHandsTrackerUpdate += NuitrackManager_onHandsTrackerUpdate;
     }
-    
-
+ 
     void Update()
     {
-        //nuitrack.HandTrackerData handTrackerData;
-
+        active = false;
+        press = false;
+        
         // Begin to drag object
         if (Input.GetMouseButtonDown(0) && dragging == false)
         {
-            //if(Input.GetMouseButtonUp(0))
-            //{
-                objectToDrag = GetDraggableTransformUnderMouse();
+            objectToDrag = GetDraggableTransformUnderMouse();
 
-                if (objectToDrag != null)
-                {
-                    dragging = true;
-
-                    objectToDrag.SetAsLastSibling();
-
-                    originalPosition = objectToDrag.position;
-
-                    objectToDragImage = objectToDrag.GetComponent<Image>();
-
-                    objectToDragImage.raycastTarget = false;
-                }
-            //}
+            beginDrag(objectToDrag);
             
         }
-
         // Drag object
         if (dragging)
         {
@@ -68,19 +52,42 @@ public class ItemDragHandler : MonoBehaviour
         // Drop object
         if (Input.GetMouseButtonUp(0) && dragging == true)
         {
-            //if(Input.GetMouseButtonUp(0))
-            //{
-                objectToDrag.position = Input.mousePosition;
-
-                objectToDragImage.raycastTarget = true;
-
-                dragging = false;
-            //}
-            
+            endDrag(objectToDrag);
         }
+       
     } // end Update()
 
-    private GameObject GetObjectUnderMouse()
+    public void beginDrag(Transform objectToDrag)
+    {
+        if (objectToDrag != null)
+        {
+            dragging = true;
+
+            objectToDrag.SetAsLastSibling();
+
+            originalPosition = objectToDrag.position;
+
+            objectToDragImage = objectToDrag.GetComponent<Image>();
+
+            objectToDragImage.raycastTarget = false;
+        }
+    }
+
+    public void dragObj(Transform objectToDrag)
+    {
+        objectToDrag.position = Input.mousePosition;
+    }
+
+    public void endDrag(Transform objectToDrag)
+    {
+        objectToDrag.position = Input.mousePosition;
+
+        objectToDragImage.raycastTarget = true;
+
+        dragging = false;
+    }
+
+    public GameObject GetObjectUnderMouse()
     {
         var pointer = new PointerEventData(EventSystem.current);
 
@@ -95,7 +102,7 @@ public class ItemDragHandler : MonoBehaviour
 
     }
 
-    private Transform GetDraggableTransformUnderMouse()
+    public Transform GetDraggableTransformUnderMouse()
     {
         GameObject clickedObject = GetObjectUnderMouse();
 
@@ -105,10 +112,31 @@ public class ItemDragHandler : MonoBehaviour
         }
 
         return null;
-    }
+}
     
 
 
 } // End ItemDragHandler class
+/*
+if (handTrackerData != null)
+        {
+            nuitrack.UserHands userHands = handTrackerData.GetUserHandsByID(CurrentUserTracker.CurrentUser);
 
+            if(userHands != null)
+            {
+                if(userHands.RightHand != null)
+                {
+                    Vector2 curpos = new Vector2(userHands.RightHand.Value.X * Screen.currentResolution.width, userHands.RightHand.Value.Y * Screen.currentResolution.height);
+MouseOperations.SetCursorPosition((int)(curpos.x), (int) (curpos.y));
+                    active = true;
+                    press = userHands.RightHand.Value.Click;
 
+                    if(pressed != press)
+                    {
+                        pressed = press;
+
+                        if(pressed)
+
+    MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
+    MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
+                        {*/
