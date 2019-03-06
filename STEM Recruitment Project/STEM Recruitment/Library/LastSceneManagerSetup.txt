@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CC.unity
+- path: Assets/Scenes/GameMatching.unity
   isLoaded: 1
   isActive: 1
