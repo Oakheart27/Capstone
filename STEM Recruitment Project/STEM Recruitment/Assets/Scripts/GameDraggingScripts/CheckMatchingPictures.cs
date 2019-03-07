@@ -7,11 +7,12 @@ public class CheckMatchingPictures : MonoBehaviour
 {
 
     public GameObject picture, picture_outline;
-   
     private Outline outline_color;
     private int scoreValue = 10;
     bool firstTime = true;
     Vector2 initialPos;
+    public AudioSource source;
+    public AudioClip correct;
 
     void Start()
     {
@@ -34,8 +35,9 @@ public class CheckMatchingPictures : MonoBehaviour
             if(firstTime)
             {
                 GameProgress.instance.AddScore(scoreValue);
-
                 firstTime = false;
+                source.clip = correct;
+                source.Play();
             }
         }
 
@@ -43,6 +45,7 @@ public class CheckMatchingPictures : MonoBehaviour
         {
             firstTime = true;
             picture.transform.position = initialPos;
+
         }
     }
 }

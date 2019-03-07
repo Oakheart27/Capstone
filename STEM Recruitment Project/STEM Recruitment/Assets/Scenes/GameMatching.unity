@@ -358,11 +358,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338254144}
-  - component: {fileID: 338254145}
   - component: {fileID: 338254143}
   - component: {fileID: 338254146}
   - component: {fileID: 338254147}
   - component: {fileID: 338254148}
+  - component: {fileID: 338254145}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -384,6 +384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   picture: {fileID: 1392925985}
   picture_outline: {fileID: 588376193}
+  source: {fileID: 338254145}
+  correct: {fileID: 8300000, guid: eb29844b03df258489a10c01c6e51552, type: 3}
+  incorrect: {fileID: 8300000, guid: a7696a2bf114ed3438fefac35ec6ec66, type: 3}
 --- !u!4 &338254144
 Transform:
   m_ObjectHideFlags: 0
@@ -508,6 +511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   picture: {fileID: 680223862}
   picture_outline: {fileID: 1389963310}
+  source: {fileID: 338254145}
+  correct: {fileID: 8300000, guid: eb29844b03df258489a10c01c6e51552, type: 3}
+  incorrect: {fileID: 8300000, guid: a7696a2bf114ed3438fefac35ec6ec66, type: 3}
 --- !u!114 &338254147
 MonoBehaviour:
   m_ObjectHideFlags: 0
