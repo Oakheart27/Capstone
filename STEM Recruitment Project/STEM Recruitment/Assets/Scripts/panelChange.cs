@@ -7,6 +7,7 @@ public class panelChange : MonoBehaviour
 {
     public GameObject gamePanel;
     public GameObject choicePanel;
+    public GameObject resultPanel; 
     //public GameObject backBtn;
     int test = 1; 
 
@@ -32,5 +33,17 @@ public class panelChange : MonoBehaviour
     {
         gamePanel.gameObject.SetActive(true);
         choicePanel.gameObject.SetActive(false); 
+    }
+
+    public void endPanel()
+    {
+        gamePanel.gameObject.SetActive(false);
+        resultPanel.gameObject.SetActive(true);
+    }
+
+    public void gameReturn()
+    {
+        gamePanel.gameObject.SetActive(true);
+        resultPanel.gameObject.SetActive(false);
     }
 }
