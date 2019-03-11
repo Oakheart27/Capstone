@@ -8,7 +8,7 @@ public class Dialog : MonoBehaviour
     // Intsance variables 
     public int size;
     public string[] sentences;
-    public string[] followup; 
+    //public string[] followup; 
     private int index;
     public int counter;  
     public float typingSpeed;
@@ -40,13 +40,13 @@ public class Dialog : MonoBehaviour
             continueBtn.SetActive(true);
 
         }
-
+        /*
         if (counter == size)
         {
             print("Inside the if");
             p1.SetActive(false);
             p2.SetActive(false); 
-        }
+        }*/
     }
 
     IEnumerator Type()
