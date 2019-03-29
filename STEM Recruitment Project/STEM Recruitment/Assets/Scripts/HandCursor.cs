@@ -40,7 +40,7 @@ public class HandCursor : MonoBehaviour
                     active = true;
                     press = userHands.RightHand.Value.Click;
 
-                    if (pressed != press)
+                    /*if (pressed != press)
                     {
                         pressed = press;
 
@@ -48,7 +48,7 @@ public class HandCursor : MonoBehaviour
                         {
                             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp | MouseOperations.MouseEventFlags.LeftDown);
                         }
-                    }
+                    }*/
                 }
             }
         }
