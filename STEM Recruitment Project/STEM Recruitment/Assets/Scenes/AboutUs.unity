@@ -147,7 +147,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 373, y: -161}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305629437
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a60bb25259eea1d4491e0bf7d3bc7fd7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50ed7eb0e7c189c4597c4ecc699c2562, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -325,71 +325,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390503200}
   m_CullTransparentMesh: 0
---- !u!1001 &577166608
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 101342, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_Name
-      value: NuitrackScripts
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: gesturesRecognizerModuleOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
-      propertyPath: handsTrackerModuleOn
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e999ace05c586574fa1b964016f28531, type: 3}
 --- !u!1 &721318989
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +363,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -246}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 270, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721318991
 MonoBehaviour:
@@ -450,7 +385,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0.20000002, b: 0.40000004, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -496,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.2, b: 0.4, a: 1}
+  m_Color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -529,7 +464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 721318989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b21565e1d4392d4eb0e9c3068e6a7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dd62923beb0ab9479399e98533335c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &912252319
@@ -589,7 +524,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3043572696ebdcf418a244e687529f66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93162bfd2ed50914c8855e5ee3eda615, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -661,7 +596,7 @@ GameObject:
   - component: {fileID: 963223313}
   - component: {fileID: 963223314}
   m_Layer: 5
-  m_Name: aReturn
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234.7, y: -41}
+  m_AnchoredPosition: {x: -234.7, y: -32}
   m_SizeDelta: {x: 455.1, y: 368.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118843924
@@ -927,7 +862,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 220
@@ -937,7 +872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The team is composed of 3 senior computer science undergratuate students
+  m_Text: "The team is composed of 3 senior computer science undergraduate students
     at Northern Arizona University.\nSamantha Earl: Programmer and Code Reviewer.
     Along with programming Sam enjoys drawing, hiking, playing video games, and learning
     Japanese and about Japanese culture.\nCluadia Coronel: Programmer and Recorder.
@@ -953,6 +888,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118843922}
   m_CullTransparentMesh: 0
+--- !u!1001 &1215911838
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 101342, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_Name
+      value: NuitrackScripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449316, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: gesturesRecognizerModuleOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436578, guid: e999ace05c586574fa1b964016f28531, type: 3}
+      propertyPath: handsTrackerModuleOn
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e999ace05c586574fa1b964016f28531, type: 3}
 --- !u!1 &1234142132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7bdc381ddb088ab4bb334a9038beeee2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5f637f06a029a847baf701756126076, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

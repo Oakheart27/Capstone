@@ -15,12 +15,6 @@ public class HandCursor : MonoBehaviour
         //Cursor.visible = false;
     }
 
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 100, 100), "BUTTON"))
-            Debug.Log("clicked button");
-    }
-
     private void OnDestroy()
     {
         NuitrackManager.onHandsTrackerUpdate -= NuitrackManager_onHandsTrackerUpdate;

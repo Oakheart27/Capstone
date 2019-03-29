@@ -215,7 +215,12 @@ public class NuitrackManager : MonoBehaviour
             }
         }
         else
+        {
             nuitrack.Nuitrack.Init();
+
+            ChangeSensivity(3);
+        }
+            
 #endif
         Debug.Log("Init OK");
 
@@ -383,6 +388,14 @@ public class NuitrackManager : MonoBehaviour
             gesturesRecognizerModuleOn,
             userTrackerModuleOn
         );
+    }
+
+    void ChangeSensivity(float sensivity)
+    {
+        float defaultWidth = 450.0f;
+        float defaultHeight = 200.0f;
+        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Width", (defaultWidth * sensivity).ToString());
+        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Height", (defaultHeight * sensivity).ToString());
     }
 
     public void CloseUserGen()
