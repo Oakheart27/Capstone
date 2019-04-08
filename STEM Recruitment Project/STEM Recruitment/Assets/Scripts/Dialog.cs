@@ -11,7 +11,8 @@ public class Dialog : MonoBehaviour
     public string userChoice; 
     //public string[] followup; 
     private int index;
-    public int counter;  
+    public int counter;
+    public int qnum; 
     public float typingSpeed;
     public int person1, person2, person3; 
 
@@ -41,7 +42,18 @@ public class Dialog : MonoBehaviour
         if (textDisplay.text == sentences[index])
         { 
             continueBtn.SetActive(true);
-            resultsBtn.SetActive(true); 
+
+            /*
+            p1Btn.SetActive(true);
+            p2Btn.SetActive(true);
+            p3Btn.SetActive(true);*/
+         
+            if (qnum < 3)
+            {
+                resultsBtn.SetActive(false);
+            }
+            else { resultsBtn.SetActive(true); }
+
         }
     }
 
@@ -95,7 +107,11 @@ public class Dialog : MonoBehaviour
         {
             print("No button press detected"); 
         }
-
+        qnum += 1;
+        /*
+        p1Btn.SetActive(false);
+        p2Btn.SetActive(false);
+        p3Btn.SetActive(false);*/
         Debug.Log(person1 + ", " +  person2 + ", " + person3);
     }
 
