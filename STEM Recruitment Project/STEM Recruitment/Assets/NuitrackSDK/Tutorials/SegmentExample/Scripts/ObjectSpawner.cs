@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
     float maxTimeInterval = 2;
     float halfWidth;
 
-    float[] positions = { -240, -80, 80, 240 };
+    float[] positions = { -450, -150, 150, 450 };
 
 
     public void StartSpawn(float widthImage)
