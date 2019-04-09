@@ -88,4 +88,5 @@ public class SegmentPaint : MonoBehaviour
         GUI.skin.label.fontSize = 50;
         GUILayout.Label(msg);
     }
+
 }

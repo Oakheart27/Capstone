@@ -14,11 +14,28 @@ public class FallingObject : MonoBehaviour
 
         active = false;
 
+        if (gameObject.name == "button_score_1(Clone)")
+        {
+            MathGameProgress.instance.AddNumber("1", 1);
+        }
+        else if (gameObject.name == "button_score_2(Clone)")
+        {
+            MathGameProgress.instance.AddNumber("2", 2);
+        }
+        else if (gameObject.name == "button_score_3(Clone)")
+        {
+            MathGameProgress.instance.AddNumber("3", 3);
+        }
+        else if (gameObject.name == "button_score_4(Clone)")
+        {
+            MathGameProgress.instance.AddNumber("4", 4);
+        }
+
+        // by taking this out, you can move and drag around the balls
+        // could be used in a different game
         Destroy(gameObject);
 
-        if (collision.transform.tag == "UserPixel")
-            GameProgress.instance.AddScore(scoreValue);
-        else if (collision.transform.tag == "BottomLine")
-            GameProgress.instance.RemoveScore(scoreValue);
     }
 }
+
+

@@ -6,6 +6,8 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField]
     GameObject[] fallingObjectsPrefabs;
 
+
+
     [Range(0.5f, 2f)]
     [SerializeField]
     float minTimeInterval = 1;
@@ -13,27 +15,30 @@ public class ObjectSpawner : MonoBehaviour
     [Range(2f, 4f)]
     [SerializeField]
     float maxTimeInterval = 2;
-
     float halfWidth;
+
+    float[] positions = { -240, -80, 80, 240 };
+
 
     public void StartSpawn(float widthImage)
     {
         halfWidth = widthImage / 2;
-        StartCoroutine(SpawnObject(0f));
+        StartCoroutine(SpawnObject(10f,0));
+        StartCoroutine(SpawnObject(10f, 1));
+        StartCoroutine(SpawnObject(10f, 2));
+        StartCoroutine(SpawnObject(10f, 3));
+
     }
 
-    IEnumerator SpawnObject(float waitingTime)
+    IEnumerator SpawnObject(float waitingTime,int pos)
     {
         yield return new WaitForSeconds(waitingTime);
-
-        float randX = Random.Range(-halfWidth, halfWidth);
+        float randX = positions[pos];
         Vector3 localSpawnPosition = new Vector3(randX, 0, 0);
 
-        GameObject currentObject = Instantiate(fallingObjectsPrefabs[Random.Range(0, fallingObjectsPrefabs.Length)]);
-
+        GameObject currentObject = Instantiate(fallingObjectsPrefabs[pos]);
         currentObject.transform.SetParent(gameObject.transform, true);
         currentObject.transform.localPosition = localSpawnPosition;
-
-        StartCoroutine(SpawnObject(Random.Range(minTimeInterval, maxTimeInterval)));
-    }  
+        StartCoroutine(SpawnObject(waitingTime,pos));
+    }
 }
