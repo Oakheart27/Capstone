@@ -150,6 +150,11 @@ public class DBManager : MonoBehaviour
 
     public void addScoreToDB(int score, int userID, int gameID)
     {
+        if(getID() < 0)
+        {
+            return;
+        }
+
         string path = loadConnectionString();
 
         IDbConnection dbconn = new SqliteConnection(path);

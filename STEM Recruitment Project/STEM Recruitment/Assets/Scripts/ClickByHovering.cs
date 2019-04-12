@@ -3,13 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ClickByHovering : MonoBehaviour
+public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Button myButton;
+    public Button myButton;
     private string originalButtonText;
     private int timeLeft; 
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        clickButton(myButton);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        stop();
+    }
     // Call this method on EventTrigger -> PointerEnter.
     public void clickButton(Button thisButton)
     {
@@ -18,9 +27,15 @@ public class ClickByHovering : MonoBehaviour
         StartCoroutine(wait(3)); 
 
         timeLeft = 3;
-
-        originalButtonText = myButton.GetComponentInChildren<TextMeshProUGUI>().text;
-
+        
+        if(isTextMeshProUGUI())
+        {
+            originalButtonText = myButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        }
+        else
+        {
+            originalButtonText = myButton.GetComponentInChildren<Text>().text;
+        }
         StartCoroutine(showTime());
     }
 
@@ -37,21 +52,46 @@ public class ClickByHovering : MonoBehaviour
     {
         while(timeLeft>=0)
         {
-            Debug.Log(timeLeft);
+            string newText = originalButtonText + " (" + timeLeft + ")";
 
-            myButton.GetComponentInChildren<TextMeshProUGUI>().text = originalButtonText + " (" + timeLeft + ")";
-
+            updateButtonText(newText);
+            
             yield return new WaitForSeconds(1);
 
             timeLeft--;
         }
+
+        updateButtonText(originalButtonText);
     }
 
     // Stops everything and changes button text to original. Call when pointer exits button.
     public void stop()
     {
         StopAllCoroutines();
-        myButton.GetComponentInChildren<TextMeshProUGUI>().text = originalButtonText;
+
+        updateButtonText(originalButtonText);
+    }
+
+
+    private bool isTextMeshProUGUI()
+    {
+        if(myButton.GetComponentInChildren<TextMeshProUGUI>() != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    private void updateButtonText(string newText)
+    {
+        if(isTextMeshProUGUI())
+        {
+            myButton.GetComponentInChildren<TextMeshProUGUI>().text = newText;
+        }
+        else
+        {
+            myButton.GetComponentInChildren<Text>().text = newText;
+        }
     }
 }
    

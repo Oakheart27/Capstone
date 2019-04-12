@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MathGameProgress : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class MathGameProgress : MonoBehaviour
 
     [SerializeField]
     Text currentScore;
+
+    [SerializeField]
+    Text highScore;
 
     int firstNum;
     int secondNum;
@@ -29,6 +33,15 @@ public class MathGameProgress : MonoBehaviour
 
     private void Start()
     {
+        DBManager dbManage = GetComponent<DBManager>();
+        
+        if(dbManage.getStatus())
+        {
+            int userID = dbManage.getID();
+            int gameID = SceneManager.GetActiveScene().buildIndex;
+            highScore.text = DisplayHighScore(userID, gameID);
+
+        }
         CreateEquation();
     }
 
@@ -59,6 +72,8 @@ public class MathGameProgress : MonoBehaviour
 
     void UpdateScoreText()
     {
+        DBManager dbManage = GetComponent<DBManager>();
+
         scoreText.text += strAns;
         if (givenAns == ans)
         {
@@ -66,6 +81,22 @@ public class MathGameProgress : MonoBehaviour
             responseText.text = "CORRECT";
             score += 5;
             currentScore.text = "Your Score: " + score.ToString();
+            //// Adding score to database ///////
+            // If the user is logged in...
+            if (dbManage.getStatus())
+            {
+                int userID = dbManage.getID();
+                int gameID = SceneManager.GetActiveScene().buildIndex;
+
+                // If the score is higher than the one saved in the database...
+                if (dbManage.getHighScore(userID, gameID) < score)
+                {
+                    // Set new high score
+                    dbManage.addScoreToDB(score, userID, gameID);
+                    // Display new high score
+                    highScore.text = DisplayHighScore(userID, gameID);
+                }
+            }
             StartCoroutine(TimeStop());
             //responseText.text = "";
             //CreateEquation();
@@ -108,6 +139,14 @@ public class MathGameProgress : MonoBehaviour
             if (go)
                 Destroy(go.gameObject);
         }
+    }
+
+    private string DisplayHighScore(int userID, int gameID)
+    {
+        DBManager dbManage = GetComponent<DBManager>();
+        int score = dbManage.getHighScore(userID, gameID);
+        string display = "High Score: " + score;
+        return display;
     }
 
 }

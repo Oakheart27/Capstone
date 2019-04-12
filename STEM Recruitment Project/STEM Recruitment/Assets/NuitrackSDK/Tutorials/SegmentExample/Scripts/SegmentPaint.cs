@@ -50,6 +50,7 @@ public class SegmentPaint : MonoBehaviour
     void OnDestroy()
     {
         NuitrackManager.onUserTrackerUpdate -= ColorizeUser;
+        NuitrackManager.DepthSensor.SetMirror(false);
     }
 
     string msg = "";
