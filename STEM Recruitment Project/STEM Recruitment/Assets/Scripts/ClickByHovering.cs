@@ -50,7 +50,7 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
     // Method adds countdown to button text
     IEnumerator showTime()
     {
-        while(timeLeft>=0)
+        while (timeLeft>=0)
         {
             string newText = originalButtonText + " (" + timeLeft + ")";
 
@@ -70,6 +70,8 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
         StopAllCoroutines();
 
         updateButtonText(originalButtonText);
+
+        Debug.Log(originalButtonText);
     }
 
 
