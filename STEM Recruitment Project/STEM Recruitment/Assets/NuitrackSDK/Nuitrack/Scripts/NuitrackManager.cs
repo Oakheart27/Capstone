@@ -218,15 +218,7 @@ public class NuitrackManager : MonoBehaviour
         {
             nuitrack.Nuitrack.Init();
 
-            if(Application.isEditor)
-            {
-                ChangeSensivity(3);
-            }
-
-            else
-            {
-                ChangeSensivity(5);
-            }
+            ChangeSensivity(3);
         }
             
 #endif
