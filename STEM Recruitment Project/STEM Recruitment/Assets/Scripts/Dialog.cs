@@ -69,9 +69,10 @@ public class Dialog : MonoBehaviour
 
     public void NextSentence()
     {
-        continueBtn.SetActive(false); // hide continue button 
-        resultsBtn.SetActive(false); 
-
+        continueBtn.SetActive(false); // hide continue button
+        continueBtn.GetComponentInChildren<Text>().text = "Continue";
+        resultsBtn.SetActive(false);
+        resultsBtn.GetComponentInChildren<Text>().text = "Results";
         // checks if at the end of sentece
         if (index < sentences.Length - 1)
         {
@@ -83,7 +84,9 @@ public class Dialog : MonoBehaviour
         {
             textDisplay.text = "";
             continueBtn.SetActive(false); // hide continue button
-            resultsBtn.SetActive(false); 
+            continueBtn.GetComponentInChildren<Text>().text = "Continue";
+            resultsBtn.SetActive(false);
+            resultsBtn.GetComponentInChildren<Text>().text = "Results";
         }
     }
 
@@ -92,21 +95,21 @@ public class Dialog : MonoBehaviour
         if (btn.name == "p1Btn")
         {
             person1 += 1;
-            print("Updated player 1");
+            Debug.Log("Updated player 1");
         }
         else if (btn.name == "p2Btn") 
         {
             person2 += 1;
-            print("Updtated Player 2");
+            Debug.Log("Updated Player 2");
         }
         else if (btn.name == "p3Btn")
         {
             person3 += 1;
-            print("Updated Player 3");
+            Debug.Log("Updated Player 3");
         }
         else
         {
-            print("No button press detected"); 
+            Debug.Log("No button press detected"); 
         }
         qnum += 1;
         /*
@@ -118,23 +121,24 @@ public class Dialog : MonoBehaviour
 
     public void endGame()
     {
-        print("We're in the endgame now!");
+        Debug.Log("We're in the endgame now!");
         userChoice = "Greg"; 
-        if (person1 <person2)
+        if (person2 > person1 && person2 > person3)
         {
             userChoice = "Lisa"; 
-            if (person2 < person3)
-            {
-                userChoice = "Tyrone"; 
-            }
+        }
+
+        if (person3 > person1 && person3 > person2)
+        {
+            userChoice = "Tyrone";
         }
         print("The user picked " + userChoice);
         result.text = "The person you said gave the best answer the most often is " + userChoice; 
 
         if (userChoice == "Greg")
         {
-            feedback.text = "Greg is very professionally dressed but doesn't believe he has any weakness. There are always things that people can improve on. He does " +
-                "meet the requirement of having a degree but doesn't know all of the languages that the job requires while there is another candidate that has more experience" +
+            feedback.text = "Greg is very professionally dressed but doesn't believe he has any weaknesses. There are always things that people can improve on. He does " +
+                "meet the requirement of having a degree but does not know all of the languages that the job requires. There is another candidate that has more experience" +
                 "in the languages that the employers require."; 
         }
         if (userChoice == "Lisa")
@@ -145,7 +149,7 @@ public class Dialog : MonoBehaviour
         }
         if (userChoice == "Tyrone")
         {
-            feedback.text = "Tyrone doesn't have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. By comparison there " +
+            feedback.text = "Tyrone does not have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. By comparison there " +
                 "are better candidates that were interviewed."; 
         }
     }

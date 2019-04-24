@@ -36,6 +36,7 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
         {
             originalButtonText = myButton.GetComponentInChildren<Text>().text;
         }
+
         StartCoroutine(showTime());
     }
 
@@ -74,7 +75,7 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
         Debug.Log(originalButtonText);
     }
 
-
+    
     private bool isTextMeshProUGUI()
     {
         if(myButton.GetComponentInChildren<TextMeshProUGUI>() != null)

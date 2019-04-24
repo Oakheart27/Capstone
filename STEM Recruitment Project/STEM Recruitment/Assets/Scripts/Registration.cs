@@ -6,7 +6,7 @@ using System.IO;
 using System;
 using System.Data;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Registration : MonoBehaviour
 {
@@ -70,7 +70,8 @@ public class Registration : MonoBehaviour
             if (verifyInputs(nameField.text, passwordField.text, dbconn)) // Make sure inputs have correct character length and do not already exist in database
             {
                 addAccount(nameField.text, passwordField.text, dbconn);
-                
+
+                SceneManager.LoadScene("Home");
             }
             else
             {
@@ -100,7 +101,7 @@ public class Registration : MonoBehaviour
         }
     }// end returnAll
 
-    void addAccount(string username, string password, IDbConnection dbconn)
+    public void addAccount(string username, string password, IDbConnection dbconn)
     {
         IDbCommand addUserQuery = dbconn.CreateCommand();
 
@@ -130,11 +131,21 @@ public class Registration : MonoBehaviour
 
         return id;
     }
-    string LoadConnectionString()
+    public string LoadConnectionString()
     {
         if (Application.isEditor) // If using editor, go to database in plugins folder
         {
-            return "URI=file:" + Application.dataPath + "/Plugins/prototypedb.s3db;";
+            string filePath = Application.dataPath + "/Plugins/prototypedb.s3db";
+
+            if (!File.Exists(filePath)) //if database doesn't exit, create database
+            {
+                Debug.Log(filePath);
+
+                makeDatabase(filePath);
+
+            }
+
+            return "URI=file:" + filePath;
         }
         else // If using build, get filepath (in Users/<your_name>/AppData/LocalLow/SciKids)
         {
@@ -165,9 +176,10 @@ public class Registration : MonoBehaviour
         string command = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY, " +
             "username VARCHAR(30) NOT NULL, " +
             "password VARCHAR(30) NOT NULL);";
-
+        Debug.Log(command);
         SqliteCommand makeTableQuery1 = dbconn.CreateCommand();
         makeTableQuery1.CommandText = command;
+        Debug.Log(makeTableQuery1.CommandText);
         makeTableQuery1.ExecuteNonQuery();
 
         // Create 2nd table - score

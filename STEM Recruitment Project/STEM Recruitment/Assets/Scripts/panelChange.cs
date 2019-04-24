@@ -7,7 +7,11 @@ public class panelChange : MonoBehaviour
 {
     public GameObject gamePanel;
     public GameObject choicePanel;
-    public GameObject resultPanel; 
+    public GameObject resultPanel;
+
+    // For making sure text is accurate.
+    public Button choiceBtn;
+    public Button backBtn;
     //public GameObject backBtn;
     int test = 1; 
 
@@ -27,12 +31,14 @@ public class panelChange : MonoBehaviour
     {
         gamePanel.gameObject.SetActive(false);
         choicePanel.gameObject.SetActive(true);
+        choiceBtn.GetComponentInChildren<Text>().text = "Job Details"; // resetting text
     }
     
     public void backPanel()
     {
         gamePanel.gameObject.SetActive(true);
-        choicePanel.gameObject.SetActive(false); 
+        backBtn.GetComponentInChildren<Text>().text = "Back"; // resetting text
+        choicePanel.gameObject.SetActive(false);
     }
 
     public void endPanel()
