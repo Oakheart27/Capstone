@@ -1630,8 +1630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -392, y: -77.383}
-  m_SizeDelta: {x: 366.3, y: 343.64}
+  m_AnchoredPosition: {x: -392.7, y: -91}
+  m_SizeDelta: {x: 379.1, y: 355.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113149057
 MonoBehaviour:
@@ -3571,12 +3571,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 0
   sentences:
-  - 'Welcome to the Interview Game. Press the Job Details Button to view job details.
-    Press the back button to return to this screen. '
+  - 'Welcome to the Interview Game. At any time, press the "Job Details" Button to
+    know what you are hiring for. Then, press the back button to return to this screen. '
   - Now you know what job you are hiring for, you will be reviewing the candidates'
     answers to interview questions.
-  - 'After hearing all of the answers, choose the person with the best answer by hovering
-    over their name and clicking or pressing. '
+  - After hearing all 3 answers to a question, choose the person with the best answer
+    by hovering over their name and clicking or pressing. There are a total of 3 questions.
   - Let's get started!
   - 'INTERVIEWER: Tell me about yourself.'
   - 'GREG: I enjoy hiking and hanging out with my friends.'

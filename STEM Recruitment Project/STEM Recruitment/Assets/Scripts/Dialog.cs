@@ -144,7 +144,7 @@ public class Dialog : MonoBehaviour
         if (userChoice == "Lisa")
         {
             feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's degree" +
-                "in Computer Science and knows a majority of the programming languages that are required for the field. She is also working to improve her weaknesses and work " +
+                " in Computer Science and knows a majority of the programming languages that are required for the field. She is also working to improve her weaknesses and work " +
                 "ethic.";
         }
         if (userChoice == "Tyrone")
