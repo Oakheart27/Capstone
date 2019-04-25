@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/NAU/Capstone/Builds/SplashBranch/STEM Recruitment.exe
+C:/Users/Claudia Rosas/Desktop/capstone/Capstone/STEM Recruitment Project/STEM Recruitment/builds/two/STEM Recruitment.exe
 SceneListBegin?
 Assets/Scenes/SplashLogoScene.unity
 Assets/Scenes/Home.unity

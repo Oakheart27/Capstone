@@ -57,6 +57,7 @@ public class MathGameProgress : MonoBehaviour
     {
         RandomEquation();
         scoreText.text = firstNum.ToString() + "+" + secondNum.ToString() + "=";
+        
     }
 
     void RandomEquation()
@@ -73,8 +74,9 @@ public class MathGameProgress : MonoBehaviour
     void UpdateScoreText()
     {
         DBManager dbManage = GetComponent<DBManager>();
-
         scoreText.text += strAns;
+        
+
         if (givenAns == ans)
         {
 
@@ -118,7 +120,10 @@ public class MathGameProgress : MonoBehaviour
     {
         strAns = strVal;
         givenAns = intVal;
-        UpdateScoreText();
+        if (scoreText.text.Length < 5)
+        {
+            UpdateScoreText();
+        }
 
     }
 
