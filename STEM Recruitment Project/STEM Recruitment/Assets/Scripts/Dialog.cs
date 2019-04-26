@@ -137,20 +137,18 @@ public class Dialog : MonoBehaviour
 
         if (userChoice == "Greg")
         {
-            feedback.text = "Greg is very professionally dressed but doesn't believe he has any weaknesses. There are always things that people can improve on. He does " +
-                "meet the requirement of having a degree but does not know all of the languages that the job requires. There is another candidate that has more experience" +
-                "in the languages that the employers require."; 
+            feedback.text = "Greg is very professionally dressed. He did take advantage of providing skills he has in the tell me about yourself sectiion. He doesn't have the " +
+                "\programming knowledge for the job "; 
         }
         if (userChoice == "Lisa")
         {
             feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's degree" +
-                " in Computer Science and knows a majority of the programming languages that are required for the field. She is also working to improve her weaknesses and work " +
-                "ethic.";
+                " in Computer Science and knows a majority of the programming languages that are required for the field.";
         }
         if (userChoice == "Tyrone")
         {
-            feedback.text = "Tyrone does not have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. By comparison there " +
-                "are better candidates that were interviewed."; 
+            feedback.text = "Tyrone does not have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. He knows one of the languages " +
+                "but, By comparison there are better candidates that were interviewed."; 
         }
     }
 }

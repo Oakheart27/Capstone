@@ -78,11 +78,11 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
     
     private bool isTextMeshProUGUI()
     {
-        if(myButton.GetComponentInChildren<TextMeshProUGUI>() != null)
+        if(myButton.GetComponentInChildren<TextMeshProUGUI>() == null)
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
     
     private void updateButtonText(string newText)
