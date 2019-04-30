@@ -28,7 +28,7 @@ public class SegmentPaint : MonoBehaviour
     {
         NuitrackManager.onUserTrackerUpdate += ColorizeUser;
 
-        NuitrackManager.DepthSensor.SetMirror(true);
+        NuitrackManager.DepthSensor.SetMirror(false);
 
         nuitrack.OutputMode mode = NuitrackManager.DepthSensor.GetOutputMode();
         cols = mode.XRes;

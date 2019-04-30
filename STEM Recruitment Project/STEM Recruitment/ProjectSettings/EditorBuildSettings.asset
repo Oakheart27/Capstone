@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CC.unity
     guid: 6ffc3d485300c2242ac6889544ed84d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameMatching.unity
     guid: 49eb165804f32724983ca86b41428cc2
   - enabled: 1

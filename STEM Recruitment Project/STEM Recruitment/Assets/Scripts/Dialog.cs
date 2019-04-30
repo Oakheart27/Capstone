@@ -138,7 +138,7 @@ public class Dialog : MonoBehaviour
         if (userChoice == "Greg")
         {
             feedback.text = "Greg is very professionally dressed. He did take advantage of providing skills he has in the tell me about yourself sectiion. He doesn't have the " +
-                "\programming knowledge for the job "; 
+                " programming knowledge for the job "; 
         }
         if (userChoice == "Lisa")
         {
