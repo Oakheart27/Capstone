@@ -14,10 +14,13 @@ This project is a mobile, modular, gesture-based learning system used for STEM r
 Download the project using the following link: 
 [Project Download Link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Oakheart27/Capstone/tree/master/Standalone%20Project)
 
-You should be directed to the following screen: 
-ADD IMAGE
+You will be directed to the following screen: </br>
 
-After the project is downloaded, unzip the file. Open the resulting folder(s). You should see this directory:
-ADD IMAGE
+![DownGit](https://github.com/Oakheart27/Capstone/tree/master/Extra%20Information/Images/downgit.png)</br>
+
+
+After the project is downloaded, unzip the file. Open the resulting folder(s). You should see this directory:</br>
+
+![Folder](https://github.com/Oakheart27/Capstone/blob/master/Extra%20Information/Images/opening_app.png)</br>
 
 Open the "STEM Recruitment" application to try out our system!
