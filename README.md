@@ -14,7 +14,7 @@ This project is a mobile, modular, gesture-based learning system used for STEM r
 Download the project using the following link: 
 [Project Download Link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Oakheart27/Capstone/tree/master/Standalone%20Project)
 
-You will be directed to the following screen: </br>
+You will be directed to the following screen and the download will begin automatically: </br>
 
 ![DownGit](https://github.com/Oakheart27/Capstone/blob/master/Extra%20Information/Images/downgit.png)</br>
 
