@@ -1,5 +1,5 @@
-# NAU Capstone 2018-2019 
-This respository is used to share the project between the SciKids team members. The files on the repository should be for the project itself or files corresponding to the project website. More information can be found in the shared Google Drive. 
+# NAU Capstone 2018-2019
+This repository contains all project files needed for our system. More information can be found on our [team website.](https://www.cefns.nau.edu/capstone/projects/CS/2019/SciKids-S19/index.html)  
 ## Project Description
 This project is a mobile, modular, gesture-based learning system used for STEM recruitment and career readiness. Gesture recognition technology allows the audience to have a richer experience that aims to:
 - be openly **available to anyone** in the community
@@ -10,6 +10,14 @@ This project is a mobile, modular, gesture-based learning system used for STEM r
 - **Sponsor:** Elizabeth Glass
 - **Mentor:** Austin Sanders
 - **Developers:** Samantha Earl, Claudia Coronel, Gwen Morris
-## Project Download Link
+## Project Download Link & Instructions
+Download the project using the following link: 
 [Project Download Link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Oakheart27/Capstone/tree/master/Standalone%20Project)
-After the project is downloaded, unzip the file. Add stuff later.
+
+You should be directed to the following screen: 
+ADD IMAGE
+
+After the project is downloaded, unzip the file. Open the resulting folder(s). You should see this directory:
+ADD IMAGE
+
+Open the "STEM Recruitment" application to try out our system!
