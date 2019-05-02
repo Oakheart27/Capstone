@@ -16,7 +16,7 @@ Download the project using the following link:
 
 You will be directed to the following screen: </br>
 
-![DownGit](https://github.com/Oakheart27/Capstone/tree/master/Extra%20Information/Images/downgit.png)</br>
+![DownGit](https://github.com/Oakheart27/Capstone/blob/master/Extra%20Information/Images/downgit.png)</br>
 
 
 After the project is downloaded, unzip the file. Open the resulting folder(s). You should see this directory:</br>
