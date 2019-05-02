@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/NAU/Capstone/Builds/Symposium/STEM Recruitment.exe
+D:/NAU/Capstone/Repository/Repos/Standalone Project/STEM Recruitment.exe
 SceneListBegin?
 Assets/Scenes/SplashLogoScene.unity
 Assets/Scenes/Home.unity
@@ -269,6 +269,7 @@ ddc5b9de4d695accef7a73646dc836b6 Assembly-CSharp.dll:.HandPressure
 fd976c8714fadfacb4d13a86c18526a3 Assembly-CSharp.dll:.SkeletonsVisualization
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 3f08998eb757f7d588ea38ef323d1f1c Assembly-CSharp.dll:.BackTextureCreator
+c9c079fcd6d61f378aa357b80cc138a8 Assembly-CSharp.dll:.BackCollider
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EmergencyExit
 bf1df8dfb160df6a1921ed69fe9df5cd Assembly-CSharp.dll:.PointerVisuals
 4dba252ae000063a286ed04dd3640779 Assembly-CSharp.dll:.ExitWithBckSpce
@@ -277,4 +278,3 @@ fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.GameProgress
 56a3ae0287483f8538198778e9a07cd4 Assembly-CSharp.dll:.panelChange
 eaac10e5307947527438a3b83605c81d Assembly-CSharp.dll:.CameraRotation
 7b7496f097f413dd780713dd8c747721 Assembly-CSharp.dll:.Dialog
-c9c079fcd6d61f378aa357b80cc138a8 Assembly-CSharp.dll:.BackCollider
