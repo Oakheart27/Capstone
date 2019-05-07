@@ -60,6 +60,10 @@ public class Dialog : MonoBehaviour
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
                 p3Btn.GetComponent<Button>().interactable = false;
+
+                p1Btn.GetComponentInChildren<Text>().text = "Greg";
+                p2Btn.GetComponentInChildren<Text>().text = "Lisa";
+                p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
             }
 
             int temp = counter-1;
@@ -150,6 +154,11 @@ public class Dialog : MonoBehaviour
         counter += 1;
         continueBtn.SetActive(true);
         continueBtn.GetComponent<Button>().interactable = true;
+
+        p1Btn.GetComponentInChildren<Text>().text = "Greg";
+        p2Btn.GetComponentInChildren<Text>().text = "Lisa";
+        p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
+
         p1Btn.GetComponent<Button>().interactable = false;
         p2Btn.GetComponent<Button>().interactable = false;
         p3Btn.GetComponent<Button>().interactable = false;
@@ -184,7 +193,7 @@ public class Dialog : MonoBehaviour
         }
         if (userChoice == "Lisa")
         {
-            feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's de" +
+            feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's degree" +
                 " in Computer Science and knows a majority of the programming languages that are required for the field.";
         }
         if (userChoice == "Tyrone")
