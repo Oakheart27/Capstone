@@ -2641,7 +2641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -333.51}
+  m_AnchoredPosition: {x: 0, y: -333.5}
   m_SizeDelta: {x: 0, y: -667.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500711265
@@ -3590,6 +3590,8 @@ MonoBehaviour:
     My weakness is I''m a perfectionist.'
   - 'LISA: I have a strong background in Javascripts and Java. I need to work more
     on time management. '
+  - 'TYRONE: I have good communication skills but need to improve on not overrloading
+    myself. '
   - Choose a Person
   - 'INTERVIEWER: What programming languages do you have experience in?'
   - 'GREG: Python and JavaScript.'

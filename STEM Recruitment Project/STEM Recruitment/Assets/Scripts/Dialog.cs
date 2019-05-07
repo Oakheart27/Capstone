@@ -33,10 +33,10 @@ public class Dialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Type());
-        p1Btn.GetComponent<Button>().interactable = false;
-        p2Btn.GetComponent<Button>().interactable = false;
-        p3Btn.GetComponent<Button>().interactable = false;
+      p1Btn.GetComponent<Button>().interactable = false;
+      p2Btn.GetComponent<Button>().interactable = false;
+      p3Btn.GetComponent<Button>().interactable = false;
+      StartCoroutine(Type());
     }
 
     // Update is called once per frame
