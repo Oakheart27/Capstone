@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9772253, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.26805925, g: 0.25471696, b: 0.33962262, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -589,7 +589,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.98025066, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.24528301, g: 0.20710216, b: 0.20710216, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1819,7 +1819,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.94274926, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.1509434, g: 0.13314347, b: 0.13314347, a: 0.89411765}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3584,20 +3584,23 @@ MonoBehaviour:
     am also avaliable to move if needed. '
   - 'TYRONE: I am a good leader. I hope to make a difference and eventually end up
     in a CEO position. '
-  - 'INTERVIEWER: Where did you earn your bachelor''s degree?'
-  - 'GREG: I went to school at Arizona State University.'
-  - 'LISA: I earned my bachelor''s in Computer Science from New Mexico State University.'
-  - 'TYRONE: I do not have a bachelor''s degree. Didn''t even know you were looking
-    for one.'
+  - Choose a Person
+  - 'INTERVIEWER: What are some of your strengths and weaknesses '
+  - 'GREG: My greatest strength is I''m a team leader get people to get the job done.
+    My weakness is I''m a perfectionist.'
+  - 'LISA: I have a strong background in Javascripts and Java. I need to work more
+    on time management. '
+  - Choose a Person
   - 'INTERVIEWER: What programming languages do you have experience in?'
-  - 'GREG: Python and JavaScript. '
+  - 'GREG: Python and JavaScript.'
   - 'LISA: Java, Javascript, C++, and CSS.'
-  - 'TYRONE: COBOL, C#, and BASIC '
+  - 'TYRONE: COBOL, C#, and BASIC'
+  - Choose a Person
   - Let's see the results. Press on the results button.
   userChoice: 
   counter: 0
   qnum: 0
-  typingSpeed: 0.02
+  typingSpeed: 0.001
   person1: 0
   person2: 0
   person3: 0

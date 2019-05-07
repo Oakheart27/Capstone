@@ -1,29 +1,29 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
-    // Intsance variables 
+    // Intsance variables
     public int size;
     public string[] sentences;
-    public string userChoice; 
-    //public string[] followup; 
+    public string userChoice;
+    //public string[] followup;
     private int index;
-    public int counter;
-    public int qnum; 
+    public int counter = 1;
+    public int qnum;
     public float typingSpeed;
-    public int person1, person2, person3; 
+    public int person1, person2, person3;
 
-    // Objects in Unity 
+    // Objects in Unity
     public GameObject continueBtn;
     public GameObject choiceBtn;
     public GameObject p1Btn;
     public GameObject p2Btn;
     public GameObject p3Btn;
-    public GameObject resultsBtn; 
-    public GameObject p1, p2; 
+    public GameObject resultsBtn;
+    public GameObject p1, p2;
 
     public Text textDisplay;
     public Text result;
@@ -34,6 +34,9 @@ public class Dialog : MonoBehaviour
     void Start()
     {
         StartCoroutine(Type());
+        p1Btn.GetComponent<Button>().interactable = false;
+        p2Btn.GetComponent<Button>().interactable = false;
+        p3Btn.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -41,19 +44,50 @@ public class Dialog : MonoBehaviour
     {
         // Check if text displayed is current sentence index
         if (textDisplay.text == sentences[index])
-        { 
-            continueBtn.SetActive(true);
-            
-            /*l
+        {
+            if (sentences[index] == "Choose a Person")
+            {
+                continueBtn.GetComponent<Button>().interactable = false;
+                p1Btn.GetComponent<Button>().interactable = true;
+                p2Btn.GetComponent<Button>().interactable = true;
+                p3Btn.GetComponent<Button>().interactable = true;
+
+            }
+            else
+            {
+                continueBtn.SetActive(true);
+                continueBtn.GetComponent<Button>().interactable = true;
+                p1Btn.GetComponent<Button>().interactable = false;
+                p2Btn.GetComponent<Button>().interactable = false;
+                p3Btn.GetComponent<Button>().interactable = false;
+            }
+
+            int temp = counter-1;
+
+            if (temp != counter)
+            {
+                //Debug.Log("Temp: " + temp + " Counter: " + counter);
+                continueBtn.GetComponent<Button>().interactable = true;
+            }
+
             p1Btn.SetActive(true);
             p2Btn.SetActive(true);
-            p3Btn.SetActive(true);*/
-         
+            p3Btn.SetActive(true);
+
             if (qnum < 3)
             {
                 resultsBtn.SetActive(false);
             }
-            else { resultsBtn.SetActive(true); }
+            else
+            {
+                resultsBtn.SetActive(true);
+            }
+
+            if (sentences[index] == "Let's see the results. Press the results button.")
+            {
+                continueBtn.SetActive(false);
+                continueBtn.GetComponent<Button>().interactable = false;
+            }
 
         }
     }
@@ -97,7 +131,7 @@ public class Dialog : MonoBehaviour
             person1 += 1;
             Debug.Log("Updated player 1");
         }
-        else if (btn.name == "p2Btn") 
+        else if (btn.name == "p2Btn")
         {
             person2 += 1;
             Debug.Log("Updated Player 2");
@@ -109,23 +143,31 @@ public class Dialog : MonoBehaviour
         }
         else
         {
-            Debug.Log("No button press detected"); 
+            Debug.Log("No button press detected");
         }
+
         qnum += 1;
-        /*
+        counter += 1;
+        continueBtn.SetActive(true);
+        continueBtn.GetComponent<Button>().interactable = true;
+        p1Btn.GetComponent<Button>().interactable = false;
+        p2Btn.GetComponent<Button>().interactable = false;
+        p3Btn.GetComponent<Button>().interactable = false;
+
         p1Btn.SetActive(false);
         p2Btn.SetActive(false);
-        p3Btn.SetActive(false);*/
+        p3Btn.SetActive(false);
         Debug.Log(person1 + ", " +  person2 + ", " + person3);
+
     }
 
     public void endGame()
     {
         Debug.Log("We're in the endgame now!");
-        userChoice = "Greg"; 
+        userChoice = "Greg";
         if (person2 > person1 && person2 > person3)
         {
-            userChoice = "Lisa"; 
+            userChoice = "Lisa";
         }
 
         if (person3 > person1 && person3 > person2)
@@ -133,22 +175,22 @@ public class Dialog : MonoBehaviour
             userChoice = "Tyrone";
         }
         print("The user picked " + userChoice);
-        result.text = "The person you said gave the best answer the most often is " + userChoice; 
+        result.text = "The person you said gave the best answer the most often is " + userChoice;
 
         if (userChoice == "Greg")
         {
             feedback.text = "Greg is very professionally dressed. He did take advantage of providing skills he has in the tell me about yourself sectiion. He doesn't have the " +
-                " programming knowledge for the job "; 
+                " programming knowledge for the job.";
         }
         if (userChoice == "Lisa")
         {
-            feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's degree" +
+            feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's de" +
                 " in Computer Science and knows a majority of the programming languages that are required for the field.";
         }
         if (userChoice == "Tyrone")
         {
             feedback.text = "Tyrone does not have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. He knows one of the languages " +
-                "but, By comparison there are better candidates that were interviewed."; 
+                "but, By comparison there are better candidates that were interviewed.";
         }
     }
 }
