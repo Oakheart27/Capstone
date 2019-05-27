@@ -33,6 +33,8 @@ public class MathGameProgress : MonoBehaviour
 
     private void Start()
     {
+        // Make cursor invisible
+        Cursor.visible = false;
         DBManager dbManage = GetComponent<DBManager>();
         
         if(dbManage.getStatus())
@@ -51,6 +53,11 @@ public class MathGameProgress : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.visible = true;
     }
 
     void CreateEquation()
