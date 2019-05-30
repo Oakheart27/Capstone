@@ -143,7 +143,8 @@
     <Compile Include="Assets\Scripts\Module.cs" />
     <Compile Include="Assets\Scripts\panelChange.cs" />
     <Compile Include="Assets\Scripts\Registration.cs" />
-    <Compile Include="Assets\Scripts\Setting.cs" />
+    <Compile Include="Assets\Scripts\SensitivitySettings.cs" />
+    <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SplashScene.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

@@ -72,7 +72,7 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         updateButtonText(originalButtonText);
 
-        Debug.Log(originalButtonText);
+       // Debug.Log(originalButtonText);
     }
 
     

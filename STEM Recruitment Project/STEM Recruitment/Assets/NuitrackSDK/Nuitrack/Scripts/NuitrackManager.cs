@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class InitEvent : UnityEvent<NuitrackInitState>
@@ -75,6 +77,8 @@ public class NuitrackManager : MonoBehaviour
     bool prevGest = false;
     bool prevUser = false;
 
+    int senseVal; // Used to change sensitivity
+    
     public static NuitrackManager Instance
     {
         get
@@ -214,13 +218,21 @@ public class NuitrackManager : MonoBehaviour
                 nuitrack.Nuitrack.SetConfigValue("Settings.IPAddress", "192.168.43.1");
             }
         }
+
         else
         {
             nuitrack.Nuitrack.Init();
-
-            ChangeSensivity(3);
         }
-            
+        /////////////////////////////////////////////////////////////////////
+        //// CUSTOM: Read from sensitivity file and change sensitivity.
+        SensitivitySettings senseSet = GetComponent<SensitivitySettings>();
+
+        int val = senseSet.GetSensitivityVal();
+
+        Debug.Log("Sensitivity: " + val);
+
+        ChangeSensitivity(val);
+        /////////////////////////////////////////////////////////////////////
 #endif
         Debug.Log("Init OK");
 
@@ -351,6 +363,7 @@ public class NuitrackManager : MonoBehaviour
         {
             nuitrack.Nuitrack.Update();
         }
+        
     }
 
     public void DepthModuleClose()
@@ -390,13 +403,7 @@ public class NuitrackManager : MonoBehaviour
         );
     }
 
-    void ChangeSensivity(float sensivity)
-    {
-        float defaultWidth = 450.0f;
-        float defaultHeight = 200.0f;
-        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Width", (defaultWidth * sensivity).ToString());
-        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Height", (defaultHeight * sensivity).ToString());
-    }
+   
 
     public void CloseUserGen()
     {
@@ -426,4 +433,17 @@ public class NuitrackManager : MonoBehaviour
     {
         CloseUserGen();
     }
+    
+    //////////////////////////////////////////
+    /// CUSTOM METHODS - NOT FROM NUITRACK ///
+    //////////////////////////////////////////
+    public void ChangeSensitivity(float sensivity)
+    {
+        float defaultWidth = 450.0f;
+        float defaultHeight = 200.0f;
+        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Width", (defaultWidth * sensivity).ToString());
+        nuitrack.Nuitrack.SetConfigValue("HandTracker.HandPointerFrame.Height", (defaultHeight * sensivity).ToString());
+    }
+    
+    
 }
