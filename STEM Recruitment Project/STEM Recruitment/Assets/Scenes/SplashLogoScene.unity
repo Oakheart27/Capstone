@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sciLogo: {fileID: 2136933764}
   nauLogo: {fileID: 629419143}
-  newScene: Home
+  newScene: SplashTutorial
 --- !u!1 &629419141
 GameObject:
   m_ObjectHideFlags: 0

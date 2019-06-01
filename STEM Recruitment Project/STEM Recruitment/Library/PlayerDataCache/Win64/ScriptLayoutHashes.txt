@@ -3,6 +3,7 @@ PlayerPath?
 D:/NAU/Capstone/Repository/Repos/Standalone Project/STEM Recruitment.exe
 SceneListBegin?
 Assets/Scenes/SplashLogoScene.unity
+Assets/Scenes/SplashTutorial.unity
 Assets/Scenes/Home.unity
 Assets/Scenes/Registration.unity
 Assets/Scenes/AboutUs.unity
@@ -280,3 +281,4 @@ fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.GameProgress
 56a3ae0287483f8538198778e9a07cd4 Assembly-CSharp.dll:.panelChange
 eaac10e5307947527438a3b83605c81d Assembly-CSharp.dll:.CameraRotation
 7b7496f097f413dd780713dd8c747721 Assembly-CSharp.dll:.Dialog
+a925415aeeb3d03429d297551b2f0196 Assembly-CSharp.dll:.SplashTutorialScene

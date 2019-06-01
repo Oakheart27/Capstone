@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SplashLogoScene.unity
     guid: 04b0f938f73fe8944987c136afa54d95
   - enabled: 1
+    path: Assets/Scenes/SplashTutorial.unity
+    guid: 13eac657a35edfc49ac5851393602279
+  - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
