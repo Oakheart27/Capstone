@@ -2,8 +2,8 @@ Win64
 PlayerPath?
 D:/NAU/Capstone/Repository/Repos/Standalone Project/STEM Recruitment.exe
 SceneListBegin?
-Assets/Scenes/SplashLogoScene.unity
-Assets/Scenes/SplashTutorial.unity
+Assets/Scenes/SplashScreens/SplashLogoScene.unity
+Assets/Scenes/SplashScreens/SplashTutorial.unity
 Assets/Scenes/Home.unity
 Assets/Scenes/Registration.unity
 Assets/Scenes/AboutUs.unity
@@ -14,6 +14,7 @@ Assets/Scenes/k5.unity
 Assets/Scenes/5_6.unity
 Assets/Scenes/CC.unity
 Assets/Scenes/mcq.unity
+Assets/Scenes/SplashScreens/MathGameTutorial.unity
 Assets/Scenes/MathGame.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -231,6 +232,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+a925415aeeb3d03429d297551b2f0196 Assembly-CSharp.dll:.SplashTutorialScene
 9ce07f8de5ca946b2829b169b16b8b42 Assembly-CSharp.dll:.EnviromentSwitcher
 ca1c9695bbafcb52af6a07f1bd4c4ea5 Assembly-CSharp.dll:TMPro.Examples.TMP_TextInfoDebugTool
 bd3f0ca738703903e759f77536ed74fd Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRateCounter
@@ -245,6 +247,7 @@ bf6be350e91c922b5cba4cf2fc2fd2d1 Assembly-CSharp.dll:.MathGameProgress
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 fe2d355deb0ca31d59a0a7cf4d141fc3 Assembly-CSharp.dll:TMPro.Examples.Benchmark04
 998ca758b5e6cd33222eb14c140693f4 Assembly-CSharp.dll:.HandTrackerVisualization
+62a6e127e7b6e8aeef26cb0da3d919f1 Assembly-CSharp.dll:.MathGameTutorial
 7932ceb95ed3f24bcad30f092ff0c540 Assembly-CSharp.dll:.MatchingGameDB
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
@@ -281,4 +284,3 @@ fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.GameProgress
 56a3ae0287483f8538198778e9a07cd4 Assembly-CSharp.dll:.panelChange
 eaac10e5307947527438a3b83605c81d Assembly-CSharp.dll:.CameraRotation
 7b7496f097f413dd780713dd8c747721 Assembly-CSharp.dll:.Dialog
-a925415aeeb3d03429d297551b2f0196 Assembly-CSharp.dll:.SplashTutorialScene

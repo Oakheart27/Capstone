@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SplashLogoScene.unity
+    path: Assets/Scenes/SplashScreens/SplashLogoScene.unity
     guid: 04b0f938f73fe8944987c136afa54d95
   - enabled: 1
-    path: Assets/Scenes/SplashTutorial.unity
+    path: Assets/Scenes/SplashScreens/SplashTutorial.unity
     guid: 13eac657a35edfc49ac5851393602279
   - enabled: 1
     path: Assets/Scenes/Home.unity
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mcq.unity
     guid: ddc6f541e5676b84fa4dceee3dd58a66
+  - enabled: 1
+    path: Assets/Scenes/SplashScreens/MathGameTutorial.unity
+    guid: 886be63a824c9744c9af96779f927327
   - enabled: 1
     path: Assets/Scenes/MathGame.unity
     guid: c9d128e8cc547bb46b9b3e7ec136078c

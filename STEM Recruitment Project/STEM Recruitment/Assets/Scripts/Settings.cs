@@ -7,8 +7,8 @@ public class Settings : MonoBehaviour
 {
     public Button quitBtn;
     public Button lowBtn, medBtn, highBtn;
-    private int sensVal;
-    private int newSensVal;
+    private float sensVal;
+    private float newSensVal;
     // Start is called before the first frame update
     void Start()
     {
