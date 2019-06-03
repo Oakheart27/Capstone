@@ -160,7 +160,7 @@ d7ac4d265759dcf23488e916bbdd4d8b Assembly-CSharp.dll:.DrawColorFrame
 47930f3b40e24ef5b3b5e3d9ada7097a Assembly-CSharp.dll:TMPro.Examples.Benchmark01
 418cc16d03856e24cc3fef4c3e67fc2e Assembly-CSharp.dll:.Pointer
 fb89962d7a5de5524990196e08e115cd Assembly-CSharp.dll:.FaceManager
-928f40a536a5dca7b58b8e16ea7e0e6b Assembly-CSharp.dll:.LogIn
+8eea63dd075cb45e83ac8eb8a72adb62 Assembly-CSharp.dll:.LogIn
 328baf3622f2ae9c6d5f17e790dd7775 Assembly-CSharp.dll:.DebugDepth
 f18f1baddc8ecbf4f78b907ae36ecf57 Assembly-CSharp.dll:.NativeAvatar
 fe6d0ece772c3502baff480d033e4432 Assembly-CSharp.dll:.PointerRotation

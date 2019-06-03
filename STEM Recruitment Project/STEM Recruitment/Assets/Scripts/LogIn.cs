@@ -14,7 +14,7 @@ public class LogIn : MonoBehaviour
     public InputField nameField;
     public InputField passwordField;
     public Text errorDisplay;
-    public Button submitButton;
+    public Button submitButton, registerButton;
     private DBManager dbManage;
     private int id; // ID for future use.
 
@@ -35,7 +35,8 @@ public class LogIn : MonoBehaviour
             nameField.DeactivateInputField();
             passwordField.DeactivateInputField();
             submitButton.GetComponent<Button>().interactable = false;
-            
+            registerButton.GetComponent<Button>().interactable = false;
+
         }
         else
         {
@@ -44,8 +45,7 @@ public class LogIn : MonoBehaviour
 
             // Go to TaskOnClick when button is pressed
             submitButton.onClick.AddListener(TaskOnClick);
-
-
+            
         }
       
     }

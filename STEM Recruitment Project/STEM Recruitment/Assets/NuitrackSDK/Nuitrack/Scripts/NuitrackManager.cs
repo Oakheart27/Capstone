@@ -227,7 +227,7 @@ public class NuitrackManager : MonoBehaviour
         //// CUSTOM: Read from sensitivity file and change sensitivity.
         SensitivitySettings senseSet = GetComponent<SensitivitySettings>();
 
-        float val = senseSet.GetSensitivityVal();
+        int val = senseSet.GetSensitivityVal();
 
         Debug.Log("Sensitivity: " + val);
 

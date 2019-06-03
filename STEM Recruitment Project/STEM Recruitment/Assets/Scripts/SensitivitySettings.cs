@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class SensitivitySettings : MonoBehaviour
 {
     public Text userMessage = null;
-    public void ChangeSensitivity(float val)
+    public void ChangeSensitivity(int val)
     {
         string filePath = GetFilePath();
         
@@ -42,14 +42,14 @@ public class SensitivitySettings : MonoBehaviour
         
     } // end ChangeSensitivity
     
-    public float GetSensitivityVal()
+    public int GetSensitivityVal()
     {
         // Read value from file
         try
         {
             using (TextReader reader = File.OpenText(GetFilePath()))
             {
-                float val = float.Parse(reader.ReadLine());
+                int val = int.Parse(reader.ReadLine());
                 return val;
             }
         }
@@ -59,7 +59,7 @@ public class SensitivitySettings : MonoBehaviour
             Debug.Log("Could not read sensitivity file. Sensitivity set to default");
             Debug.Log(e);
             // Return default value
-            return 3.5f;
+            return 3;
         }
     }
 
