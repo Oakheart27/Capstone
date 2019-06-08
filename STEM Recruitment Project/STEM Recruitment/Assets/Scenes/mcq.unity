@@ -3577,48 +3577,74 @@ MonoBehaviour:
     answers to interview questions.
   - After hearing all 3 answers to a question, choose the person with the best answer
     by hovering over their name and clicking or pressing. There are a total of 3 questions.
-  - Let's get started!
+  - 'Let''s get started '
   - 'INTERVIEWER: Tell me about yourself.'
-  - 'GREG: I enjoy hiking and hanging out with my friends.'
-  - 'LISA: I have experience in Java and C++. I have 2 years of SQL experience. I
-    am also avaliable to move if needed. '
-  - 'TYRONE: I am a good leader. I hope to make a difference and eventually end up
-    in a CEO position. '
+  - 'GREG: I have been married for six years. I enjoy hiking and running in my spare
+    time. '
+  - 'LISA: I am some experience in Java and JavaScript, I have 2 years of experience
+    with SQL, and I like to solve puzzles '
+  - 'TYRONE: I have high goals of becoming a CEO and team lead. '
   - Choose a Person
-  - 'INTERVIEWER: What are some of your strengths and weaknesses '
-  - 'GREG: My greatest strength is I''m a team leader get people to get the job done.
-    My weakness is I''m a perfectionist.'
-  - 'LISA: I have a strong background in Javascripts and Java. I need to work more
-    on time management. '
-  - 'TYRONE: I have good communication skills but need to improve on not overrloading
-    myself. '
+  - 'INTERVIEWER: Tell me about a time when you worked well with a team to solve a
+    problem '
+  - 'GREG: I was part of a development team trying to create a rube goldberg machine
+    for a competition. The machine had to be made using all of the materials we were
+    given and create the machine '
+  - 'in one hour. We had good communication and delegated tasks to all of the members.
+    We ended up getting second place at the competition. '
+  - 'LISA: For me I was a reliable team member. There was good communication among
+    all the members of the team and we were very optimistic about the projects outcome
+    and current progress. '
+  - 'TYRONE: As a team we planned out our approach and implemented it. We made modifications
+    as needed together and finished the project on time. '
   - Choose a Person
-  - 'INTERVIEWER: What programming languages do you have experience in?'
-  - 'GREG: Python and JavaScript.'
-  - 'LISA: Java, Javascript, C++, and CSS.'
-  - 'TYRONE: COBOL, C#, and BASIC'
+  - 'INTERVIEWER: What are your biggest strengths and weaknesses '
+  - "GREG: I am good at communication but I\u2019m also a perfectionist. However,
+    this means I will keep working at my job. "
+  - 'LISA: My strengths are what help me succeed in my job and weaknesses are points
+    that I need to work on. '
+  - 'TYRONE: I am a strong SQL programmer, but I need to work on my communication
+    skills with my teammates. '
   - Choose a Person
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
-  - Let's see the results. Press on the results button.
+  - 'INTERVIEWER: Do you have kids?'
+  - 'Greg: Yes, I have two kids. '
+  - 'LISA: Could you please explain how this question is relevant to the job position?'
+  - 'TYRONE: This question is illegal to ask!'
+  - 'INTERVIEWER: Oh I apologize, that is a personal question not relating to the
+    job. '
+  - Choose a Person
+  - 'INTERVIWER: Describe the problem solving process for the computer science field.'
+  - 'GREG: First you list out the requirements that need to be met, then you make
+    a plan, afterwards you implement that plan, and after you have your results you
+    can go back to refactor your '
+  - solution to make it more effective and maintain your solution.
+  - 'LISA: You create a plan, implement it, and then debug it until the solution works. '
+  - 'TYRONE: Make an observation, test the hypothesis, and write up the results. '
+  - Choose a Person
+  - 'INTERVIWER: What is your favorite animal and why?'
+  - "GREG: Ugh I\u2019m not sure a ferret cause they\u2019re cute. "
+  - 'LISA: I really like octopus because they are great problem solvers and escape
+    artists. '
+  - 'TYRONE: I like lions because they are known as the king of the jungle. '
+  - Choose a Person
+  - 'INTERVIEWER: Describe your ideal supervisor. '
+  - 'GREG: The supervisor needs to be on time, dress professionally, be willing to
+    stay late, let me work in my own space, and always make sure the break room is
+    clean and has snacks. '
+  - 'LISA: I like a leader who can boost team morale, be respectful, have good communication
+    with team members, and is willing to help other members of his team if needed. '
+  - "TYRONE: I\u2019ve had so many bad supervisors. They can\u2019t be lazy, disrespectful,
+    liars, micromanaging, or have a short temper. "
+  - Choose a Person
+  - 'INTERVIEW: Do you have any questions for me?'
+  - 'GREG: No thank you.'
+  - 'LISA: Yes, what do you enjoy about working for this company?'
+  - 'INTERVIEWER: They have a very open atmosphere and welcome questions of any kind.
+    They respect all of the workers here and have nice benefits. '
+  - 'TYRONE: What is the pay?'
+  - 'INTERVIEWER: Exact pay can be discussed if a job offer is extended. '
+  - Choose a Person
+  - 'Thank you for your time. Click on the results button. '
   userChoice: 
   counter: 0
   qnum: 0

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 474}
   m_MaxSize: {x: 14002, y: 14024}
   vertical: 0
-  controlID: 10849
+  controlID: 6412
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 474}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 10850
+  controlID: 6365
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 10851
+  controlID: 6503
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -381,9 +381,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 189effff389effff2ca0ffff3ca0ffff5ca0ffff9ea0ffffcaa0ffff0ca1ffff7aa1ffffb2a1ffffd6a1fffff2a1ffff18a2ffff2ea2ffff3ea2ffff4aa2ffffa2a9ffffdca9ffff10aaffff60aaffffa2aaffffd4aaffff52abffff80abffffdcabffff0eacffff56acffff04afffff3aafffff7cafffffb0afffffaeb5ffffdcb5fffff8b5ffff26b6ffff80b6ffffb0b6ffff66baffff6ac0ffffccc0ffff00c1ffff3cc1ffff8ec1ffff5ac6ffffa2c6ffff48f6ffff72f7ffffd23c0000fc3c0000243d0000303d0000a85e0000b85e0000ae6300004a68000060680000966e0000b0790000de790000127a000012810000
+      m_SelectedIDs: 583d0000
+      m_LastClickedID: 15704
+      m_ExpandedIDs: 08f6ffff66f7ffff623b0000963b0000b43b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -551,20 +551,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\NAU\Capstone\Repository\Repos\STEM Recruitment Project\STEM
+  m_LastProjectPath: C:\Users\Gwen M\Documents\GitHub\Capstone\STEM Recruitment Project\STEM
     Recruitment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4350000
-    m_LastClickedID: 13812
+    m_SelectedIDs: ae330000
+    m_LastClickedID: 13230
     m_ExpandedIDs: 000000009a330000a0330000ae330000f4350000e6370000d6390000de390000ca3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

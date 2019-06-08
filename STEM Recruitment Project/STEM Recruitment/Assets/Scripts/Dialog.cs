@@ -36,6 +36,7 @@ public class Dialog : MonoBehaviour
       p1Btn.GetComponent<Button>().interactable = false;
       p2Btn.GetComponent<Button>().interactable = false;
       p3Btn.GetComponent<Button>().interactable = false;
+      resultsBtn.SetActive(false);
       StartCoroutine(Type());
     }
 
@@ -78,19 +79,11 @@ public class Dialog : MonoBehaviour
             p2Btn.SetActive(true);
             p3Btn.SetActive(true);
 
-            if (qnum < 3)
-            {
-                resultsBtn.SetActive(false);
-            }
-            else
-            {
-                resultsBtn.SetActive(true);
-            }
-
-            if (sentences[index] == "Let's see the results. Press the results button.")
+            if (sentences[index] == "Thank you for your time. Click on the results button.")
             {
                 continueBtn.SetActive(false);
                 continueBtn.GetComponent<Button>().interactable = false;
+                resultsBtn.SetActive(true);
             }
 
         }

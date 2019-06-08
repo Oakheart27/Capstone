@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 474}
   m_MaxSize: {x: 14002, y: 14024}
   vertical: 0
-  controlID: 10435
+  controlID: 6173
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -61,10 +61,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -474.5
-    m_HBaseRangeMax: 474.5
-    m_VBaseRangeMin: -267
-    m_VBaseRangeMax: 267
+    m_HBaseRangeMin: -795.5
+    m_HBaseRangeMax: 795.5
+    m_VBaseRangeMin: -447.5
+    m_VBaseRangeMax: 447.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -82,25 +82,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 954
-      height: 534
+      width: 1908
+      height: 895
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 477, y: 267}
+    m_Translation: {x: 954, y: 447.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -477
-      y: -267
-      width: 954
-      height: 534
+      x: -954
+      y: -447.5
+      width: 1908
+      height: 895
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 954, y: 551}
+  m_LastWindowPixelSize: {x: 1908, y: 912}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 474}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 10414
+  controlID: 6174
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 10415
+  controlID: 6175
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,9 +210,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: a2a9ffffdca9ffff10aaffff60aaffffa2aaffffd4aaffff52abffff80abffffdcabffff0eacffff56acffff04afffff3aafffff7cafffffb0afffffaeb5ffffdcb5fffff8b5ffff26b6ffff80b6ffffb0b6ffff66baffff6ac0ffffccc0ffff00c1ffff3cc1ffff8ec1ffff5ac6ffffa2c6ffff48f6ffff72f7ffffd23c0000fc3c0000243d0000303d0000a85e0000b85e0000ae6300004a68000060680000966e0000b0790000de790000127a000012810000
+      m_SelectedIDs: 583d0000
+      m_LastClickedID: 15704
+      m_ExpandedIDs: 08f6ffff66f7ffff623b0000963b0000b43b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -435,20 +435,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\NAU\Capstone\Repository\Repos\STEM Recruitment Project\STEM
+  m_LastProjectPath: C:\Users\Gwen M\Documents\GitHub\Capstone\STEM Recruitment Project\STEM
     Recruitment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4350000
-    m_LastClickedID: 13812
+    m_SelectedIDs: ae330000
+    m_LastClickedID: 13230
     m_ExpandedIDs: 000000009a330000a0330000ae330000f4350000e6370000d6390000de390000ca3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -502,8 +502,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 28810000
-    m_LastClickedInstanceID: 33064
+    m_SelectedInstanceIDs: 583d0000
+    m_LastClickedInstanceID: 15704
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300006035000000000000c22b00003e290000983100003a490000
     m_RenameOverlay:
