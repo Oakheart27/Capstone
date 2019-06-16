@@ -9,6 +9,7 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
 {
     public Button myButton;
     private string originalButtonText;
+    public int time = 3;
     private int timeLeft; 
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -22,11 +23,11 @@ public class ClickByHovering : MonoBehaviour, IPointerEnterHandler, IPointerExit
     // Call this method on EventTrigger -> PointerEnter.
     public void clickButton(Button thisButton)
     {
+        timeLeft = time;
+
         myButton = thisButton;
         
-        StartCoroutine(wait(3)); 
-
-        timeLeft = 3;
+        StartCoroutine(wait(timeLeft)); 
         
         if(isTextMeshProUGUI())
         {

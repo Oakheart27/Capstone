@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UIDraggable
+  - CustomCollider
+  - Hand
   layers:
   - Default
   - TransparentFX

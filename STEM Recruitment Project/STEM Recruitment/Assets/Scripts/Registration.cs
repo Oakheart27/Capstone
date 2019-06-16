@@ -137,13 +137,13 @@ public class Registration : MonoBehaviour
         {
             string filePath = Application.dataPath + "/Plugins/prototypedb.s3db";
 
-            if (!File.Exists(filePath)) //if database doesn't exit, create database
+            /*if (!File.Exists(filePath)) //if database doesn't exit, create database
             {
                 Debug.Log(filePath);
 
                 makeDatabase(filePath);
 
-            }
+            }*/
 
             return "URI=file:" + filePath;
         }
@@ -151,64 +151,19 @@ public class Registration : MonoBehaviour
         {
             string filePath = Application.persistentDataPath + "/prototypedb.s3db";
 
-            if (!File.Exists(filePath)) //if database doesn't exit, create database
+            /*if (!File.Exists(filePath)) //if database doesn't exit, create database
             {
                 Debug.Log(Application.persistentDataPath);
 
                 makeDatabase(filePath);
 
-            }
+            }*/
 
             return "URI=file:" + filePath;
         }
     } // end LoadConnectionString()
 
-    // Creates the database if doesn't exist
-    void makeDatabase(string filePath)
-    {
-        SqliteConnection.CreateFile(filePath);
-
-        SqliteConnection dbconn = new SqliteConnection("URI=file:" + filePath);
-
-        dbconn.Open();
-
-        // Create 1st table - user
-        string command = "CREATE TABLE IF NOT EXISTS user(id INTEGER PRIMARY KEY, " +
-            "username VARCHAR(30) NOT NULL, " +
-            "password VARCHAR(30) NOT NULL);";
-        Debug.Log(command);
-        SqliteCommand makeTableQuery1 = dbconn.CreateCommand();
-        makeTableQuery1.CommandText = command;
-        Debug.Log(makeTableQuery1.CommandText);
-        makeTableQuery1.ExecuteNonQuery();
-
-        // Create 2nd table - score
-        string command2 = "CREATE TABLE IF NOT EXISTS score(" +
-            "gameID INTEGER," +
-            "userID INTEGER," +
-            "userScore INTEGER," +
-            "FOREIGN KEY(userID) REFERENCES user(id));";
-
-        SqliteCommand makeTableQuery2 = dbconn.CreateCommand();
-        makeTableQuery2.CommandText = command2;
-        makeTableQuery2.ExecuteNonQuery();
-
-        // Create 3rd table - module
-        string command3 = "CREATE TABLE IF NOT EXISTS module(" +
-             "modID INTEGER PRIMARY KEY," +
-             "userID INTEGER," +
-             "gameID INTEGER," +
-             "FOREIGN KEY(userID) REFERENCES user(id)," +
-             "FOREIGN KEY(gameID) REFERENCES score(gameID));";
-
-        SqliteCommand makeTableQuery3 = dbconn.CreateCommand();
-        makeTableQuery3.CommandText = command3;
-        makeTableQuery3.ExecuteNonQuery();
-
-        Debug.Log(command);
-
-        dbconn.Close();
-    } // end makeDatabase()
+    
 
     bool verifyInputs(string username, string password, IDbConnection dbconn)
     {

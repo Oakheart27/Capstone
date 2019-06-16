@@ -48,6 +48,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MathGame.unity
     guid: c9d128e8cc547bb46b9b3e7ec136078c
   - enabled: 1
-    path: Assets/Scenes/STEM_Game.unity
+    path: Assets/Scenes/MatchingGame.unity
     guid: 128a08e43f8356b478d73d4d698c9b3d
   m_configObjects: {}

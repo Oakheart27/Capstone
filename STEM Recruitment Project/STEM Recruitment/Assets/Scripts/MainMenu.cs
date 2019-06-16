@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
@@ -13,8 +14,15 @@ public class MainMenu : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        // Create the database on startup if it does not yet exist.
         DBManager dbManage = GetComponent<DBManager>();
-        
+        Debug.Log(dbManage.getFilePath());
+
+        if (!File.Exists(dbManage.getFilePath()))
+        {
+            dbManage.makeDatabase(dbManage.getFilePath());
+        }
+
         if (dbManage.getStatus())
         {
             salutation.text = "Welcome " + dbManage.getUsername();

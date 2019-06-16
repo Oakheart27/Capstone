@@ -186,7 +186,7 @@ public class NuitrackManager : MonoBehaviour
     }
 
 
-    void NuitrackInit()
+    public void NuitrackInit()
     {
         //    CloseUserGen(); //just in case
 #if UNITY_IOS
@@ -227,7 +227,7 @@ public class NuitrackManager : MonoBehaviour
         //// CUSTOM: Read from sensitivity file and change sensitivity.
         SensitivitySettings senseSet = GetComponent<SensitivitySettings>();
 
-        int val = senseSet.GetSensitivityVal();
+        float val = senseSet.GetSensitivityVal();
 
         Debug.Log("Sensitivity: " + val);
 
@@ -433,10 +433,7 @@ public class NuitrackManager : MonoBehaviour
     {
         CloseUserGen();
     }
-    
-    //////////////////////////////////////////
-    /// CUSTOM METHODS - NOT FROM NUITRACK ///
-    //////////////////////////////////////////
+
     public void ChangeSensitivity(float sensivity)
     {
         float defaultWidth = 450.0f;
