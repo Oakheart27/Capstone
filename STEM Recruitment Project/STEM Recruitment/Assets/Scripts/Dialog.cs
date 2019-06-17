@@ -84,6 +84,7 @@ public class Dialog : MonoBehaviour
                 continueBtn.SetActive(false);
                 continueBtn.GetComponent<Button>().interactable = false;
                 resultsBtn.SetActive(true);
+                endGame(); 
             }
 
         }
