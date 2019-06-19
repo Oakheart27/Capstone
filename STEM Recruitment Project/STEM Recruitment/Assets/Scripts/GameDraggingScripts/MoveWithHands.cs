@@ -29,11 +29,13 @@ public class MoveWithHands : MonoBehaviour
     {
         NuitrackManager.onHandsTrackerUpdate += NuitrackManager_onHandsTrackerUpdate;
         dragSensitivity *= dragSensitivity;
+        Cursor.visible = false;
     }
 
     private void OnDestroy()
     {
         NuitrackManager.onHandsTrackerUpdate -= NuitrackManager_onHandsTrackerUpdate;
+        Cursor.visible = true;
     }
 
     private void Update()

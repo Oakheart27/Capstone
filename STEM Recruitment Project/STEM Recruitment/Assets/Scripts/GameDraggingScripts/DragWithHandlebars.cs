@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class DragWithHandlebars : MonoBehaviour
 {
-    public GameObject leftHand, rightHand, leftBar, rightBar, outline;
+    public GameObject leftHand, rightHand, leftBar, rightBar, outlineFront, outlineBack;
     //public Text scoreText;
     //private int score;
     private Vector3 originalPosition, outlinePos;
     private GameObject cube;
+    private Material outlineMat;
     private RigidbodyConstraints constraints;
     private bool isCorrect;
     
@@ -17,7 +18,8 @@ public class DragWithHandlebars : MonoBehaviour
     {
         originalPosition = this.transform.position;
         cube = this.transform.Find("Cube").gameObject;
-        outlinePos = outline.transform.position;
+        outlinePos = outlineFront.transform.position;
+        outlineMat = outlineBack.GetComponent<Renderer>().material;
 
         isCorrect = false;
         
@@ -40,13 +42,17 @@ public class DragWithHandlebars : MonoBehaviour
             // Turn bars to black to prevent user from moving the picture from the outline.
             turnToBlack(rightBar);
             turnToBlack(leftBar);
+
+            outlineMat.color = Color.green;
+
         }
 
         // If the picture is not being grabbed and it's not in its correct position, reset
         // the picture to its original position.
         else
         {
-            this.transform.position = originalPosition;
+            this.transform.position = Vector3.Lerp(this.transform.position, originalPosition, 1);
+           // this.transform.position = originalPosition;
         }
 
         // If we're in the range of the picture's outline
@@ -74,25 +80,35 @@ public class DragWithHandlebars : MonoBehaviour
         }
 
     }
+
+    public void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Outline")
+        {
+            outlineMat.color = Color.green;
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        outlineMat.color = Color.black;
+
+    }
+
     // Method determines if a bar is being grabbed if at least one segment of the bar is green.
     // Class GrabHandles changes segments from black to green.
     bool isGrabbed(GameObject bar)
     {
-        GameObject top, bottom, side;
-        Material topMat, bottomMat, sideMat;
+        GameObject seg1, seg2;
+        Material seg1Mat, seg2Mat;
 
-        top = bar.transform.Find("Top").gameObject;
-        topMat = top.GetComponent<Renderer>().material;
-
-        bottom = bar.transform.Find("Bottom").gameObject;
-        bottomMat = bottom.GetComponent<Renderer>().material;
-
-        side = bar.transform.Find("Side").gameObject;
-        sideMat = side.GetComponent<Renderer>().material;
+        seg1 = bar.transform.Find("Seg1").gameObject;
+        seg1Mat = seg1.GetComponent<Renderer>().material;
+       
+        seg2 = bar.transform.Find("Seg2").gameObject;
+        seg2Mat = seg2.GetComponent<Renderer>().material;
         
-        if (topMat.color == Color.green || 
-            bottomMat.color == Color.green || 
-            sideMat.color == Color.green)
+        if (seg1Mat.color == Color.green || seg2Mat.color == Color.green)
         {
             return true;
         }
@@ -103,21 +119,24 @@ public class DragWithHandlebars : MonoBehaviour
     // Resets all segments to black to prevent player from moving object.
     void turnToBlack(GameObject bar)
     {
-        GameObject top, bottom, side;
-        Material topMat, bottomMat, sideMat;
+        GameObject seg1, seg2;
+        Material seg1Mat, seg2Mat;
 
-        top = bar.transform.Find("Top").gameObject;
-        topMat = top.GetComponent<Renderer>().material;
+        seg1 = bar.transform.Find("Seg1").gameObject;
+        seg1Mat = seg1.GetComponent<Renderer>().material;
 
-        bottom = bar.transform.Find("Bottom").gameObject;
-        bottomMat = bottom.GetComponent<Renderer>().material;
-
-        side = bar.transform.Find("Side").gameObject;
-        sideMat = side.GetComponent<Renderer>().material;
-
-        topMat.color = Color.black;
-        bottomMat.color = Color.black;
-        sideMat.color = Color.black; 
+        seg2 = bar.transform.Find("Seg2").gameObject;
+        seg2Mat = seg2.GetComponent<Renderer>().material;
+        
+        seg2Mat.color = Color.black;
+           
+        seg1Mat.color = Color.black;
+         
     }
+
+   /* void MoveObjectBack(Vector3 start, Vector3 end)
+    {
+
+    }*/
     
 }
