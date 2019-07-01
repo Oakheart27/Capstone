@@ -11,8 +11,8 @@ public class GrabHandles : MonoBehaviour
 
     public void Start()
     {
-        this.currentMaterial = GetComponent<Renderer>().material;
-        this.currentMaterial.color = Color.black;
+        currentMaterial = this.GetComponent<Renderer>().material;
+        currentMaterial.color = Color.black;
 
         otherMat = otherSeg.GetComponent<Renderer>().material;
         otherMat.color = Color.black;
@@ -21,7 +21,7 @@ public class GrabHandles : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hand")
         {
-            this.currentMaterial.color = Color.green;
+            currentMaterial.color = Color.green;
             otherMat.color = Color.green;
         }
 
@@ -29,7 +29,7 @@ public class GrabHandles : MonoBehaviour
 
     public void OnCollisionExit(Collision collision)
     {
-        this.currentMaterial.color = Color.black;
+        currentMaterial.color = Color.black;
         otherMat.color = Color.black;
     }
 }
