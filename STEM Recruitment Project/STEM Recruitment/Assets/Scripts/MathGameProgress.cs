@@ -19,6 +19,7 @@ public class MathGameProgress : MonoBehaviour
     [SerializeField]
     Text highScore;
 
+    //instance variables 
     int firstNum;
     int secondNum;
     int ans;
@@ -44,6 +45,7 @@ public class MathGameProgress : MonoBehaviour
             highScore.text = DisplayHighScore(userID, gameID);
 
         }
+
         CreateEquation();
     }
 

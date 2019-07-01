@@ -16,7 +16,6 @@ public class Dialog : MonoBehaviour
     private int index = 0;
     public int counter = 1;
     public int anscount = 0;
-    public int qnum;
     public float typingSpeed;
     public int person1, person2, person3;
     public int final1, final2, final3; 
@@ -36,8 +35,6 @@ public class Dialog : MonoBehaviour
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
     public Text result; // Displays who the user chose and summary of interviewies. 
     public Text feedback; // Dispalys developer feedback on user choice 
-    
-
 
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
@@ -83,11 +80,11 @@ public class Dialog : MonoBehaviour
                 p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
             }
 
-            if (sentences[index] == "Choose who you would hire then click the results button.")
+            if (sentences[index] == "Choose who you would hire after looking at the summary above.")
             {
                 jobdescription.SetActive(false); 
                 summary.SetActive(true);
-                summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + "correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + "correct.";
+                summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
 
             }
 
@@ -194,7 +191,6 @@ public class Dialog : MonoBehaviour
             }
         }
         
-        //qnum += 1;
         counter += 1;
         continueBtn.SetActive(true);
         continueBtn.GetComponent<Button>().interactable = true; // after choice made, returns continue button to screen
@@ -219,8 +215,8 @@ public class Dialog : MonoBehaviour
     {
         gregR.enabled = true;
         Debug.Log(anscount);
-        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
-        gregR.GetComponent<Text>().text = gregAns[anscount];
+        if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
+        gregR.GetComponent<Text>().text = gregAns[anscount - 1];
         /*
 
         if (btn.name == "greg")
@@ -247,15 +243,15 @@ public class Dialog : MonoBehaviour
     public void lisaOver()
     {
         lisaR.enabled = true;
-        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
-        lisaR.GetComponent<Text>().text = lisaAns[anscount]; 
+        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
+        lisaR.GetComponent<Text>().text = lisaAns[anscount -1]; 
     }
 
     public void tyroneOver()
     {
         tyroneR.enabled = true;
-        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
-        tyroneR.GetComponent<Text>().text = tyroneAns[anscount]; 
+        if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
+        tyroneR.GetComponent<Text>().text = tyroneAns[anscount - 1]; 
     }
 
     public void mouseLeave()

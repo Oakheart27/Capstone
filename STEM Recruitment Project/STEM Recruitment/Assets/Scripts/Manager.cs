@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/* Drag and Drop system for the matching game.*/
 
 public class Manager : MonoBehaviour
 {
