@@ -60,7 +60,7 @@ public class Dialog : MonoBehaviour
         // Check if text displayed is current sentence index
         if (textDisplay.text == sentences[index])
         {
-            if (sentences[index] == "Choose a Person" || sentences[index] == "Choose who you would hire then click the results button.") // checks if prompting for question 
+            if (sentences[index] == "Choose a Person" || sentences[index] == "Choose who you would hire after looking at the summary above.") // checks if prompting for question 
             {
                 continueBtn.GetComponent<Button>().interactable = false; // hides continue button
                 // allows name buttons to be ineractable for choice 
@@ -85,10 +85,9 @@ public class Dialog : MonoBehaviour
 
             if (sentences[index] == "Choose who you would hire then click the results button.")
             {
-                //jobdescription.SetActive(false);
                 jobdescription.SetActive(false); 
                 summary.SetActive(true);
-                summary.GetComponentInChildren<Text>().text = "Results!!!";
+                summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + "correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + "correct.";
 
             }
 
