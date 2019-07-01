@@ -9,9 +9,13 @@ public class Dialog : MonoBehaviour
     public int size;
     public string[] sentences;
     public string userChoice;
+    public string[] gregAns;
+    public string[] lisaAns;
+    public string[] tyroneAns; 
     //public string[] followup;
     private int index;
     public int counter = 1;
+    public int anscount = 0;
     public int qnum;
     public float typingSpeed;
     public int person1, person2, person3;
@@ -22,22 +26,29 @@ public class Dialog : MonoBehaviour
     public GameObject p1Btn;
     public GameObject p2Btn;
     public GameObject p3Btn;
+    public GameObject greg, lisa, tyrone; 
     public GameObject resultsBtn;
     public GameObject p1, p2;
 
-    public Text textDisplay;
-    public Text result;
-    public Text feedback;
+    public Text textDisplay; // Questions
+    public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
+    public Text result; // Displays who the user chose
+    public Text feedback; // Dispalys developer feedback on user choice 
+
 
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
     void Start()
     {
-      p1Btn.GetComponent<Button>().interactable = false;
-      p2Btn.GetComponent<Button>().interactable = false;
-      p3Btn.GetComponent<Button>().interactable = false;
-      resultsBtn.SetActive(false);
-      StartCoroutine(Type());
+        p1Btn.GetComponent<Button>().interactable = false;
+        p2Btn.GetComponent<Button>().interactable = false;
+        p3Btn.GetComponent<Button>().interactable = false;
+        resultsBtn.SetActive(false);
+        gregR.enabled = false;
+        lisaR.enabled = false;
+        tyroneR.enabled = false; 
+       
+        StartCoroutine(Type());
     }
 
     // Update is called once per frame
@@ -46,18 +57,20 @@ public class Dialog : MonoBehaviour
         // Check if text displayed is current sentence index
         if (textDisplay.text == sentences[index])
         {
-            if (sentences[index] == "Choose a Person")
+            if (sentences[index] == "Choose a Person") // checks if prompting for question 
             {
-                continueBtn.GetComponent<Button>().interactable = false;
+                continueBtn.GetComponent<Button>().interactable = false; // hides continue button
+                // allows name buttons to be ineractable for choice 
                 p1Btn.GetComponent<Button>().interactable = true;
                 p2Btn.GetComponent<Button>().interactable = true;
                 p3Btn.GetComponent<Button>().interactable = true;
-
             }
             else
             {
                 continueBtn.SetActive(true);
                 continueBtn.GetComponent<Button>().interactable = true;
+
+                // name buttons uninteractable with user when not prompting person choice
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
                 p3Btn.GetComponent<Button>().interactable = false;
@@ -147,8 +160,8 @@ public class Dialog : MonoBehaviour
         qnum += 1;
         counter += 1;
         continueBtn.SetActive(true);
-        continueBtn.GetComponent<Button>().interactable = true;
-
+        continueBtn.GetComponent<Button>().interactable = true; // after choice made, returns continue button to screen
+        
         p1Btn.GetComponentInChildren<Text>().text = "Greg";
         p2Btn.GetComponentInChildren<Text>().text = "Lisa";
         p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
@@ -160,10 +173,62 @@ public class Dialog : MonoBehaviour
         p1Btn.SetActive(false);
         p2Btn.SetActive(false);
         p3Btn.SetActive(false);
+        anscount += 1; 
         Debug.Log(person1 + ", " +  person2 + ", " + person3);
 
     }
 
+    public void gregOver()
+    {
+        gregR.enabled = true;
+        Debug.Log(anscount);
+        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
+        gregR.GetComponent<Text>().text = gregAns[anscount];
+        /*
+
+        if (btn.name == "greg")
+        {
+            Debug.Log("In Greg");
+            gregR.enabled = true;
+            gregR.GetComponent<Text>().text = "bombskill";
+            Debug.Log("HELLOW IM DONE");
+        }
+        if (btn.name == "lisa")
+        {
+            lisaR.enabled = true;
+            lisaR.GetComponent<Text>().text = "HiIII";
+        }
+        if (btn.name == "tyrone")
+        {
+            tyroneR.enabled = true;
+            tyroneR.GetComponent<Text>().text = "bro";
+        }
+        Debug.Log("MouseOver"); */
+
+    }
+
+    public void lisaOver()
+    {
+        lisaR.enabled = true;
+        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
+        lisaR.GetComponent<Text>().text = lisaAns[anscount]; 
+    }
+
+    public void tyroneOver()
+    {
+        tyroneR.enabled = true;
+        if (anscount > 7) { anscount = 7; } // Stops array out of bounds error
+        tyroneR.GetComponent<Text>().text = tyroneAns[anscount]; 
+    }
+
+    public void mouseLeave()
+    {
+        gregR.enabled = false;
+        lisaR.enabled = false;
+        tyroneR.enabled = false; 
+    }
+
+    //TODO Change endGame conditions to allow user to choice final hire. 
     public void endGame()
     {
         Debug.Log("We're in the endgame now!");

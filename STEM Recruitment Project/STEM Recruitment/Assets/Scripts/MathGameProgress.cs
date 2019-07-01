@@ -61,20 +61,60 @@ public class MathGameProgress : MonoBehaviour
     }
 
     void CreateEquation()
-    {
-        RandomEquation();
+    {  
+        /*
+        if (input == "easy")
+        {
+            addEquation(); 
+        }
+
+        if (input == "medium")
+        {
+            subEquation(); 
+        }
+
+        if (Input == "hard")
+        {
+            multiplyEquation(); 
+        }
+  
+        */
+
+       // randomEquation();
         scoreText.text = firstNum.ToString() + "+" + secondNum.ToString() + "=";
         
     }
 
-    void RandomEquation()
+    // equation functions in range from 0-12
+    // adds numbers together 
+    void addEquation()
     {
-        firstNum = Random.Range(0, 3);
-        secondNum = Random.Range(0, 3);
+        firstNum = Random.Range(0, 12);
+        secondNum = Random.Range(0, 12);
         ans = firstNum + secondNum;
         if (ans == 0)
         {
-            RandomEquation();
+            addEquation();
+        }
+    }
+    void subEquation()
+    {
+        firstNum = Random.Range(0, 12);
+        secondNum = Random.Range(0, 12);
+        ans = firstNum - secondNum;
+        if (ans == 0)
+        {
+            subEquation();
+        }
+    }
+    void multiplyEquation()
+    {
+        firstNum = Random.Range(0, 12);
+        secondNum = Random.Range(0, 12);
+        ans = firstNum * secondNum;
+        if (ans == 0)
+        {
+            multiplyEquation();
         }
     }
 
