@@ -61,6 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\Loading.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\loadingbar.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\loadingcolorful.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\loadingtext.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\rotatetotate.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\SimpleLoading.cs" />
+    <Compile Include="Assets\Downloaded Assets\loadingBar\scripts\simplerotate.cs" />
     <Compile Include="Assets\Downloaded Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\NuitrackSDK\Nuitrack\Advanced\NuitrackAvatar.cs" />
     <Compile Include="Assets\NuitrackSDK\Nuitrack\Advanced\NuitrackAvatarAdvanced.cs" />
@@ -125,26 +132,22 @@
     <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\SensorDisconnectChecker.cs" />
     <Compile Include="Assets\Scripts\aReturn.cs" />
     <Compile Include="Assets\Scripts\BackCollider.cs" />
-    <Compile Include="Assets\Scripts\CheckWorkers.cs" />
     <Compile Include="Assets\Scripts\ClickByHovering.cs" />
     <Compile Include="Assets\Scripts\CustomCursor.cs" />
     <Compile Include="Assets\Scripts\DBManager.cs" />
     <Compile Include="Assets\Scripts\Dialog.cs" />
-    <Compile Include="Assets\Scripts\DisplayWorkerTitle.cs" />
     <Compile Include="Assets\Scripts\ExitWithBckSpce.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\AddToScore.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\CheckAnswer.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\CheckMatchingPictures.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\DragWithHand.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\DragWithHandlebars.cs" />
-    <Compile Include="Assets\Scripts\GameDraggingScripts\DragWorkers.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\GrabHandles.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\ItemDragHandler.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\MatchingGameDB.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\MoveWithHands.cs" />
     <Compile Include="Assets\Scripts\GameDraggingScripts\StayInsideBorder.cs" />
     <Compile Include="Assets\Scripts\goHome.cs" />
-    <Compile Include="Assets\Scripts\HalfStarCollider.cs" />
     <Compile Include="Assets\Scripts\HandCursor.cs" />
     <Compile Include="Assets\Scripts\LoadSceneThroughButton.cs" />
     <Compile Include="Assets\Scripts\LogIn.cs" />
@@ -156,13 +159,21 @@
     <Compile Include="Assets\Scripts\panelChange.cs" />
     <Compile Include="Assets\Scripts\Registration.cs" />
     <Compile Include="Assets\Scripts\Reset.cs" />
-    <Compile Include="Assets\Scripts\ResetWithStar.cs" />
     <Compile Include="Assets\Scripts\SensitivitySettings.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SplashScreenScripts\MathGameTutorial.cs" />
     <Compile Include="Assets\Scripts\SplashScreenScripts\SplashScene.cs" />
     <Compile Include="Assets\Scripts\SplashScreenScripts\SplashTutorialScene.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\BossDialog.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\CheckWorkers.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\DisplayWorkerTitle.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\DragWorkers.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\HalfStarCollider.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\MoveBackToInitPos.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\MoveScreen.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\ResetWithStar.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\SendToChairs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

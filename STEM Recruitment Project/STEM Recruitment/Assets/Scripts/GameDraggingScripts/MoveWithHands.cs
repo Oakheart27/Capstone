@@ -21,6 +21,7 @@ public class MoveWithHands : MonoBehaviour
     Vector3 rightHandPos, leftHandPos;
     public GameObject leftHandPic, rightHandPic;
     nuitrack.HandTrackerData handTrackerDataTest;
+    public int ZPosition;
 
     [SerializeField]
     float dragSensitivity = 5f;
@@ -62,7 +63,7 @@ public class MoveWithHands : MonoBehaviour
                 if (userHands.RightHand != null)
                 {
                     //baseRect.anchoredPosition = new Vector2(userHands.RightHand.Value.X * Screen.width, -userHands.RightHand.Value.Y * Screen.height);
-                    rightHandPos = new Vector3(userHands.RightHand.Value.X * Screen.width, -userHands.RightHand.Value.Y * Screen.height, -21);
+                    rightHandPos = new Vector3(userHands.RightHand.Value.X * Screen.width, -userHands.RightHand.Value.Y * Screen.height, ZPosition);
 
                     //Debug.Log("Right: " + rightHandPos);
                     
@@ -74,7 +75,7 @@ public class MoveWithHands : MonoBehaviour
                 if (userHands.LeftHand != null)
                 {
                     //baseRect.anchoredPosition = new Vector2(userHands.LeftHand.Value.X * Screen.width, -userHands.LeftHand.Value.Y * Screen.height);
-                    leftHandPos = new Vector3(userHands.LeftHand.Value.X * Screen.width, -userHands.LeftHand.Value.Y * Screen.height, -21);
+                    leftHandPos = new Vector3(userHands.LeftHand.Value.X * Screen.width, -userHands.LeftHand.Value.Y * Screen.height, ZPosition);
 
                     leftHandPic.transform.position = leftHandPos;
 

@@ -8,6 +8,9 @@ TagManager:
   - CustomCollider
   - Hand
   - Outline
+  - Worker
+  - Floor
+  - Table
   layers:
   - Default
   - TransparentFX
