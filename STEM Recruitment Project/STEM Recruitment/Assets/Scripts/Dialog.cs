@@ -12,15 +12,23 @@ public class Dialog : MonoBehaviour
     public string[] gregAns;
     public string[] lisaAns;
     public string[] tyroneAns;
-    public string[] userFeedback; 
-    //public string[] followup;
+    public string[] userFeedback;
+    public string[] gScore1, gScore2, gScore3;
+    public string[] lScore1, lScore2, lScore3;
+    public string[] tScore1, tScore2, tScore3;
+    public string[] noscore; 
+    public string[] gfeed, lfeed, tfeed; 
+
     private int index = 0;
     public int counter = 1;
     public int anscount = 0; // determines what index of answers arrays to display 
-    public int ans; 
-    public float typingSpeed;
+    public int ans;
+    public int totalcount = 0; // keeps track of how many questions have been answered 
+    public float typingSpeed; // determines the speed of text apperance for questions 
     public int person1, person2, person3;
-    public int final1, final2, final3; 
+    public int final1, final2, final3;
+    public int winner;
+    public int temp = 1; 
 
     // Objects in Unity
     public GameObject continueBtn;
@@ -33,36 +41,52 @@ public class Dialog : MonoBehaviour
     public GameObject p1, p2;
     public GameObject jobdescription, summary;
     public GameObject jobPanel, returnPanel;
-    public GameObject returnBtn; 
+    public GameObject returnBtn, feedBtn;
+    public GameObject score1, score2, score3;
 
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
+    public Text crit; 
     public Text result; // Displays who the user chose and summary of interviewies. 9286079754
     public Text feedback; // Dispalys developer feedback on user choice 
-    public Text userReturn; 
+    public Text userReturn;
     
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
     void Start()
     {
+        // disables character name buttons
         p1Btn.GetComponent<Button>().interactable = false;
         p2Btn.GetComponent<Button>().interactable = false;
         p3Btn.GetComponent<Button>().interactable = false;
+
         returnBtn.GetComponent<Button>().interactable = false;
         resultsBtn.SetActive(false);
+
+        // hides speech from characters
         gregR.enabled = false;
         lisaR.enabled = false;
         tyroneR.enabled = false;
-        gregsp.SetActive(false); // hides speech bubble image
+
+        // hides feedback of character on feedback panel 
+        crit.enabled = false;
+
+        // hides speech bubble image
+        gregsp.SetActive(false); 
         lisasp.SetActive(false);
-        tyronesp.SetActive(false); 
+        tyronesp.SetActive(false);
+
+        feedBtn.GetComponent<Button>().interactable = false;
+
         StartCoroutine(Type());
     }
 
     // Update is called once per frame
     void Update()
     {
+        //feedBtn.GetComponent<Button>().interactable = false;
         // Check if text displayed is current sentence index
+        displayScore(); 
         if (textDisplay.text == sentences[index])
         {
             if (sentences[index] == "Choose a Person" || sentences[index] == "Choose who you would hire after looking at the summary above.") // checks if prompting for question 
@@ -102,6 +126,12 @@ public class Dialog : MonoBehaviour
             {
                 //Debug.Log("Temp: " + temp + " Counter: " + counter);
                 continueBtn.GetComponent<Button>().interactable = true;
+            }
+
+            if (anscount == totalcount)
+            {
+                feedBtn.GetComponent<Button>().interactable = false; 
+                //totalcount =+ 1; 
             }
 
             p1Btn.SetActive(true);
@@ -178,20 +208,42 @@ public class Dialog : MonoBehaviour
         }
         // Checks if choosing who answered question best
         else {
+
+            winner = 0; 
+
             if (btn.name == "p1Btn")
             {
                 person1 += 1;
+                winner += 5; 
                 Debug.Log("Updated player 1");
+             //   totalcount += 1;
+                feedBtn.GetComponent<Button>().interactable = true;
+                p1Btn.GetComponent<Button>().interactable = false;
+                p2Btn.GetComponent<Button>().interactable = false;
+                p3Btn.GetComponent<Button>().interactable = false;
             }
+
             else if (btn.name == "p2Btn")
             {
                 person2 += 1;
+                winner += 10; 
                 Debug.Log("Updated Player 2");
+            //    totalcount += 1;
+                feedBtn.GetComponent<Button>().interactable = true;
+                p1Btn.GetComponent<Button>().interactable = false;
+                p2Btn.GetComponent<Button>().interactable = false;
+                p3Btn.GetComponent<Button>().interactable = false;
             }
             else if (btn.name == "p3Btn")
             {
                 person3 += 1;
+                winner += 15; 
                 Debug.Log("Updated Player 3");
+            //    totalcount += 1;
+                feedBtn.GetComponent<Button>().interactable = true;
+                p1Btn.GetComponent<Button>().interactable = false;
+                p2Btn.GetComponent<Button>().interactable = false;
+                p3Btn.GetComponent<Button>().interactable = false;
             }
             else
             {
@@ -214,14 +266,15 @@ public class Dialog : MonoBehaviour
         p1Btn.SetActive(false);
         p2Btn.SetActive(false);
         p3Btn.SetActive(false);
-        anscount += 1; 
+        anscount += 1;
+        temp = anscount - 1; 
         Debug.Log(person1 + ", " +  person2 + ", " + person3);
 
     }
 
     public void gregOver()
     {
-        gregR.enabled = true;
+        gregR.enabled = true; //enables response to answer 
         gregsp.SetActive(true); // hides speech bubble image
         Debug.Log(anscount);
         if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
@@ -249,28 +302,6 @@ public class Dialog : MonoBehaviour
 
     }
 
-    public void readJob()
-    {
-        returnPanel.SetActive(false);
-        jobPanel.SetActive(true); 
-    }
-
-    public void feedbackInfo()
-    {
-        jobPanel.SetActive(false); 
-        returnPanel.SetActive(true);
-        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
-        userReturn.GetComponent<Text>().text = userFeedback[anscount - 1];
-
-    }
-
-    public void hidePannels()
-    {
-        returnPanel.SetActive(false);
-        jobPanel.SetActive(false);
-        returnBtn.GetComponent<Button>().interactable = false;
-    }
-
     public void lisaOver()
     {
         lisaR.enabled = true;
@@ -287,14 +318,100 @@ public class Dialog : MonoBehaviour
         tyroneR.GetComponent<Text>().text = tyroneAns[anscount - 1]; 
     }
 
+    public void Response()
+    {
+        if (anscount - 2 > 7) { anscount = 7; } // stops array out of bounds error 
+        Debug.Log("Ans Response Value " + (anscount - 2)); 
+        if (winner == 5)
+        {
+            crit.enabled = true;
+            crit.GetComponent<Text>().text = gfeed[anscount -2];
+        }
+        else if (winner == 10)
+        {
+            crit.enabled = true;
+            crit.GetComponent<Text>().text = lfeed[anscount - 2];
+        }
+
+        else if (winner == 15)
+        {
+            crit.enabled = true;
+            crit.GetComponent<Text>().text = tfeed[anscount - 2];
+        }
+    }
+
+    // removes critisizim text from screen 
+    public void endfeed()
+    {
+        crit.enabled = false;
+        crit.enabled = false;
+        crit.enabled = false;
+       // totalcount = +1;
+    }
+
     public void mouseLeave()
     {
-        gregR.enabled = false;
-        lisaR.enabled = false;
-        tyroneR.enabled = false;
-        gregsp.SetActive(false); // hides speech bubble image
+        // hides speech bubble image
+        gregsp.SetActive(false); 
         lisasp.SetActive(false);
         tyronesp.SetActive(false);      
+    }
+
+   public void hidePannels()
+    {
+        returnPanel.SetActive(false);
+        jobPanel.SetActive(false);
+        returnBtn.GetComponent<Button>().interactable = false;
+    }
+
+    public void readJob()
+    {
+        returnPanel.SetActive(false);
+        jobPanel.SetActive(true);
+        returnBtn.GetComponent<Button>().interactable = true;
+    }
+
+    public void feedbackInfo()
+    {
+        jobPanel.SetActive(false); 
+        returnPanel.SetActive(true);
+        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
+        userReturn.GetComponent<Text>().text = userFeedback[anscount - 1];
+        returnBtn.GetComponent<Button>().interactable = true;
+    }
+
+    public void displayScore()
+    {
+        summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
+        if (anscount-2 >7) { temp = 7; }
+        if (winner == 5)
+        {
+            Debug.Log("temp " + temp); 
+            score1.GetComponentInChildren<Text>().text = gScore1[anscount - 2];
+            score2.GetComponentInChildren<Text>().text = gScore2[anscount - 2];
+            score3.GetComponentInChildren<Text>().text = gScore3[anscount - 2];
+        }
+
+        else if (winner == 10)
+        {
+            score1.GetComponentInChildren<Text>().text = lScore1[anscount - 2];
+            score2.GetComponentInChildren<Text>().text = lScore2[anscount - 2];
+            score3.GetComponentInChildren<Text>().text = lScore3[anscount - 2];
+        }
+
+        else if (winner == 15)
+        {
+            score1.GetComponentInChildren<Text>().text = tScore1[anscount - 2];
+            score2.GetComponentInChildren<Text>().text = tScore2[anscount - 2];
+            score3.GetComponentInChildren<Text>().text = tScore3[anscount - 2];
+        }
+
+        else
+        {
+            score1.GetComponentInChildren<Text>().text = noscore[0];
+            score2.GetComponentInChildren<Text>().text = noscore[0];
+            score3.GetComponentInChildren<Text>().text = noscore[0];
+        }
     }
 
     //TODO Change endGame conditions to allow user to choice final hire. 

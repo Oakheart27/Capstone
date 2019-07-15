@@ -31,13 +31,13 @@ public class panelChange : MonoBehaviour
     {
         gamePanel.gameObject.SetActive(false);
         choicePanel.gameObject.SetActive(true);
-        choiceBtn.GetComponentInChildren<Text>().text = "Job Details"; // resetting text
+       // choiceBtn.GetComponentInChildren<Text>().text = "Job Details"; // resetting text
     }
     
     public void backPanel()
     {
         gamePanel.gameObject.SetActive(true);
-        backBtn.GetComponentInChildren<Text>().text = "Back"; // resetting text
+        //backBtn.GetComponentInChildren<Text>().text = "Back"; // resetting text
         choicePanel.gameObject.SetActive(false);
     }
 

@@ -19,6 +19,9 @@ public class MathGameProgress : MonoBehaviour
     [SerializeField]
     Text highScore;
 
+    public int difficulty = 1;
+    public Text levelTxt; 
+
     //instance variables 
     int firstNum;
     int secondNum;
@@ -45,6 +48,8 @@ public class MathGameProgress : MonoBehaviour
             highScore.text = DisplayHighScore(userID, gameID);
 
         }
+
+        levelTxt.text = difficulty.ToString(); 
 
         CreateEquation();
     }
