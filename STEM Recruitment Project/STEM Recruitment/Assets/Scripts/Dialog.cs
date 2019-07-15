@@ -11,11 +11,13 @@ public class Dialog : MonoBehaviour
     public string userChoice;
     public string[] gregAns;
     public string[] lisaAns;
-    public string[] tyroneAns; 
+    public string[] tyroneAns;
+    public string[] userFeedback; 
     //public string[] followup;
     private int index = 0;
     public int counter = 1;
-    public int anscount = 0;
+    public int anscount = 0; // determines what index of answers arrays to display 
+    public int ans; 
     public float typingSpeed;
     public int person1, person2, person3;
     public int final1, final2, final3; 
@@ -26,16 +28,19 @@ public class Dialog : MonoBehaviour
     public GameObject p1Btn;
     public GameObject p2Btn;
     public GameObject p3Btn;
-   // public GameObject greg, lisa, tyrone; 
+    public GameObject gregsp, lisasp, tyronesp; 
     public GameObject resultsBtn;
     public GameObject p1, p2;
     public GameObject jobdescription, summary;
+    public GameObject jobPanel, returnPanel;
+    public GameObject returnBtn; 
 
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
-    public Text result; // Displays who the user chose and summary of interviewies. 
+    public Text result; // Displays who the user chose and summary of interviewies. 9286079754
     public Text feedback; // Dispalys developer feedback on user choice 
-
+    public Text userReturn; 
+    
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
     void Start()
@@ -43,11 +48,14 @@ public class Dialog : MonoBehaviour
         p1Btn.GetComponent<Button>().interactable = false;
         p2Btn.GetComponent<Button>().interactable = false;
         p3Btn.GetComponent<Button>().interactable = false;
+        returnBtn.GetComponent<Button>().interactable = false;
         resultsBtn.SetActive(false);
         gregR.enabled = false;
         lisaR.enabled = false;
-        tyroneR.enabled = false; 
-       
+        tyroneR.enabled = false;
+        gregsp.SetActive(false); // hides speech bubble image
+        lisasp.SetActive(false);
+        tyronesp.SetActive(false); 
         StartCoroutine(Type());
     }
 
@@ -214,6 +222,7 @@ public class Dialog : MonoBehaviour
     public void gregOver()
     {
         gregR.enabled = true;
+        gregsp.SetActive(true); // hides speech bubble image
         Debug.Log(anscount);
         if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
         gregR.GetComponent<Text>().text = gregAns[anscount - 1];
@@ -240,9 +249,32 @@ public class Dialog : MonoBehaviour
 
     }
 
+    public void readJob()
+    {
+        returnPanel.SetActive(false);
+        jobPanel.SetActive(true); 
+    }
+
+    public void feedbackInfo()
+    {
+        jobPanel.SetActive(false); 
+        returnPanel.SetActive(true);
+        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
+        userReturn.GetComponent<Text>().text = userFeedback[anscount - 1];
+
+    }
+
+    public void hidePannels()
+    {
+        returnPanel.SetActive(false);
+        jobPanel.SetActive(false);
+        returnBtn.GetComponent<Button>().interactable = false;
+    }
+
     public void lisaOver()
     {
         lisaR.enabled = true;
+        lisasp.SetActive(true);
         if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
         lisaR.GetComponent<Text>().text = lisaAns[anscount -1]; 
     }
@@ -250,6 +282,7 @@ public class Dialog : MonoBehaviour
     public void tyroneOver()
     {
         tyroneR.enabled = true;
+        tyronesp.SetActive(true);
         if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
         tyroneR.GetComponent<Text>().text = tyroneAns[anscount - 1]; 
     }
@@ -258,7 +291,10 @@ public class Dialog : MonoBehaviour
     {
         gregR.enabled = false;
         lisaR.enabled = false;
-        tyroneR.enabled = false; 
+        tyroneR.enabled = false;
+        gregsp.SetActive(false); // hides speech bubble image
+        lisasp.SetActive(false);
+        tyronesp.SetActive(false);      
     }
 
     //TODO Change endGame conditions to allow user to choice final hire. 
