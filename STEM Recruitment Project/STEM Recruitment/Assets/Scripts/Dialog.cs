@@ -23,6 +23,8 @@ public class Dialog : MonoBehaviour
     public int counter = 1;
     public int anscount = 0; // determines what index of answers arrays to display 
     public int ans;
+    public int clickcnt = 0;
+    public int cClick = 0; 
     public int totalcount = 0; // keeps track of how many questions have been answered 
     public float typingSpeed; // determines the speed of text apperance for questions 
     public int person1, person2, person3;
@@ -40,16 +42,17 @@ public class Dialog : MonoBehaviour
     public GameObject resultsBtn;
     public GameObject p1, p2;
     public GameObject jobdescription, summary;
-    public GameObject jobPanel, returnPanel;
-    public GameObject returnBtn, feedBtn;
+    public GameObject jobPanel, scorePanel;
+    public GameObject feedBtn;
     public GameObject score1, score2, score3;
 
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
-    public Text crit; 
+    public Text crit; // responses to the answers for each interview question 
     public Text result; // Displays who the user chose and summary of interviewies. 9286079754
     public Text feedback; // Dispalys developer feedback on user choice 
-    public Text userReturn;
+    //public Text userReturn;
+    public Text proconSum; // lists the pros and cons of each character 
     
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
@@ -60,12 +63,12 @@ public class Dialog : MonoBehaviour
         p2Btn.GetComponent<Button>().interactable = false;
         p3Btn.GetComponent<Button>().interactable = false;
 
-        returnBtn.GetComponent<Button>().interactable = false;
+        //returnBtn.GetComponent<Button>().interactable = false;
         resultsBtn.SetActive(false);
 
         // hides speech from characters
         gregR.enabled = false;
-        lisaR.enabled = false;
+        lisaR.enabled = false;  
         tyroneR.enabled = false;
 
         // hides feedback of character on feedback panel 
@@ -87,9 +90,9 @@ public class Dialog : MonoBehaviour
         //feedBtn.GetComponent<Button>().interactable = false;
         // Check if text displayed is current sentence index
         displayScore(); 
-        if (textDisplay.text == sentences[index])
-        {
-            if (sentences[index] == "Choose a Person" || sentences[index] == "Choose who you would hire after looking at the summary above.") // checks if prompting for question 
+       // if (textDisplay.text == sentences[index])
+        //{
+            if (sentences[index] == "Choose who you would hire after looking at the summary above.") // checks if prompting for question 
             {
                 continueBtn.GetComponent<Button>().interactable = false; // hides continue button
                 // allows name buttons to be ineractable for choice 
@@ -97,26 +100,29 @@ public class Dialog : MonoBehaviour
                 p2Btn.GetComponent<Button>().interactable = true;
                 p3Btn.GetComponent<Button>().interactable = true;
             }
+
             else
             {
                 continueBtn.SetActive(true);
                 continueBtn.GetComponent<Button>().interactable = true;
 
                 // name buttons uninteractable with user when not prompting person choice
-                p1Btn.GetComponent<Button>().interactable = false;
-                p2Btn.GetComponent<Button>().interactable = false;
-                p3Btn.GetComponent<Button>().interactable = false;
+                p1Btn.GetComponent<Button>().interactable = true;
+                p2Btn.GetComponent<Button>().interactable = true;
+                p3Btn.GetComponent<Button>().interactable = true;
 
+                Debug.Log("CLICK count: " + clickcnt);
+                Debug.Log("Continue CLICK: " + cClick); 
                 p1Btn.GetComponentInChildren<Text>().text = "Greg";
                 p2Btn.GetComponentInChildren<Text>().text = "Lisa";
                 p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
             }
 
-            if (sentences[index] == "Choose who you would hire after looking at the summary above.")
+            if (sentences[index] == "Choose who you would hire.")
             {
                 jobdescription.SetActive(false); 
-                summary.SetActive(true);
-                summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
+                //summary.SetActive(true);
+                //summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
 
             }
 
@@ -134,10 +140,11 @@ public class Dialog : MonoBehaviour
                 //totalcount =+ 1; 
             }
 
+            /*
             p1Btn.SetActive(true);
             p2Btn.SetActive(true);
             p3Btn.SetActive(true);
-
+            */
             if (sentences[index] == "Thank you for your time. Click on the results button.")
             {
                 continueBtn.SetActive(false);
@@ -147,7 +154,7 @@ public class Dialog : MonoBehaviour
             }
 
         }
-    }
+    //}
 
     IEnumerator Type()
     {
@@ -181,10 +188,14 @@ public class Dialog : MonoBehaviour
         }
     }
 
+    public void continueClick()
+    {
+        cClick += 1; 
+    }
     public void ButtonClick(Button btn)
     {
         // Checks if user is choosing the person to hire
-        if (sentences[index] == "Choose who you would hire then click the results button.")
+        if (sentences[index] == "Thank you for your time. Click on the results button.")
         {
             if (btn.name == "p1Btn")
             {
@@ -249,6 +260,7 @@ public class Dialog : MonoBehaviour
             {
                 Debug.Log("No button press detected");
             }
+            clickcnt += 1; 
         }
         
         counter += 1;
@@ -259,26 +271,28 @@ public class Dialog : MonoBehaviour
         p2Btn.GetComponentInChildren<Text>().text = "Lisa";
         p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
 
+        /*
         p1Btn.GetComponent<Button>().interactable = false;
         p2Btn.GetComponent<Button>().interactable = false;
         p3Btn.GetComponent<Button>().interactable = false;
 
         p1Btn.SetActive(false);
         p2Btn.SetActive(false);
-        p3Btn.SetActive(false);
+        p3Btn.SetActive(false);*/
         anscount += 1;
         temp = anscount - 1; 
         Debug.Log(person1 + ", " +  person2 + ", " + person3);
 
     }
 
+    // determines what happens when the mouse moves over characters 
     public void gregOver()
     {
         gregR.enabled = true; //enables response to answer 
         gregsp.SetActive(true); // hides speech bubble image
         Debug.Log(anscount);
-        if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
-        gregR.GetComponent<Text>().text = gregAns[anscount - 1];
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        gregR.GetComponent<Text>().text = gregAns[cClick];
         /*
 
         if (btn.name == "greg")
@@ -306,37 +320,37 @@ public class Dialog : MonoBehaviour
     {
         lisaR.enabled = true;
         lisasp.SetActive(true);
-        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
-        lisaR.GetComponent<Text>().text = lisaAns[anscount -1]; 
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        lisaR.GetComponent<Text>().text = lisaAns[cClick]; 
     }
 
     public void tyroneOver()
     {
         tyroneR.enabled = true;
         tyronesp.SetActive(true);
-        if (anscount -1 > 7) { anscount = 7; } // Stops array out of bounds error
-        tyroneR.GetComponent<Text>().text = tyroneAns[anscount - 1]; 
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        tyroneR.GetComponent<Text>().text = tyroneAns[cClick]; 
     }
 
     public void Response()
     {
-        if (anscount - 2 > 7) { anscount = 7; } // stops array out of bounds error 
-        Debug.Log("Ans Response Value " + (anscount - 2)); 
+        if (cClick > 2) { cClick = 2; } // stops array out of bounds error 
+        Debug.Log("Ans Response Value " + (cClick)); 
         if (winner == 5)
         {
             crit.enabled = true;
-            crit.GetComponent<Text>().text = gfeed[anscount -2];
+            crit.GetComponent<Text>().text = gfeed[cClick];
         }
         else if (winner == 10)
         {
             crit.enabled = true;
-            crit.GetComponent<Text>().text = lfeed[anscount - 2];
+            crit.GetComponent<Text>().text = lfeed[cClick];
         }
 
         else if (winner == 15)
         {
             crit.enabled = true;
-            crit.GetComponent<Text>().text = tfeed[anscount - 2];
+            crit.GetComponent<Text>().text = tfeed[cClick];
         }
     }
 
@@ -359,51 +373,59 @@ public class Dialog : MonoBehaviour
 
    public void hidePannels()
     {
-        returnPanel.SetActive(false);
+       // finalPanel.SetActive(false);
         jobPanel.SetActive(false);
-        returnBtn.GetComponent<Button>().interactable = false;
+        scorePanel.SetActive(false); 
     }
 
     public void readJob()
     {
-        returnPanel.SetActive(false);
+        //finalPanel.SetActive(false);
         jobPanel.SetActive(true);
-        returnBtn.GetComponent<Button>().interactable = true;
+        scorePanel.SetActive(true); 
+        //returnBtn.GetComponent<Button>().interactable = true;
+    }
+
+    public void seeScore()
+    {
+        jobPanel.SetActive(false);
+        scorePanel.SetActive(true); 
     }
 
     public void feedbackInfo()
     {
         jobPanel.SetActive(false); 
-        returnPanel.SetActive(true);
-        if (anscount - 1 > 7) { anscount = 7; } // Stops array out of bounds error
-        userReturn.GetComponent<Text>().text = userFeedback[anscount - 1];
-        returnBtn.GetComponent<Button>().interactable = true;
+        //finalPanel.SetActive(true);
+        scorePanel.SetActive(true); 
+        if (anscount - 1 > 2) { anscount = 2; } // Stops array out of bounds error
+        //userReturn.GetComponent<Text>().text = userFeedback[anscount - 1];
+        //returnBtn.GetComponent<Button>().interactable = true;
     }
 
     public void displayScore()
     {
-        summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
-        if (anscount-2 >7) { temp = 7; }
+        //summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
+        if (cClick >2) { cClick = 2; }
         if (winner == 5)
         {
             Debug.Log("temp " + temp); 
-            score1.GetComponentInChildren<Text>().text = gScore1[anscount - 2];
-            score2.GetComponentInChildren<Text>().text = gScore2[anscount - 2];
-            score3.GetComponentInChildren<Text>().text = gScore3[anscount - 2];
+            score1.GetComponentInChildren<Text>().text = gScore1[cClick];
+            score2.GetComponentInChildren<Text>().text = gScore2[cClick];
+            score3.GetComponentInChildren<Text>().text = gScore3[cClick];
         }
 
         else if (winner == 10)
         {
-            score1.GetComponentInChildren<Text>().text = lScore1[anscount - 2];
-            score2.GetComponentInChildren<Text>().text = lScore2[anscount - 2];
-            score3.GetComponentInChildren<Text>().text = lScore3[anscount - 2];
+            score1.GetComponentInChildren<Text>().text = lScore1[cClick];
+            score2.GetComponentInChildren<Text>().text = lScore2[cClick];
+            score3.GetComponentInChildren<Text>().text = lScore3[cClick];
         }
 
         else if (winner == 15)
         {
-            score1.GetComponentInChildren<Text>().text = tScore1[anscount - 2];
-            score2.GetComponentInChildren<Text>().text = tScore2[anscount - 2];
-            score3.GetComponentInChildren<Text>().text = tScore3[anscount - 2];
+            score1.GetComponentInChildren<Text>().text = tScore1[cClick];
+            score2.GetComponentInChildren<Text>().text = tScore2[cClick];
+            score3.GetComponentInChildren<Text>().text = tScore3[cClick];
         }
 
         else
@@ -418,7 +440,12 @@ public class Dialog : MonoBehaviour
     public void endGame()
     {
         Debug.Log("We're in the endgame now!");
-        userChoice = "Greg";
+        Debug.Log("Final1 " + final1 + " final2 " + final2 + " final3 " + final3); 
+
+        if (final1 == 0 && final2 == 0 && final3 == 0)
+        {
+            Debug.Log("Failure"); 
+        }
         if (final2 > final1 && final2 > final3)
         {
             userChoice = "Lisa";
@@ -433,18 +460,35 @@ public class Dialog : MonoBehaviour
 
         if (userChoice == "Greg")
         {
-            feedback.text = "Greg is very professionally dressed. He did take advantage of providing skills he has in the tell me about yourself sectiion. He doesn't have the " +
-                " programming knowledge for the job.";
+            feedback.text = "This person is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
+                "had to take the time to get this person up to speed, you don’t end up having the time to apply for a big grant you had been planning on. Oh well, there’s always next year!";
+            proconSum.text = "this person is enthusiastic (+)" + "\n" // new line character 
+                + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)"; 
         }
         if (userChoice == "Lisa")
         {
-            feedback.text = "Out of the three candidates, Lisa seems to meet most of the requirements for the position of entry-level software engineer. She has a bachelor's degree" +
-                " in Computer Science and knows a majority of the programming languages that are required for the field.";
+            feedback.text = "This person turns out to be a bit full of themselves. They seem to learn quickly, freeing you up to apply for that big grant to fund more wildlife projects. " +
+                "But – you discover at the end of the summer that the data they’ve been collecting is inaccurate. You figure out how to fix the errors, but it costs you valuable planning " + 
+                "time for other projects!";
+            proconSum.text = "this person is confident (+)" + "\n" + "but not self - reflective enough to check their work for accuracy – leading to data collection mistakes(-)";
         }
         if (userChoice == "Tyrone")
         {
-            feedback.text = "Tyrone does not have the best attire for a job interview. He is also missing a Bachelors degree that is needed for the job. He knows one of the languages " +
-                "but, By comparison there are better candidates that were interviewed.";
+            feedback.text = "This person is enthusiastic and capable of learning what they don't know – and quick! They take on every project thoughtfully throughout the whole summer." + 
+                "Unfortunately, this candidate doesn't get along well with two other more experienced team members. You are hoping this person will come back for another summer before " + 
+                "they graduate, but are unsure if the team dynamics will work against productivity next time around!";
+            proconSum.text = "this person is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)"; 
         }
+    }
+
+    public void newChoice()
+    {
+        final1 = 0;
+        final2 = 0;
+        final3 = 0;
+        sentences[index] = "Choose who you would hire.";
+        textDisplay.text = sentences[index];
+        //Update();
+        resultsBtn.SetActive(true);
     }
 }

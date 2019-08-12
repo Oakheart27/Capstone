@@ -125,9 +125,12 @@
      <Compile Include="Assets\Scripts\aReturn.cs" />
      <Compile Include="Assets\Scripts\BackCollider.cs" />
      <Compile Include="Assets\Scripts\ClickByHovering.cs" />
+     <Compile Include="Assets\Scripts\copyDialog.cs" />
      <Compile Include="Assets\Scripts\CustomCursor.cs" />
      <Compile Include="Assets\Scripts\DBManager.cs" />
      <Compile Include="Assets\Scripts\Dialog.cs" />
+     <Compile Include="Assets\Scripts\dragHandler.cs" />
+     <Compile Include="Assets\Scripts\dropHandler.cs" />
      <Compile Include="Assets\Scripts\ExitWithBckSpce.cs" />
      <Compile Include="Assets\Scripts\GameDraggingScripts\AddToScore.cs" />
      <Compile Include="Assets\Scripts\GameDraggingScripts\CheckAnswer.cs" />
