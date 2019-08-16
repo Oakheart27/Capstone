@@ -11,6 +11,7 @@ public class MoveScreen : MonoBehaviour
     public Text timeDisplay;
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 0.3f;
+
     private void Start()
     {
         okToChange = false;

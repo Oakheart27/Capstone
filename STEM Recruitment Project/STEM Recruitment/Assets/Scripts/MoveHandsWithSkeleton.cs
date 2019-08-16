@@ -7,8 +7,11 @@ public class MoveHandsWithSkeleton : MonoBehaviour
     public nuitrack.JointType[] typeJoint;
     GameObject[] CreatedJoint;
     public GameObject rightHand, leftHand;
-    public Canvas canvas; 
+    //public Canvas canvas; 
     public Camera camera;
+    public float ZPosition;
+    public float multiplier = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +33,14 @@ public class MoveHandsWithSkeleton : MonoBehaviour
             // Get right hand stuff
             nuitrack.Joint rightJoint = skeleton.GetJoint(typeJoint[0]);
             Vector3 rightPos = rightJoint.ToVector3();
-            Vector3 rightNewPos = new Vector3(rightPos.x + camera.transform.position.x, rightPos.y + camera.transform.position.y, 275);
+            Vector3 rightNewPos = new Vector3((rightPos.x + camera.transform.position.x) * multiplier, (rightPos.y + camera.transform.position.y) * multiplier, ZPosition);
             //rightNewPos.z = 275;
             rightHand.transform.position = rightNewPos;
 
             // Get left hand stuff
             nuitrack.Joint leftJoint = skeleton.GetJoint(typeJoint[1]);
             Vector3 leftPos = leftJoint.ToVector3();
-            Vector3 leftNewPos = new Vector3(leftPos.x + camera.transform.position.x, leftPos.y + camera.transform.position.y, 275);
+            Vector3 leftNewPos = new Vector3((leftPos.x + camera.transform.position.x) * multiplier, (leftPos.y + camera.transform.position.y) * multiplier, ZPosition);
             //leftNewPos.z = 275;
             leftHand.transform.position = leftNewPos;
 

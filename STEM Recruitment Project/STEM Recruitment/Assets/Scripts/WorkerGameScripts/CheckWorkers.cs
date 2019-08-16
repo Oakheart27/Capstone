@@ -36,8 +36,8 @@ public class CheckWorkers : MonoBehaviour
             // Go through each worker in the chairs and show their feedback pic.
             for (int i = 0; i < chairs.Length; i++)
             {
-                GameObject canvas = chairs[i].worker.transform.Find("Canvas").gameObject;
-                GameObject feedbackPic = canvas.transform.Find("FeedbackPic").gameObject;
+                //GameObject canvas = chairs[i].worker.transform.Find("Canvas").gameObject;
+                GameObject feedbackPic = chairs[i].worker.transform.Find("FeedbackPic").gameObject;
 
                 feedbackPic.SetActive(true);
 

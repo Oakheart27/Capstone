@@ -11,6 +11,7 @@ TagManager:
   - Worker
   - Floor
   - Table
+  - Button
   layers:
   - Default
   - TransparentFX
