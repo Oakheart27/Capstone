@@ -19,10 +19,6 @@ public class MathGameProgress : MonoBehaviour
     [SerializeField]
     Text highScore;
 
-    public int difficulty = 1;
-    public Text levelTxt; 
-
-    //instance variables 
     int firstNum;
     int secondNum;
     int ans;
@@ -40,17 +36,14 @@ public class MathGameProgress : MonoBehaviour
         // Make cursor invisible
         Cursor.visible = false;
         DBManager dbManage = GetComponent<DBManager>();
-        
-        if(dbManage.getStatus())
+
+        if (dbManage.getStatus())
         {
             int userID = dbManage.getID();
             int gameID = SceneManager.GetActiveScene().buildIndex;
             highScore.text = DisplayHighScore(userID, gameID);
 
         }
-
-        levelTxt.text = difficulty.ToString(); 
-
         CreateEquation();
     }
 
@@ -68,60 +61,20 @@ public class MathGameProgress : MonoBehaviour
     }
 
     void CreateEquation()
-    {  
-        /*
-        if (input == "easy")
-        {
-            addEquation(); 
-        }
-
-        if (input == "medium")
-        {
-            subEquation(); 
-        }
-
-        if (Input == "hard")
-        {
-            multiplyEquation(); 
-        }
-  
-        */
-
-       // randomEquation();
+    {
+        RandomEquation();
         scoreText.text = firstNum.ToString() + "+" + secondNum.ToString() + "=";
-        
+
     }
 
-    // equation functions in range from 0-12
-    // adds numbers together 
-    void addEquation()
+    void RandomEquation()
     {
-        firstNum = Random.Range(0, 12);
-        secondNum = Random.Range(0, 12);
+        firstNum = Random.Range(0, 3);
+        secondNum = Random.Range(0, 3);
         ans = firstNum + secondNum;
         if (ans == 0)
         {
-            addEquation();
-        }
-    }
-    void subEquation()
-    {
-        firstNum = Random.Range(0, 12);
-        secondNum = Random.Range(0, 12);
-        ans = firstNum - secondNum;
-        if (ans == 0)
-        {
-            subEquation();
-        }
-    }
-    void multiplyEquation()
-    {
-        firstNum = Random.Range(0, 12);
-        secondNum = Random.Range(0, 12);
-        ans = firstNum * secondNum;
-        if (ans == 0)
-        {
-            multiplyEquation();
+            RandomEquation();
         }
     }
 
@@ -129,7 +82,7 @@ public class MathGameProgress : MonoBehaviour
     {
         DBManager dbManage = GetComponent<DBManager>();
         scoreText.text += strAns;
-        
+
 
         if (givenAns == ans)
         {
