@@ -41,7 +41,7 @@ public class Dialog : MonoBehaviour
     public GameObject gregsp, lisasp, tyronesp; 
     public GameObject resultsBtn;
     public GameObject p1, p2;
-    public GameObject jobdescription, summary;
+    public GameObject jobdescription; 
     public GameObject jobPanel, scorePanel;
     public GameObject feedBtn;
     public GameObject score1, score2, score3;
@@ -50,9 +50,9 @@ public class Dialog : MonoBehaviour
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
     public Text crit; // responses to the answers for each interview question 
     public Text result; // Displays who the user chose and summary of interviewies. 9286079754
-    public Text feedback; // Dispalys developer feedback on user choice 
+    public Text feedback, feedFinal; // Dispalys developer feedback on user choice 
     //public Text userReturn;
-    public Text proconSum; // lists the pros and cons of each character 
+    public Text proconSum, proconFinal; // lists the pros and cons of each character 
     
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
@@ -117,14 +117,14 @@ public class Dialog : MonoBehaviour
                 p2Btn.GetComponentInChildren<Text>().text = "Lisa";
                 p3Btn.GetComponentInChildren<Text>().text = "Tyrone";
             }
-
+            /*
             if (sentences[index] == "Choose who you would hire.")
             {
                 jobdescription.SetActive(false); 
                 //summary.SetActive(true);
                 //summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
 
-            }
+            }*/
 
             int temp = counter-1;
 
@@ -192,42 +192,79 @@ public class Dialog : MonoBehaviour
     {
         cClick += 1; 
     }
+
+    /*
+    public void finalCount(Button btn)
+    {
+        Button currentbtn = btn; 
+        while (sentences[index] != "Thank you for your time. Click on the results button.")
+        {
+            ButtonClick(currentbtn); 
+        }
+        if (sentences[index] == "Thank you for your time. Click on the results button.")
+            {
+                if (btn.name == "p1Btn")
+                {
+                    final1 += 10;
+                    Debug.Log("Updated player 1 FINAL");
+                }
+                else if (btn.name == "p2Btn")
+                {
+                    final2 += 10;
+                    Debug.Log("Updated Player 2 FINAL");
+                }
+                else if (btn.name == "p3Btn")
+                {
+                    final3 += 10;
+                    Debug.Log("Updated Player 3 FINAL");
+                }
+                else
+                {
+                    Debug.Log("No button press detected FINAL");
+                }
+                Debug.Log(" Count of FINAL: Final1 " + final1 + " final2 " + final2 + " final3 " + final3);
+            }
+
+    }*/
+
     public void ButtonClick(Button btn)
     {
         // Checks if user is choosing the person to hire
-        if (sentences[index] == "Thank you for your time. Click on the results button.")
+
+        if (sentences[index] == "Choose who you would hire.")
         {
             if (btn.name == "p1Btn")
             {
                 final1 += 10;
-                Debug.Log("Updated player 1");
+                Debug.Log("Updated player 1 FINAL");
             }
             else if (btn.name == "p2Btn")
             {
                 final2 += 10;
-                Debug.Log("Updated Player 2");
+                Debug.Log("Updated Player 2 FINAL");
             }
             else if (btn.name == "p3Btn")
             {
                 final3 += 10;
-                Debug.Log("Updated Player 3");
+                Debug.Log("Updated Player 3 FINAL");
             }
             else
             {
-                Debug.Log("No button press detected");
+                Debug.Log("No button press detected FINAL");
             }
+            Debug.Log(" Count of FINAL: Final1 " + final1 + " final2 " + final2 + " final3 " + final3);
         }
         // Checks if choosing who answered question best
-        else {
-
-            winner = 0; 
+        else
+        {
+            winner = 0;
 
             if (btn.name == "p1Btn")
             {
                 person1 += 1;
-                winner += 5; 
+                winner += 5;
                 Debug.Log("Updated player 1");
-             //   totalcount += 1;
+                //   totalcount += 1;
                 feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
@@ -237,9 +274,9 @@ public class Dialog : MonoBehaviour
             else if (btn.name == "p2Btn")
             {
                 person2 += 1;
-                winner += 10; 
+                winner += 10;
                 Debug.Log("Updated Player 2");
-            //    totalcount += 1;
+                //    totalcount += 1;
                 feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
@@ -248,9 +285,9 @@ public class Dialog : MonoBehaviour
             else if (btn.name == "p3Btn")
             {
                 person3 += 1;
-                winner += 15; 
+                winner += 15;
                 Debug.Log("Updated Player 3");
-            //    totalcount += 1;
+                //    totalcount += 1;
                 feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
@@ -260,7 +297,7 @@ public class Dialog : MonoBehaviour
             {
                 Debug.Log("No button press detected");
             }
-            clickcnt += 1; 
+            clickcnt += 1;
         }
         
         counter += 1;
@@ -382,7 +419,7 @@ public class Dialog : MonoBehaviour
     {
         //finalPanel.SetActive(false);
         jobPanel.SetActive(true);
-        scorePanel.SetActive(true); 
+        scorePanel.SetActive(false); 
         //returnBtn.GetComponent<Button>().interactable = true;
     }
 
@@ -444,51 +481,88 @@ public class Dialog : MonoBehaviour
 
         if (final1 == 0 && final2 == 0 && final3 == 0)
         {
-            Debug.Log("Failure"); 
+            Debug.Log("Failure");
+            userChoice = "ERROR"; 
         }
+
+        if (final1 > final2 && final1 > final3)
+        {
+            userChoice = "Greg";
+            Debug.Log("GREG"); 
+        }
+
         if (final2 > final1 && final2 > final3)
         {
             userChoice = "Lisa";
+            Debug.Log("LISA");
         }
 
         if (final3 > final1 && final3 > final2)
         {
             userChoice = "Tyrone";
+            Debug.Log("TYRONE");
         }
+
         print("The user picked " + userChoice);
-        result.text = "The person you said gave the best answer the most often is " + userChoice;
+        result.text = "The person you chose is " + userChoice;
 
         if (userChoice == "Greg")
         {
-            feedback.text = "This person is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
+            feedback.text = "Greg is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
                 "had to take the time to get this person up to speed, you don’t end up having the time to apply for a big grant you had been planning on. Oh well, there’s always next year!";
-            proconSum.text = "this person is enthusiastic (+)" + "\n" // new line character 
+            proconSum.text = "Greg is enthusiastic (+)" + "\n" // new line character 
                 + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)"; 
         }
         if (userChoice == "Lisa")
         {
-            feedback.text = "This person turns out to be a bit full of themselves. They seem to learn quickly, freeing you up to apply for that big grant to fund more wildlife projects. " +
-                "But – you discover at the end of the summer that the data they’ve been collecting is inaccurate. You figure out how to fix the errors, but it costs you valuable planning " + 
+            feedback.text = "Lisa turns out to be a bit full of themselves. They seem to learn quickly, freeing you up to apply for that big grant to fund more wildlife projects. " +
+                "But - you discover at the end of the summer that the data they’ve been collecting is inaccurate. You figure out how to fix the errors, but it costs you valuable planning " + 
                 "time for other projects!";
-            proconSum.text = "this person is confident (+)" + "\n" + "but not self - reflective enough to check their work for accuracy – leading to data collection mistakes(-)";
+            proconSum.text = "Lisa is confident (+)" + "\n" + "but not self - reflective enough to check their work for accuracy - leading to data collection mistakes(-)";
         }
         if (userChoice == "Tyrone")
         {
-            feedback.text = "This person is enthusiastic and capable of learning what they don't know – and quick! They take on every project thoughtfully throughout the whole summer." + 
-                "Unfortunately, this candidate doesn't get along well with two other more experienced team members. You are hoping this person will come back for another summer before " + 
+            feedback.text = "Tyrone is enthusiastic and capable of learning what they don't know - and quick! They take on every project thoughtfully throughout the whole summer." + 
+                "Unfortunately, Tyrone doesn't get along well with two other more experienced team members. You are hoping this person will come back for another summer before " + 
                 "they graduate, but are unsure if the team dynamics will work against productivity next time around!";
-            proconSum.text = "this person is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)"; 
+            proconSum.text = "Tyrone is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)"; 
         }
+    }
+
+    public void finalGreg()
+    {
+        feedFinal.text = "Greg is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
+                "had to take the time to get this person up to speed, you don't end up having the time to apply for a big grant you had been planning on. Oh well, there’s always next year!";
+        proconFinal.text = "Greg is enthusiastic (+)" + "\n" // new line character 
+            + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)";
+    }
+
+    public void finalLisa()
+    {
+        feedFinal.text = "Lisa turns out to be a bit full of themselves. They seem to learn quickly, freeing you up to apply for that big grant to fund more wildlife projects. " +
+                "But - you discover at the end of the summer that the data they’ve been collecting is inaccurate. You figure out how to fix the errors, but it costs you valuable planning " +
+                "time for other projects!";
+        proconFinal.text = "Lisa is confident (+)" + "\n" + "but not self - reflective enough to check their work for accuracy - leading to data collection mistakes(-)";
+    }
+   
+    public void finalTyrone()
+    {
+        feedFinal.text = "Tyrone is enthusiastic and capable of learning what they don't know - and quick! They take on every project thoughtfully throughout the whole summer." +
+                "Unfortunately, Tyrone doesn't get along well with two other more experienced team members. You are hoping this person will come back for another summer before " +
+                "they graduate, but are unsure if the team dynamics will work against productivity next time around!";
+        proconFinal.text = "Tyrone is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)";
+
     }
 
     public void newChoice()
     {
+        /*
         final1 = 0;
         final2 = 0;
         final3 = 0;
         sentences[index] = "Choose who you would hire.";
         textDisplay.text = sentences[index];
         //Update();
-        resultsBtn.SetActive(true);
+        resultsBtn.SetActive(true);*/
     }
 }

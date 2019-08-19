@@ -8,6 +8,7 @@ public class panelChange : MonoBehaviour
     public GameObject gamePanel;
     public GameObject choicePanel;
     public GameObject resultPanel;
+    public GameObject finalPanel; 
 
     // For making sure text is accurate.
     public Button choiceBtn;
@@ -49,7 +50,8 @@ public class panelChange : MonoBehaviour
 
     public void gameReturn()
     {
-        gamePanel.gameObject.SetActive(true);
+        gamePanel.gameObject.SetActive(false);
         resultPanel.gameObject.SetActive(false);
+        finalPanel.gameObject.SetActive(true); 
     }
 }
