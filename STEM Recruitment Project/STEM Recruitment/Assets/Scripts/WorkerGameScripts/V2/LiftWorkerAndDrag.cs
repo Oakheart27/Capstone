@@ -15,6 +15,8 @@ public class LiftWorkerAndDrag : MonoBehaviour
         workerRightArm = this.transform.Find("RightArm").gameObject;
         workerLeftArm = this.transform.Find("LeftArm").gameObject;
         isFalling = false;
+
+        this.transform.Find("FeedbackPic").gameObject.SetActive(false);
         originalPos = this.transform.position;
     }
 

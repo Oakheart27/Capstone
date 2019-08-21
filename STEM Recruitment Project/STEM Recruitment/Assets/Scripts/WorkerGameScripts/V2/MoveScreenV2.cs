@@ -10,14 +10,10 @@ public class MoveScreenV2 : MonoBehaviour
     private float min, max;
     private float t = 0.0f;
     private bool okToChange = false;
-
+    
     private void Start()
     {
-        screen1 = cam.transform.position;
-        screen2 = cam.transform.position;
-
-        Debug.Log("Screen1: " + screen1);
-
+        
     }
 
     private void Update()
@@ -46,16 +42,27 @@ public class MoveScreenV2 : MonoBehaviour
     // Changes the value of screen2.
     public void MoveScreen(float screen2x)
     {
+        screen1 = cam.transform.position;
+
+        screen2 = cam.transform.position;
+
+        Debug.Log("Screen1: " + screen1);
+
         screen2.x = screen2x;
 
         Debug.Log("Screen2 changed to: " + screen2);
 
-        okToChange = true;
-
         min = screen1.x;
 
         max = screen2x;
+
+        okToChange = true;
         
+    }
+
+    public void SetReadyToLoad(GameObject loadingScreen)
+    {
+        loadingScreen.SendMessage("ReadyToLoad", true);
     }
 
 

@@ -7,22 +7,22 @@ public class ShowTitleAndDescription : MonoBehaviour
 {
     public Text feedback;
     public string workerDescription;
+    public string workerFeedback;
+    public GameObject feedbackPic;
 
     private int timesHovered = 0;
     private Text title;
+    private string textToShow;
 
     // Start is called before the first frame update
     void Start()
     {
-        title = this.GetComponentInChildren<Text>();   
+        title = this.GetComponentInChildren<Text>();
+        textToShow = workerDescription;
+        //feedbackPic.SetActive(false);
+        title.enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Hand")
@@ -38,7 +38,7 @@ public class ShowTitleAndDescription : MonoBehaviour
             // If the title is already enabled, show the worker description.
             if(timesHovered == 1)
             {
-                feedback.text = workerDescription;
+                feedback.text = textToShow;
             }
         }
     }
@@ -52,6 +52,18 @@ public class ShowTitleAndDescription : MonoBehaviour
             {
                 feedback.text = "";
             }
+        }
+    }
+
+    public void ChangeFeedback(bool readyToCheck)
+    {
+        if(readyToCheck)
+        {
+            textToShow = workerFeedback;
+        }
+        else
+        {
+            textToShow = workerDescription;
         }
     }
 }

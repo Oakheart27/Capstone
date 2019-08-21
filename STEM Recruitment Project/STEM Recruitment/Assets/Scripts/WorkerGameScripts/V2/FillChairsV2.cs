@@ -25,7 +25,7 @@ public class FillChairsV2 : MonoBehaviour
         // Find all chairs in the WorkerScreen game object.
         for(int i = 1; i <= numberOfChairs; i++)
         {
-            string chairStr = "/WorkerScreen/Chair" + i.ToString();
+            string chairStr = "/WholeGame/WorkerScreen/Chair" + i.ToString();
 
             GameObject newChairObj = GameObject.Find(chairStr);
 
@@ -38,7 +38,7 @@ public class FillChairsV2 : MonoBehaviour
             
         }
 
-        nextButton.gameObject.SetActive(false);
+       // nextButton.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -104,6 +104,20 @@ public class FillChairsV2 : MonoBehaviour
         }
 
         return -1;
+    }
+    
+    // Sends entire chair list to CheckWorkersV2.
+    public void SendChairsToCheck(GameObject scripts)
+    {
+        for(int i = 0; i < numberOfChairs; i++)
+        {
+            scripts.SendMessage("ReceiveChair", chairList[i].chair);
+            scripts.SendMessage("ReceiveWorker", chairList[i].worker);
+            scripts.SendMessage("ReceiveCube", chairList[i].cube);
+            scripts.SendMessage("IncreaseIndex", 1);
+        }
+
+        scripts.SendMessage("OkToCheck", true);
     }
 
     public class Chair
