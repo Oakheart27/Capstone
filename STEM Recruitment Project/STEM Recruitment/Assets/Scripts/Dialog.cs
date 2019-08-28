@@ -44,7 +44,9 @@ public class Dialog : MonoBehaviour
     public GameObject jobdescription; 
     public GameObject jobPanel, scorePanel;
     public GameObject feedBtn;
-    public GameObject score1, score2, score3;
+    public GameObject score2, gscoreF, lscoreF, tscoreF;
+    public GameObject gscored, lscored, tscored;  // minijuge scores 
+    public GameObject jresp, jtext; 
 
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies 
@@ -73,11 +75,17 @@ public class Dialog : MonoBehaviour
 
         // hides feedback of character on feedback panel 
         crit.enabled = false;
+        jresp.SetActive(false); 
 
         // hides speech bubble image
         gregsp.SetActive(false); 
         lisasp.SetActive(false);
         tyronesp.SetActive(false);
+
+        // hides minijudges 
+        gscored.SetActive(false);
+        lscored.SetActive(false);
+        tscored.SetActive(false);
 
         feedBtn.GetComponent<Button>().interactable = false;
 
@@ -190,7 +198,18 @@ public class Dialog : MonoBehaviour
 
     public void continueClick()
     {
-        cClick += 1; 
+        // hides minijudges
+        gscored.SetActive(false);
+        lscored.SetActive(false);
+        tscored.SetActive(false);
+
+        // counts clicks
+        cClick += 1;
+
+        /* hides minijudges
+        gscored.SetActive(false);
+        lscored.SetActive(false);
+        tscored.SetActive(false); */
     }
 
     /*
@@ -325,8 +344,8 @@ public class Dialog : MonoBehaviour
     // determines what happens when the mouse moves over characters 
     public void gregOver()
     {
-        gregR.enabled = true; //enables response to answer 
-        gregsp.SetActive(true); // hides speech bubble image
+        gregR.enabled = true; //enables text response to answer 
+        gregsp.SetActive(true); // shows speech bubble image
         Debug.Log(anscount);
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
         gregR.GetComponent<Text>().text = gregAns[cClick];
@@ -369,6 +388,28 @@ public class Dialog : MonoBehaviour
         tyroneR.GetComponent<Text>().text = tyroneAns[cClick]; 
     }
 
+    public void gsOver()
+    {
+        jresp.SetActive(true); // shows critisim speech bubble 
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        jtext.GetComponent<Text>().text = gfeed[cClick]; // displays jude repsonse text 
+
+    }
+
+    public void lsOver()
+    {
+        jresp.SetActive(true); // shows critisim speech bubble 
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        jtext.GetComponent<Text>().text = lfeed[cClick]; // displays jude repsonse text 
+    }
+
+    public void tsOver()
+    {
+        jresp.SetActive(true); // shows critisim speech bubble 
+        if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
+        jtext.GetComponent<Text>().text = tfeed[cClick]; // displays jude repsonse text 
+    }
+
     public void Response()
     {
         if (cClick > 2) { cClick = 2; } // stops array out of bounds error 
@@ -405,7 +446,10 @@ public class Dialog : MonoBehaviour
         // hides speech bubble image
         gregsp.SetActive(false); 
         lisasp.SetActive(false);
-        tyronesp.SetActive(false);      
+        tyronesp.SetActive(false);
+
+        // hides minijudge response
+        jresp.SetActive(false);
     }
 
    public void hidePannels()
@@ -422,7 +466,7 @@ public class Dialog : MonoBehaviour
         scorePanel.SetActive(false); 
         //returnBtn.GetComponent<Button>().interactable = true;
     }
-
+   
     public void seeScore()
     {
         jobPanel.SetActive(false);
@@ -442,34 +486,46 @@ public class Dialog : MonoBehaviour
     public void displayScore()
     {
         //summary.GetComponentInChildren<Text>().text = "Greg answeered " + person1 + " correct, Lisa answered " + person2 + " correct, and Tyrone answered " + person3 + " correct.";
-        if (cClick >2) { cClick = 2; }
-        if (winner == 5)
+        if (cClick > 2) { cClick = 2; } // stops index out of bounds error
+
+        if (winner == 5) //Greg
         {
             Debug.Log("temp " + temp); 
-            score1.GetComponentInChildren<Text>().text = gScore1[cClick];
+            //score1.GetComponentInChildren<Text>().text = gScore1[cClick];
             score2.GetComponentInChildren<Text>().text = gScore2[cClick];
-            score3.GetComponentInChildren<Text>().text = gScore3[cClick];
+            gscoreF.GetComponentInChildren<Text>().text = gScore2[cClick];
+            gscored.SetActive(true);  // displays minijudge
+            //score3.GetComponentInChildren<Text>().text = gScore3[cClick];
+
         }
 
-        else if (winner == 10)
+        else if (winner == 10) //Lisa
         {
-            score1.GetComponentInChildren<Text>().text = lScore1[cClick];
+            //score1.GetComponentInChildren<Text>().text = lScore1[cClick];
             score2.GetComponentInChildren<Text>().text = lScore2[cClick];
-            score3.GetComponentInChildren<Text>().text = lScore3[cClick];
+            lscoreF.GetComponent<Text>().text = lScore2[cClick];
+            lscored.SetActive(true); 
+            //score3.GetComponentInChildren<Text>().text = lScore3[cClick];
         }
 
-        else if (winner == 15)
+        else if (winner == 15) //Tyrone
         {
-            score1.GetComponentInChildren<Text>().text = tScore1[cClick];
+            //score1.GetComponentInChildren<Text>().text = tScore1[cClick];
             score2.GetComponentInChildren<Text>().text = tScore2[cClick];
-            score3.GetComponentInChildren<Text>().text = tScore3[cClick];
+            tscoreF.GetComponentInChildren<Text>().text = tScore2[cClick];
+            tscored.SetActive(true); 
+            //score3.GetComponentInChildren<Text>().text = tScore3[cClick];
         }
 
+        // Displays 'X' for score 
         else
         {
-            score1.GetComponentInChildren<Text>().text = noscore[0];
+            //score1.GetComponentInChildren<Text>().text = noscore[0];
             score2.GetComponentInChildren<Text>().text = noscore[0];
-            score3.GetComponentInChildren<Text>().text = noscore[0];
+            gscoreF.GetComponentInChildren<Text>().text = noscore[0];
+            lscoreF.GetComponent<Text>().text = noscore[0];
+            tscoreF.GetComponentInChildren<Text>().text = noscore[0];
+            //score3.GetComponentInChildren<Text>().text = noscore[0];
         }
     }
 
@@ -509,7 +565,7 @@ public class Dialog : MonoBehaviour
         if (userChoice == "Greg")
         {
             feedback.text = "Greg is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
-                "had to take the time to get this person up to speed, you don’t end up having the time to apply for a big grant you had been planning on. Oh well, there’s always next year!";
+                "had to take the time to get this person up to speed, you don’t end up having the time to apply for a big grant you had been planning on. Oh well, there's always next year!";
             proconSum.text = "Greg is enthusiastic (+)" + "\n" // new line character 
                 + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)"; 
         }
@@ -556,13 +612,7 @@ public class Dialog : MonoBehaviour
 
     public void newChoice()
     {
-        /*
-        final1 = 0;
-        final2 = 0;
-        final3 = 0;
-        sentences[index] = "Choose who you would hire.";
-        textDisplay.text = sentences[index];
-        //Update();
-        resultsBtn.SetActive(true);*/
+        Debug.Log("AT THE FINAL"); 
+
     }
 }

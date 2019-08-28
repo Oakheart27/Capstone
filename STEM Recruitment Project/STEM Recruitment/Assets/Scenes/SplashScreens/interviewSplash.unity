@@ -204,12 +204,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519200493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5626e9384788b5647aef9ae9b80a3b1b, type: 3}
+  m_Script: {fileID: 11500000, guid: f8b7eae166bfe6842a8a0667aa542e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sciLogo: {fileID: 0}
-  nauLogo: {fileID: 0}
-  newScene: SplashTutorial
+  jobdes: {fileID: 1905059397}
+  questions: {fileID: 537476741}
+  newScene: mcq
 --- !u!1 &537476739
 GameObject:
   m_ObjectHideFlags: 0
