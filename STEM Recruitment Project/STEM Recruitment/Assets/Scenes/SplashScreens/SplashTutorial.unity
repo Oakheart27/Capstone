@@ -587,7 +587,7 @@ MonoBehaviour:
   tutorialPic: {fileID: 1725554438}
   rightHandPic: {fileID: 1730904846}
   description: {fileID: 389428997}
-  newScene: Home
+  newScene: CalibrationGame
 --- !u!1 &1878243096
 GameObject:
   m_ObjectHideFlags: 0

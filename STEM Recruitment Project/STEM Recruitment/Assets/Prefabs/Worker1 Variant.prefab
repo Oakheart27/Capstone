@@ -321,16 +321,6 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2,
-        type: 3}
-      propertyPath: feedbackPic
-      value: 
-      objectReference: {fileID: 4435370154011296246}
-    - target: {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2,
-        type: 3}
-      propertyPath: title
-      value: 
-      objectReference: {fileID: 499748826}
     - target: {fileID: 4160525502641023571, guid: 13191f94b4946624e99d1574b2923ae2,
         type: 3}
       propertyPath: m_Size.y
@@ -371,6 +361,51 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -31.814964
       objectReference: {fileID: 0}
+    - target: {fileID: 4160525502445305032, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502445305032, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502445305032, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.38431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502699421016, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502699421016, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502699421016, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525502699421016, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: feedbackPic
+      value: 
+      objectReference: {fileID: 4435370154011296246}
+    - target: {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: title
+      value: 
+      objectReference: {fileID: 499748826}
     - target: {fileID: 8252884184482437435, guid: 13191f94b4946624e99d1574b2923ae2,
         type: 3}
       propertyPath: m_LocalPosition.z

@@ -48,10 +48,10 @@ public class LoadSprites : MonoBehaviour
 
                 workerTorso.GetComponent<SpriteRenderer>().sprite = torsoSprite;
 
-                workerRightUp.GetComponent<SpriteRenderer>().sprite = armSprite;
+               // workerRightUp.GetComponent<SpriteRenderer>().sprite = armSprite;
                 workerRightDown.GetComponent<SpriteRenderer>().sprite = armSprite;
 
-                workerLeftUp.GetComponent<SpriteRenderer>().sprite = armSprite;
+                //workerLeftUp.GetComponent<SpriteRenderer>().sprite = armSprite;
                 workerLeftDown.GetComponent<SpriteRenderer>().sprite = armSprite;
 
                 Debug.Log(path + torsoSpriteStr);

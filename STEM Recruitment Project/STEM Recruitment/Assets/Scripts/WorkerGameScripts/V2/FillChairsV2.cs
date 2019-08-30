@@ -91,6 +91,25 @@ public class FillChairsV2 : MonoBehaviour
         }
     }
 
+    /*public void SendWorkertChair(GameObject worker)
+    {
+        int availableChair = GetNextAvailableChair();
+
+        if(availableChair == -1)
+        {
+            feedback.text = "All chairs are filled! Either drag a worker out or reset the entire table.";
+
+            workerScreenScripts.SendMessage("ResetWorker", worker);
+        }
+        else
+        {
+            worker.transform.position = chairList[availableChair].cube.transform.position;
+
+            chairList[availableChair].worker = worker;
+        }
+
+    }*/
+
     private int GetNextAvailableChair()
     {
         for (int i = 0; i < numberOfChairs; i++)
