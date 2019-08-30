@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/NAU/Capstone/Repository/Repos/Standalone Project/STEM Recruitment.exe
+D:/Work/Repository3/Capstone/Standalone Project/STEM Recruitment.exe
 SceneListBegin?
 Assets/Scenes/SplashScreens/SplashTutorial.unity
 Assets/Scenes/CalibrationGame.unity
