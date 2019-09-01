@@ -32,7 +32,7 @@ public class MoveScreenV2 : MonoBehaviour
 
                 okToChange = false;
 
-                Debug.Log("Camera changed to: " + cam.transform.position);
+               // Debug.Log("Camera changed to: " + cam.transform.position);
             }
             
         }
@@ -46,11 +46,11 @@ public class MoveScreenV2 : MonoBehaviour
 
         screen2 = cam.transform.position;
 
-        Debug.Log("Screen1: " + screen1);
+        //Debug.Log("Screen1: " + screen1);
 
         screen2.x = screen2x;
 
-        Debug.Log("Screen2 changed to: " + screen2);
+        //Debug.Log("Screen2 changed to: " + screen2);
 
         min = screen1.x;
 

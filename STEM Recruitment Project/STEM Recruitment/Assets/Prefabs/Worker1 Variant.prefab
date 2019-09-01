@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 499748827}
   - component: {fileID: 499748826}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,21 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4160525503416279080, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: totalNumOfWorkers
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160525503729951898, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Worker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8496321342946270078, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4160525502641023571, guid: 13191f94b4946624e99d1574b2923ae2,
         type: 3}
       propertyPath: m_Size.y
@@ -395,6 +410,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337848127221745698, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337848127221745698, guid: 13191f94b4946624e99d1574b2923ae2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2,
         type: 3}
@@ -503,6 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4509539960214565073, guid: 13191f94b4946624e99d1574b2923ae2, type: 3}
+    - {fileID: 3337848127221745698, guid: 13191f94b4946624e99d1574b2923ae2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 13191f94b4946624e99d1574b2923ae2, type: 3}
 --- !u!1 &347762461550201722 stripped
 GameObject:

@@ -29,6 +29,7 @@ public class CheckWorkersV2 : MonoBehaviour
                 GameObject feedbackPic = chairList[i].worker.gameObject.transform.Find("FeedbackPic").gameObject;
 
                 feedbackPic.SetActive(true);
+            
             }
         }
     }

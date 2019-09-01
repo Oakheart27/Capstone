@@ -13,14 +13,19 @@ public class ShowTitleAndDescription : MonoBehaviour
     private int timesHovered = 0;
     private Text title;
     private string textToShow;
+    private GameObject speechbubble;
+    private bool drawLine = false;
 
     // Start is called before the first frame update
     void Start()
     {
         title = this.GetComponentInChildren<Text>();
         textToShow = workerDescription;
-        //feedbackPic.SetActive(false);
+        feedbackPic.SetActive(false);
         title.enabled = false;
+        speechbubble = GameObject.Find("/WholeGame/WorkerScreen/Speechbubble");
+        speechbubble.SetActive(false);
+        
     }
     
     private void OnTriggerEnter(Collider other)
@@ -38,7 +43,20 @@ public class ShowTitleAndDescription : MonoBehaviour
             // If the title is already enabled, show the worker description.
             if(timesHovered == 1)
             {
+                // If the right/wrong pictures are active, the worker has been evaluated so the feedback can be shown.
+                if(feedbackPic.activeSelf)
+                {
+                    textToShow = workerFeedback;
+                }
+
+                // Otherwise, just show the description
+                else
+                {
+                    textToShow = workerDescription;
+                }
                 feedback.text = textToShow;
+                speechbubble.SetActive(true);
+                drawLine = true;
             }
         }
     }
@@ -51,7 +69,17 @@ public class ShowTitleAndDescription : MonoBehaviour
             if (timesHovered == 1)
             {
                 feedback.text = "";
+                speechbubble.SetActive(false);
+                drawLine = false;
             }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        if(drawLine)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawLine(speechbubble.transform.position, this.transform.position);
         }
     }
 

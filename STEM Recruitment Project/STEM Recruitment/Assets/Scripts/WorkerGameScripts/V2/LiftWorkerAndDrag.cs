@@ -5,13 +5,15 @@ using UnityEngine;
 public class LiftWorkerAndDrag : MonoBehaviour
 {
     public GameObject rightHand, leftHand;
+    public int totalNumOfWorkers = 6;
 
     private GameObject workerRightArm, workerLeftArm;
-    private bool isFalling, touchedTable, sendUserBack;
+    private bool isFalling, touchedTable, sendWorkerBack;
     private Vector3 originalPos;
     private float t = 0.0f;
     private float minX, maxX, minY, maxY;
     private GameObject tableTop;
+    private bool otherWorkerIsGrabbed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class LiftWorkerAndDrag : MonoBehaviour
         workerLeftArm = this.transform.Find("LeftArm").gameObject;
         isFalling = false;
         touchedTable = false;
-        sendUserBack = false;
+        sendWorkerBack = false;
 
         this.transform.Find("FeedbackPic").gameObject.SetActive(false);
         originalPos = this.transform.position;
@@ -47,14 +49,26 @@ public class LiftWorkerAndDrag : MonoBehaviour
 
             this.transform.position = midPoint + pos1;
 
+            AllWorkersCanMove(false);
+
+            // Let the star selection know that a worker is grabbed so it doesn't undo the block
+            GameObject star = GameObject.Find("/WholeGame/WorkerScreen/YellowStar3");
+
+            star.SendMessage("WorkerIsGrabbed", true);
+
             if (UserLetGo())
             {
                 LetArmGo(workerRightArm);
                 LetArmGo(workerLeftArm);
+
+                AllWorkersCanMove(true);
+
+                // Let star know that a worker was let go
+                star.SendMessage("WorkerIsGrabbed", false);
                 
                 // If the user hasn't touched the table, send user back using Mathf.Lerp. 
                 // Here I'm getting all the needed variables for lerp.
-                if(!touchedTable)
+                if (!touchedTable)
                 {
                     minX = this.transform.position.x;
                     minY = this.transform.position.y;
@@ -62,12 +76,22 @@ public class LiftWorkerAndDrag : MonoBehaviour
                     maxX = originalPos.x;
                     maxY = originalPos.y;
 
-                    sendUserBack = true;
+                    sendWorkerBack = true;
+
+                    tableTop.SendMessage("RemoveWorkerFromChair", this.gameObject);
+                }
+
+                // If the user did touch the table, send worker over to FillChairsV2
+                else
+                {
+                    tableTop.SendMessage("AssignWorkerToChair", this.gameObject);
+
+                    sendWorkerBack = false; // making sure worker won't go back to original position.
                 }
             }
         }
         
-        if(sendUserBack)
+        if(sendWorkerBack)
         {
             this.transform.position = new Vector3(Mathf.Lerp(minX, maxX, t), Mathf.Lerp(minY, maxY, t), originalPos.z);
 
@@ -77,28 +101,28 @@ public class LiftWorkerAndDrag : MonoBehaviour
             {
                 t = 0.0f;
 
-                sendUserBack = false;
+                sendWorkerBack = false; 
             }
         }
-        
-        
+
         if(ArmGrabbed(workerRightArm) && !ArmGrabbed(workerLeftArm))
         {
-            LetArmGoAfterTime(workerRightArm, workerLeftArm);
+            StartCoroutine(LetArmGoAfterTime(workerRightArm, workerLeftArm));
         }
-
-        if (ArmGrabbed(workerLeftArm) && !ArmGrabbed(workerRightArm))
+        
+        if(ArmGrabbed(workerLeftArm) && !ArmGrabbed(workerRightArm))
         {
-            LetArmGoAfterTime(workerLeftArm, workerRightArm);
+            StartCoroutine(LetArmGoAfterTime(workerLeftArm, workerRightArm));
         }
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Table")
         {
+           // Debug.Log("Touched table!!");
             touchedTable = true;
-            
         }
         
     }
@@ -110,31 +134,18 @@ public class LiftWorkerAndDrag : MonoBehaviour
             touchedTable = false;
         }
     }
-
-    IEnumerator SendWorkerBack()
-    {
-        yield return new WaitForSeconds(0.01f); // added this in to avoid error.
-
-        while(t <= 1.0f)
-        {
-            this.transform.position = new Vector3(Mathf.Lerp(minX, maxX, t), Mathf.Lerp(minY, maxY, t), originalPos.z);
-
-            t += 0.5f * Time.deltaTime;
-        }
-        
-        //touchedTable = false;
-        t = 0.0f;
-    }
-
+    
     private bool ArmGrabbed(GameObject arm)
     {
         GameObject upArm = arm.transform.Find("Up").gameObject;
-
+        
         if(upArm.activeSelf)
         {
             return true;
         }
+
         return false;
+        
     }
 
     private void LetArmGo(GameObject arm)
@@ -149,36 +160,117 @@ public class LiftWorkerAndDrag : MonoBehaviour
 
     IEnumerator LetArmGoAfterTime(GameObject arm1, GameObject arm2)
     {
+        yield return new WaitForSeconds(2);
+
         GameObject upArm1, downArm1, upArm2;
 
         upArm1 = arm1.transform.Find("Up").gameObject;
         downArm1 = arm1.transform.Find("Down").gameObject;
 
         upArm2 = arm2.transform.Find("Up").gameObject;
-
-        yield return new WaitForSeconds(2);
-
+        
         if(upArm1.activeSelf == true && upArm2.activeSelf == false)
         {
             upArm1.SetActive(false);
             downArm1.SetActive(true);
         }
     }
+    
+    // Send a message to each arm of each worker of whether it can be moved or not.
+    public void AllWorkersCanMove(bool status)
+    {
+        string thisName = this.name;
+        
+        for(int i = 1; i <= totalNumOfWorkers; i++)
+        {
+            //Find each worker other than this one
+            string workerName = "Worker" + i.ToString();
+            
+            if(workerName != thisName)
+            {
+                string fullPath = "/WholeGame/WorkerScreen/" + workerName;
 
+                GameObject worker = GameObject.Find(fullPath);
+
+                // Block both arms from lifting
+                GameObject rightArm = worker.transform.Find("RightArm").gameObject;
+
+                GameObject leftArm = worker.transform.Find("LeftArm").gameObject;
+
+                rightArm.SendMessage("SetOkToLift", status);
+
+                leftArm.SendMessage("SetOkToLift", status);
+
+            }
+
+            else
+            {
+                continue;   
+            }
+        }
+    }
+
+    /*
+    void BlockAllWorkers()
+    {
+        string thisName = this.name;
+
+        for(int i = 1; i <= totalNumOfWorkers; i++)
+        {
+            string workerName = "Worker" + i.ToString();
+
+            if(workerName != thisName)
+            {
+                string fullPath = "/WholeGame/WorkerScreen" + workerName;
+
+                GameObject worker = GameObject.Find(fullPath);
+
+                GameObject rightArm = worker.transform.Find("RightArm").gameObject;
+
+                GameObject leftArm = worker.transform.Find("LeftArm").gameObject;
+
+                rightArm.GetComponent<BoxCollider>().enabled = false;
+
+                leftArm.GetComponent<BoxCollider>().enabled = false;
+
+            }
+        }
+    }
+    void UnblockAllWorkers()
+    {
+        string thisName = this.name;
+
+        for (int i = 1; i <= totalNumOfWorkers; i++)
+        {
+            string workerName = "Worker" + i.ToString();
+
+            if (workerName != thisName)
+            {
+                string fullPath = "/WholeGame/WorkerScreen" + workerName;
+
+                GameObject worker = GameObject.Find(fullPath);
+
+                GameObject rightArm = worker.transform.Find("RightArm").gameObject;
+
+                GameObject leftArm = worker.transform.Find("LeftArm").gameObject;
+
+                rightArm.GetComponent<BoxCollider>().enabled = false;
+
+                leftArm.GetComponent<BoxCollider>().enabled = false;
+
+            }
+        }
+    }*/
     bool UserLetGo()
     {
         if (rightHand.transform.position.x - leftHand.transform.position.x > 350)
         {
-            // Debug.Log("DragWithHandlebars -> User let go with distance at " + 
-            //     (rightHand.transform.position.x - leftHand.transform.position.x));
-
             return true;
         }
+
         else if ((rightHand.transform.position.y - leftHand.transform.position.y > 350) ||
                 (leftHand.transform.position.y - rightHand.transform.position.y > 350))
         {
-            //Debug.Log("DragWithHandlebars -> User let go with distance at " +
-            //    (rightHand.transform.position.y - leftHand.transform.position.y));
             return true;
         }
 

@@ -80,6 +80,8 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -119,6 +121,7 @@ b3202b06ed94fbacd400fb2060e2c565 Assembly-CSharp.dll:.DisplayWorkerTitle
 2373e3958a5b6ee0034c736c3c938eeb Assembly-CSharp.dll:.CalibrateCamera
 fb2876616d40d7aa20f05b8edee9ac8a Assembly-CSharp.dll:.NuitrackAvatar
 e3ffed576278127ab56c9e91cfd8081c Assembly-CSharp.dll:.MoveStarV2
+80c292d22f7f3dc8bad872ef57a9437e Assembly-CSharp.dll:.BlockAllWorkers
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.HandCursor
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.loadingbar
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -305,7 +308,7 @@ e80c1450883443c68d6c2dade213536f Assembly-CSharp.dll:TMPro.Examples.TMPro_Instru
 80c292d22f7f3dc8bad872ef57a9437e Assembly-CSharp.dll:.ResetV2
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DragWithHand
 d4777fd2ce44d1e2e83e35f2ab3c7e15 Assembly-CSharp.dll:.FallingObject
-6a87aabddfc5d96376c5b622248d0dcf Assembly-CSharp.dll:.LiftWorkerAndDrag
+14eace7ce556d15ae2f0140638567aaa Assembly-CSharp.dll:.LiftWorkerAndDrag
 4e7d2e0c28450caa2532daeb874ffec7 Assembly-CSharp.dll:.BasicDialog
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TeleType
 f6e3392cd5cf8a978cd052ca44314607 Assembly-CSharp.dll:.NuitrackAvatarAdvanced

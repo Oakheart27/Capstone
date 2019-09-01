@@ -184,6 +184,7 @@
     <Compile Include="Assets\Scripts\WorkerGameScripts\ResetWithStar.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\SendToChairs.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\BasicDialog.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\V2\BlockAllWorkers.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\CheckChairsTemp.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\CheckWorkersV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\ClickButton.cs" />

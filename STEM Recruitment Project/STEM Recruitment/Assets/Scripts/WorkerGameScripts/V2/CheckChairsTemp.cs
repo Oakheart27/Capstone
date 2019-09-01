@@ -13,90 +13,84 @@ public class CheckChairsTemp : MonoBehaviour
     private bool okToCheck = false;
     private bool wrongAnsPresent = false;
     private bool reset = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameObject[] workersInChairs;
 
+    private void Start()
+    {
+        workersInChairs = new GameObject[chairs.Length];
+    }
     // Update is called once per frame
     void Update()
     {
-        if(okToCheck)
-        {
-            for(int i = 0; i < chairs.Length; i++)
-            {
-                GameObject chairCube = chairs[i].transform.Find("Cube").gameObject;
-
-                Vector3 cubePos = chairCube.transform.position;
-
-                for(int j = 0; j < allWorkers.Length;  j++)
-                {
-                    if(allWorkers[j].transform.position == cubePos)
-                    {
-                        GameObject feedback = allWorkers[j].transform.Find("FeedbackPic").gameObject;
-
-                        feedback.SetActive(true);
-
-                        if(feedback.GetComponent<SpriteRenderer>().sprite.name == "Wrong")
-                        {
-                            wrongAnsPresent = true;
-                        }
-                        
-                        break;
-                    }
-                }
-                
-            }
-
-            okToCheck = false;
-        }
-
         if(wrongAnsPresent)
         {
             feedbackText.text = "Oops! Some of your answers were wrong. Press the reset button to try again.";
+            wrongAnsPresent = false; // I don't want this to keep updating.
+        }
+        
+    }
+    
+    public void ResetScreen()
+    {
+        Debug.Log("ResetScreen called");
+        
+        for(int i = 0; i < workersInChairs.Length; i++)
+        {
+            Debug.Log("Resetting " + workersInChairs[i].name);
+
+            GameObject feedbackPic = workersInChairs[i].transform.Find("FeedbackPic").gameObject;
+            
+            feedbackPic.SetActive(false);
             
         }
-
-        if(reset)
-        {
-            for (int i = 0; i < chairs.Length; i++)
-            {
-                GameObject chairCube = chairs[i].transform.Find("Cube").gameObject;
-
-                Vector3 cubePos = chairCube.transform.position;
-
-                for (int j = 0; j < allWorkers.Length; j++)
-                {
-                    if (allWorkers[j].transform.position == cubePos)
-                    {
-                        GameObject feedback = allWorkers[j].transform.Find("FeedbackPic").gameObject;
-
-                        feedback.SetActive(false);
-                        
-                        break;
-                    }
-                }
-
-            }
-
-            reset = false;
-        }
+        
     }
 
     public void ReadyToCheck()
     {
-        okToCheck = true;
-        reset = true;
+        Debug.Log("ReadyToCheck called");
+        StartCoroutine(Evaluate());
     }
 
-    public void Reset()
+    IEnumerator Evaluate()
     {
-        if(wrongAnsPresent)
-        {
-            wrongAnsPresent = false;
+        Debug.Log("Evaluate called");
 
-            feedbackText.text = "";
+        yield return new WaitForSeconds(2);
+
+        int workersInChairsIndex = 0;
+
+        for (int i = 0; i < chairs.Length; i++)
+        {
+            GameObject chairCube = chairs[i].transform.Find("Cube").gameObject;
+
+            Vector3 cubePos = chairCube.transform.position;
+
+            for (int j = 0; j < allWorkers.Length; j++)
+            {
+                if (Mathf.Abs(allWorkers[j].transform.position.x - cubePos.x) <= 10)
+                {
+                    workersInChairs[workersInChairsIndex] = allWorkers[j]; // Saving the evaluated workers for resetting purposes
+
+                    Debug.Log("Added " + workersInChairs[workersInChairsIndex].name + " to position " + workersInChairsIndex);
+
+                    workersInChairsIndex++;
+
+                    Debug.Log("Evaluating " + allWorkers[j].name);
+
+                    GameObject feedback = allWorkers[j].transform.Find("FeedbackPic").gameObject;
+
+                    feedback.SetActive(true);
+                    
+                    if (feedback.GetComponent<SpriteRenderer>().sprite.name == "Wrong")
+                    {
+                        wrongAnsPresent = true;
+                    }
+
+                    break;
+                }
+            }
+
         }
     }
 }

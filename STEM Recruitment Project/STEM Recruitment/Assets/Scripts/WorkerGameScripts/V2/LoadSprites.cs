@@ -54,8 +54,8 @@ public class LoadSprites : MonoBehaviour
                 //workerLeftUp.GetComponent<SpriteRenderer>().sprite = armSprite;
                 workerLeftDown.GetComponent<SpriteRenderer>().sprite = armSprite;
 
-                Debug.Log(path + torsoSpriteStr);
-                Debug.Log(path + armSpriteStr);
+                //Debug.Log(path + torsoSpriteStr);
+                //Debug.Log(path + armSpriteStr);
 
                 unavailableSprites[i] = spriteNum;
                

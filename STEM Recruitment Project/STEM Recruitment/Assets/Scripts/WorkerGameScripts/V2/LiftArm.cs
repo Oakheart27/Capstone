@@ -5,6 +5,7 @@ using UnityEngine;
 public class LiftArm : MonoBehaviour
 {
     private GameObject up, down;
+    private bool okToLift = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,16 @@ public class LiftArm : MonoBehaviour
     // Move arm up.
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Hand")
+        if(other.tag == "Hand" && okToLift)
         {
             down.SetActive(false);
             up.SetActive(true);
         }
     }
     
+    public void SetOkToLift(bool status)
+    {
+        Debug.Log("Messaged received: " + status);
+        okToLift = status;
+    }
 }
