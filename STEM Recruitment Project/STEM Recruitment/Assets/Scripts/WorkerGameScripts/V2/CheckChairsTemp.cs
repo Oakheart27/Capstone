@@ -13,6 +13,7 @@ public class CheckChairsTemp : MonoBehaviour
     private bool okToCheck = false;
     private bool wrongAnsPresent = false;
     private bool reset = false;
+    private bool allAreCorrect = false;
     private GameObject[] workersInChairs;
 
     private void Start()
@@ -26,6 +27,12 @@ public class CheckChairsTemp : MonoBehaviour
         {
             feedbackText.text = "Oops! Some of your answers were wrong. Press the reset button to try again.";
             wrongAnsPresent = false; // I don't want this to keep updating.
+        }
+        
+        if(allAreCorrect)
+        {
+            feedbackText.text = "Good job! Everyone here plays an important role to the project.";
+            allAreCorrect = false;
         }
         
     }
@@ -91,6 +98,11 @@ public class CheckChairsTemp : MonoBehaviour
                 }
             }
 
+        }
+
+        if(!wrongAnsPresent)
+        {
+            allAreCorrect = true;
         }
     }
 }

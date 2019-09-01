@@ -26,7 +26,7 @@ public class LiftArm : MonoBehaviour
     
     public void SetOkToLift(bool status)
     {
-        Debug.Log("Messaged received: " + status);
+       // Debug.Log("Messaged received: " + status);
         okToLift = status;
     }
 }

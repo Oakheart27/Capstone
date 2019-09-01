@@ -196,6 +196,7 @@
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\MoveScreenV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\ResetV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\ScreenActivations.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\V2\ShowJobDescription.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\ShowTitleAndDescription.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V2\WorkerLeftChair.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
