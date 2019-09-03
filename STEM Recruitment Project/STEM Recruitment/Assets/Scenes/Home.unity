@@ -1163,6 +1163,12 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &461854126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742926235630082070, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 498145613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &498145613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,12 +1184,12 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.77
+      value: -4.93
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 2.02
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -3343,6 +3349,7 @@ GameObject:
   - component: {fileID: 1833099966}
   - component: {fileID: 1833099967}
   - component: {fileID: 1833099965}
+  - component: {fileID: 1833099968}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3530,6 +3537,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logInButton: {fileID: 1189666589}
   salutation: {fileID: 1863209143}
+--- !u!114 &1833099968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833099957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a4e6a79c6dff64facb4955709b350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 534669904}
+  rightHand: {fileID: 1574876301}
+  leftHand: {fileID: 1247300334}
+  star: {fileID: 461854126}
+  otherObjectsNotOnCanvas: []
 --- !u!1 &1863209141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,7 +3751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.50625, y: 1}
-  m_AnchoredPosition: {x: 199.3, y: -44.799988}
+  m_AnchoredPosition: {x: 199.29999, y: -44.799988}
   m_SizeDelta: {x: 391.4, y: -83.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957098580

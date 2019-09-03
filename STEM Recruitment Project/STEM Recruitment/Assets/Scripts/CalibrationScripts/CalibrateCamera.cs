@@ -10,20 +10,24 @@ public class CalibrateCamera : MonoBehaviour
     public float timeToKeepStill = 4.0f;
     public Text status, finals;
     public GameObject loadingCircle;
-
+    
     private bool readyToCalibrate = false;
     private Vector3 rightPos, leftPos;
     private bool rightOk = false;
     private bool leftOk = false;
     private bool switchHands = false;
     private bool readyToResize = false;
-    private float initialCameraSize = 6;
+    private float initialCameraSize, initialHandSize;
 
     void Start()
     {
         loadingCircle.SetActive(false);
-
+        
         camera.orthographicSize = 6;
+
+        initialCameraSize = camera.orthographicSize;
+
+        initialHandSize = rightHand.transform.localScale.x;
 
         Debug.Log("screen width: " + Screen.width + " , height: " + Screen.height);
     }
@@ -61,6 +65,10 @@ public class CalibrateCamera : MonoBehaviour
     {
         camera.orthographicSize = initialCameraSize;
 
+        rightHand.transform.localScale = new Vector3(initialHandSize, initialHandSize, initialHandSize);
+
+        leftHand.transform.localScale = new Vector3(initialHandSize, initialHandSize, initialHandSize);
+
         status.text = "Camera size reset";
 
         finals.text = "";
@@ -82,7 +90,7 @@ public class CalibrateCamera : MonoBehaviour
 
             if (Mathf.Abs(secondPos.x - firstPos.x) > 2 || Mathf.Abs(secondPos.y - firstPos.y) > 2)
             {
-                status.text = "Restarting right hand";
+                status.text = "Reading right hand";
 
                 timeLeft = timeToKeepStill;
 
@@ -132,7 +140,7 @@ public class CalibrateCamera : MonoBehaviour
 
             if (Mathf.Abs(temp.x - firstPos.x) > 2 || Mathf.Abs(temp.y - firstPos.y) > 2)
             {
-                status.text = "Restarting left hand";
+                status.text = "Reading left hand";
 
                 timeLeft = timeToKeepStill;
 
@@ -186,6 +194,14 @@ public class CalibrateCamera : MonoBehaviour
         status.text += "\nNew size: " + newSize.ToString();
 
         camera.orthographicSize = newSize;
+
+        float scale = newSize / initialCameraSize;
+
+        float newHandSize = rightHand.transform.localScale.x * scale;
+
+        rightHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
+
+        leftHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
 
         readyToResize = false;
     }

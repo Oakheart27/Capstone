@@ -20,7 +20,7 @@ public class HalfStarCollider2D : MonoBehaviour
     {
         if(other.gameObject.tag == "Hand")
         {
-            Debug.Log("Hand collided");
+            //Debug.Log("Hand collided");
             halfStarImage.enabled = true;
         }
     }
