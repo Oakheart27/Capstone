@@ -658,8 +658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15, y: 154}
-  m_SizeDelta: {x: -201.7, y: -521.6}
+  m_AnchoredPosition: {x: 79.97504, y: 154}
+  m_SizeDelta: {x: -331.65, y: -521.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51910066
 MonoBehaviour:
@@ -2056,7 +2056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 763, y: 453}
+  m_AnchoredPosition: {x: 688, y: 462}
   m_SizeDelta: {x: 94.3, y: -279.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401166950
@@ -2663,7 +2663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 59.100098, y: -2}
+  m_AnchoredPosition: {x: 59, y: -2}
   m_SizeDelta: {x: -373.6, y: -209.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587097700
@@ -5213,7 +5213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Feedback
+  m_Text: Results
 --- !u!222 &1286263612
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6170,7 +6170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -333.5}
+  m_AnchoredPosition: {x: 0, y: -333.5005}
   m_SizeDelta: {x: 0, y: -667.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500711265
@@ -7775,7 +7775,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1873040935}
-        m_MethodName: ButtonClick
+        m_MethodName: finalClick
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1806136991}
@@ -8360,7 +8360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1873040935}
-        m_MethodName: ButtonClick
+        m_MethodName: finalClick
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1825559678}
@@ -8891,8 +8891,7 @@ MonoBehaviour:
     down small animal traps, radio-tracking wildlife, operating trail cameras, placing
     acoustic monitoring equipment, and managing data collected in the field following
     specific protocols.'
-  - Choose who you would hire.
-  - Thank you for your time. Click on the results button.
+  - Choose who you would hire, then click the results button.
   userChoice: 
   gregAns:
   - I have always loved wildlife. Ever since I was a little kid, I can remember being
@@ -8939,42 +8938,18 @@ MonoBehaviour:
   - Hi
   - Qhy
   - fD
-  gScore1:
-  - 1
-  - 2
-  - 3
   gScore2:
   - 6
   - 5
   - 7
-  gScore3:
-  - 5
-  - 6
-  - 4
-  lScore1:
-  - 1
-  - 2
-  - 3
   lScore2:
   - 7
   - 4
   - 6
-  lScore3:
-  - 4
-  - 2
-  - 3
-  tScore1:
-  - 1
-  - 2
-  - 3
   tScore2:
   - 8
   - 5
   - 9
-  tScore3:
-  - 6
-  - 8
-  - 6
   noscore:
   - X
   gfeed:
@@ -9032,7 +9007,6 @@ MonoBehaviour:
   gregsp: {fileID: 298207780}
   lisasp: {fileID: 1678583727}
   tyronesp: {fileID: 245635702}
-  resultsBtn: {fileID: 1424494841}
   p1: {fileID: 1113149055}
   p2: {fileID: 1461804140}
   jobdescription: {fileID: 181675586}
@@ -9164,7 +9138,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1873040935}
-        m_MethodName: ButtonClick
+        m_MethodName: finalClick
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1941900182}
