@@ -42,7 +42,7 @@ public class Dialog : MonoBehaviour
     public GameObject resultsBtn;
     public GameObject p1, p2;
     public GameObject jobdescription; 
-    public GameObject jobPanel, scorePanel;
+    public GameObject jobPanel, scorePanel, resultsPanel;
     public GameObject feedBtn;
     public GameObject score2, gscoreF, lscoreF, tscoreF;
     public GameObject gscored, lscored, tscored;  // minijuge scores 
@@ -55,6 +55,7 @@ public class Dialog : MonoBehaviour
     public Text feedback, feedFinal; // Dispalys developer feedback on user choice 
     //public Text userReturn;
     public Text proconSum, proconFinal; // lists the pros and cons of each character 
+    public Text pro, con; 
     
     //private string continueBtnStr = "Continue";
     // Start is called before the first frame update
@@ -87,7 +88,8 @@ public class Dialog : MonoBehaviour
         lscored.SetActive(false);
         tscored.SetActive(false);
 
-        feedBtn.GetComponent<Button>().interactable = false;
+        // feedBtn.GetComponent<Button>().interactable = false;
+        feedBtn.SetActive(false); 
 
         StartCoroutine(Type());
     }
@@ -158,6 +160,7 @@ public class Dialog : MonoBehaviour
                 continueBtn.SetActive(false);
                 continueBtn.GetComponent<Button>().interactable = false;
                 resultsBtn.SetActive(true);
+            feedBtn.SetActive(true); 
                 endGame(); 
             }
 
@@ -284,7 +287,7 @@ public class Dialog : MonoBehaviour
                 winner += 5;
                 Debug.Log("Updated player 1");
                 //   totalcount += 1;
-                feedBtn.GetComponent<Button>().interactable = true;
+                //feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
                 p3Btn.GetComponent<Button>().interactable = false;
@@ -296,7 +299,7 @@ public class Dialog : MonoBehaviour
                 winner += 10;
                 Debug.Log("Updated Player 2");
                 //    totalcount += 1;
-                feedBtn.GetComponent<Button>().interactable = true;
+               // feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
                 p3Btn.GetComponent<Button>().interactable = false;
@@ -307,7 +310,7 @@ public class Dialog : MonoBehaviour
                 winner += 15;
                 Debug.Log("Updated Player 3");
                 //    totalcount += 1;
-                feedBtn.GetComponent<Button>().interactable = true;
+                //feedBtn.GetComponent<Button>().interactable = true;
                 p1Btn.GetComponent<Button>().interactable = false;
                 p2Btn.GetComponent<Button>().interactable = false;
                 p3Btn.GetComponent<Button>().interactable = false;
@@ -456,7 +459,8 @@ public class Dialog : MonoBehaviour
     {
        // finalPanel.SetActive(false);
         jobPanel.SetActive(false);
-        scorePanel.SetActive(false); 
+        scorePanel.SetActive(false);
+        resultsPanel.SetActive(false); 
     }
 
     public void readJob()
@@ -470,7 +474,8 @@ public class Dialog : MonoBehaviour
     public void seeScore()
     {
         jobPanel.SetActive(false);
-        scorePanel.SetActive(true); 
+        scorePanel.SetActive(false);
+        resultsPanel.SetActive(true); 
     }
 
     public void feedbackInfo()
@@ -567,21 +572,31 @@ public class Dialog : MonoBehaviour
             feedback.text = "Greg is honest and enthusiastic, but not very experienced! The candidate takes half the summer to learn the proper techniques. Since you " +
                 "had to take the time to get this person up to speed, you don’t end up having the time to apply for a big grant you had been planning on. Oh well, there's always next year!";
             proconSum.text = "Greg is enthusiastic (+)" + "\n" // new line character 
-                + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)"; 
+                + "inexperienced will need a LOT of supervision to become a fully contributing member of the field team (-)";
+
+            pro.text = "\u2022 Enthusiastic";
+            con.text = "\u2022 Inexpereinced and will need a LOT of supervision to become a fully contributing member of the field team"; 
         }
+
         if (userChoice == "Lisa")
         {
             feedback.text = "Lisa turns out to be a bit full of themselves. They seem to learn quickly, freeing you up to apply for that big grant to fund more wildlife projects. " +
                 "But - you discover at the end of the summer that the data they’ve been collecting is inaccurate. You figure out how to fix the errors, but it costs you valuable planning " + 
                 "time for other projects!";
             proconSum.text = "Lisa is confident (+)" + "\n" + "but not self - reflective enough to check their work for accuracy - leading to data collection mistakes(-)";
+            pro.text = "\u2022 Confident";
+            con.text = "\u2022 Not self refelctive enough to check their work for accuracy lealding to data collection mistakes"; 
         }
+
         if (userChoice == "Tyrone")
         {
             feedback.text = "Tyrone is enthusiastic and capable of learning what they don't know - and quick! They take on every project thoughtfully throughout the whole summer." + 
                 "Unfortunately, Tyrone doesn't get along well with two other more experienced team members. You are hoping this person will come back for another summer before " + 
                 "they graduate, but are unsure if the team dynamics will work against productivity next time around!";
-            proconSum.text = "Tyrone is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)"; 
+            proconSum.text = "Tyrone is enthusiastic" + "\n" + "confident(but not too much so)" + "\n" + "quick to learn(+)" + "\n" + "does not get along well with the team(-)";
+
+            pro.text = "\u2022 Enthusiastic " + "\n" + "\u2022 Confident (but not too much) \n" + "\u2022 Quick to learn";
+            con.text = "\u2022 Does not get along well with the team"; 
         }
     }
 

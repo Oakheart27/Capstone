@@ -2427,7 +2427,7 @@ GameObject:
   - component: {fileID: 587097701}
   - component: {fileID: 587097700}
   m_Layer: 5
-  m_Name: resultsPanel
+  m_Name: resultsP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2455,7 +2455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.799988, y: -1.9790039}
+  m_AnchoredPosition: {x: -6, y: -2}
   m_SizeDelta: {x: -243.4, y: -209.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587097700
@@ -8352,6 +8352,7 @@ MonoBehaviour:
   jobdescription: {fileID: 181675586}
   jobPanel: {fileID: 51910064}
   scorePanel: {fileID: 24339762}
+  resultsPanel: {fileID: 587097698}
   feedBtn: {fileID: 242214249}
   score2: {fileID: 1860411630}
   gscoreF: {fileID: 1152515660}
@@ -8372,6 +8373,8 @@ MonoBehaviour:
   feedFinal: {fileID: 2119508687}
   proconSum: {fileID: 1628367327}
   proconFinal: {fileID: 1466844505}
+  pro: {fileID: 720964530}
+  con: {fileID: 1670427498}
 --- !u!1 &1941900179
 GameObject:
   m_ObjectHideFlags: 0
