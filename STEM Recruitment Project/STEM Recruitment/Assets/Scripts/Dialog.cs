@@ -35,9 +35,8 @@ public class Dialog : MonoBehaviour
     // Objects in Unity
     public GameObject continueBtn;
     public GameObject choiceBtn;
-    public GameObject p1Btn;
-    public GameObject p2Btn;
-    public GameObject p3Btn;
+    public GameObject p1Btn, p2Btn, p3Btn;
+    public GameObject p1B2, p2B2, p3B2; 
     public GameObject gregsp, lisasp, tyronesp; 
     public GameObject resultsBtn;
     public GameObject p1, p2;
@@ -598,6 +597,15 @@ public class Dialog : MonoBehaviour
             pro.text = "\u2022 Enthusiastic " + "\n" + "\u2022 Confident (but not too much) \n" + "\u2022 Quick to learn";
             con.text = "\u2022 Does not get along well with the team"; 
         }
+
+        p1Btn.SetActive(false);
+        p2Btn.SetActive(false);
+        p3Btn.SetActive(false);
+
+        p1B2.SetActive(true);
+        p2B2.SetActive(true);
+        p3B2.SetActive(true); 
+
     }
 
     public void finalGreg()
