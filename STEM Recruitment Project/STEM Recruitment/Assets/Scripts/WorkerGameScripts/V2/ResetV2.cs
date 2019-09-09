@@ -27,7 +27,7 @@ public class ResetV2 : MonoBehaviour
 
             allWorkers[i - 1] = newWorker;
 
-            Debug.Log("Added " + allWorkers[i - 1].worker.name + " to position " + i);
+           // Debug.Log("Added " + allWorkers[i - 1].worker.name + " to position " + i);
         }
         
     }

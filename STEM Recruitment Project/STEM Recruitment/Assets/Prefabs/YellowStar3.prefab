@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 1241206269957997475}
   - component: {fileID: 6242605957480299803}
   - component: {fileID: 6799830724757719125}
-  - component: {fileID: 179767860559788934}
+  - component: {fileID: 2313271339742676599}
   m_Layer: 0
   m_Name: YellowStar3
   m_TagString: Untagged
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 7742926235630082070}
   m_LocalRotation: {x: -0, y: -0, z: -0.01172545, w: 0.9999313}
   m_LocalPosition: {x: 0, y: 0, z: 99.75}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 5346419956715334561}
   - {fileID: 398160882663909895}
@@ -375,7 +375,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!95 &179767860559788934
+--- !u!95 &2313271339742676599
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

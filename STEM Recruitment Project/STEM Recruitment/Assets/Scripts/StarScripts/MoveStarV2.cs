@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class MoveStarV2 : MonoBehaviour
 {
+    public GameObject rightHand, leftHand;
+    public bool orthographic;
+
     //private GameObject rightHalf, leftHalf;
     private SpriteRenderer rightImage, leftImage;
     private Button button = null;
     private Vector3 originalPos;
     private Animator anim;
-
-    public GameObject rightHand, leftHand;
-    public bool orthographic;
 
     private void Start()
     {
@@ -48,8 +48,6 @@ public class MoveStarV2 : MonoBehaviour
                 // If the user let go over a button, click the button
                 if (button != null)
                 {
-                    this.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, this.transform.position.z);
-
                     StartCoroutine(ClickButton(button));
                 }
 
@@ -135,6 +133,8 @@ public class MoveStarV2 : MonoBehaviour
 
     IEnumerator ClickButton(Button thisButton)
     {
+        this.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, this.transform.position.z);
+
         anim.Play("StarSelect");
 
         yield return new WaitForSeconds(0.70f); // This is how long it takes for the star to shrink

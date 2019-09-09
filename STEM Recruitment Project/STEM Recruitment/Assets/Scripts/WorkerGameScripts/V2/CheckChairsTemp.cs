@@ -9,6 +9,7 @@ public class CheckChairsTemp : MonoBehaviour
     public GameObject[] chairs;
     public GameObject[] allWorkers;
     public Text feedbackText;
+    public GameObject exitButton;
 
     private bool okToCheck = false;
     private bool wrongAnsPresent = false;
@@ -19,6 +20,7 @@ public class CheckChairsTemp : MonoBehaviour
     private void Start()
     {
         workersInChairs = new GameObject[chairs.Length];
+        exitButton.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -33,6 +35,7 @@ public class CheckChairsTemp : MonoBehaviour
         {
             feedbackText.text = "Good job! Everyone here plays an important role to the project.";
             allAreCorrect = false;
+            exitButton.SetActive(true);
         }
         
     }
@@ -41,14 +44,17 @@ public class CheckChairsTemp : MonoBehaviour
     {
         Debug.Log("ResetScreen called");
         
-        for(int i = 0; i < workersInChairs.Length; i++)
+        if(!(workersInChairs.Length == 0))
         {
-            Debug.Log("Resetting " + workersInChairs[i].name);
+            for (int i = 0; i < workersInChairs.Length; i++)
+            {
+                Debug.Log("Resetting " + workersInChairs[i].name);
 
-            GameObject feedbackPic = workersInChairs[i].transform.Find("FeedbackPic").gameObject;
-            
-            feedbackPic.SetActive(false);
-            
+                GameObject feedbackPic = workersInChairs[i].transform.Find("FeedbackPic").gameObject;
+
+                feedbackPic.SetActive(false);
+
+            }
         }
         
     }

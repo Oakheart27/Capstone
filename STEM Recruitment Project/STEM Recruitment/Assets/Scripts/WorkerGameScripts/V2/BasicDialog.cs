@@ -60,6 +60,11 @@ public class BasicDialog : MonoBehaviour
         }
     }
 
+    public void ReceiveDialog(string[] dialog)
+    {
+        sentences = dialog;
+    }
+
     IEnumerator TypeText()
     {
         foreach (char letter in sentences[index].ToCharArray())
@@ -81,4 +86,5 @@ public class BasicDialog : MonoBehaviour
 
         StartCoroutine(TypeText());
     }
+
 }

@@ -303,7 +303,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1756091919}
     m_Modifications:
     - target: {fileID: 7742926235630082070, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -313,17 +313,17 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.45
+      value: -483.23334
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.68
+      value: 148.96
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 99.75
+      value: -22.166668
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -348,7 +348,7 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -368,17 +368,17 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 6242605957480299803, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -390,8 +390,25 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1804835053}
+    - target: {fileID: 2313271339742676599, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 75c3b864f8529c448ab77c5a612a6275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c40d19e53a69704395d5e7abf71ea8b, type: 3}
+--- !u!4 &375449321 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 375449320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &375449322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742926235630082070, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 375449320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &556484946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,6 +1270,7 @@ GameObject:
   - component: {fileID: 1756091915}
   - component: {fileID: 1756091914}
   - component: {fileID: 1756091920}
+  - component: {fileID: 1756091921}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1371,6 +1389,7 @@ RectTransform:
   - {fileID: 848821030}
   - {fileID: 914087124}
   - {fileID: 787812006}
+  - {fileID: 375449321}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1391,6 +1410,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8fa7f4536aa994292c131c6371da1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1756091921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756091913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a4e6a79c6dff64facb4955709b350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 768832165}
+  rightHand: {fileID: 999261834}
+  leftHand: {fileID: 1804835053}
+  star: {fileID: 375449322}
+  otherObjectsNotOnCanvas: []
+  StarOnCanvas: 1
 --- !u!1001 &1804835052
 PrefabInstance:
   m_ObjectHideFlags: 0

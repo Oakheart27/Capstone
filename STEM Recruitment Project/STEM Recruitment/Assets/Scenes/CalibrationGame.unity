@@ -694,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.789841
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -761,6 +761,26 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1168839091}
+    - target: {fileID: 6442833520605457028, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 6.2990713
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442833520605457028, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.1366454
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290326210921186506, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 6.303755
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290326210921186506, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.27744085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c40d19e53a69704395d5e7abf71ea8b, type: 3}
 --- !u!4 &659011912 stripped
@@ -965,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 202, y: -237.99997}
+  m_AnchoredPosition: {x: 330.1, y: -237.99997}
   m_SizeDelta: {x: 165.4, y: 90.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &731674715
@@ -1361,7 +1381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: -238}
+  m_AnchoredPosition: {x: -294.1, y: -238}
   m_SizeDelta: {x: 165.4, y: 90.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106964198

@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class ShowTitleAndDescription : MonoBehaviour
 {
     public Text feedback;
-    public string workerDescription;
-    public string workerFeedback;
     public GameObject feedbackPic;
+    public Text title;
 
+    private string workerDescription;
+    private string workerFeedback;
+   
     private int timesHovered = 0;
-    private Text title;
+   // private Text title;
     private string textToShow;
     private GameObject speechbubble;
     private bool drawLine = false;
@@ -19,7 +21,7 @@ public class ShowTitleAndDescription : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        title = this.GetComponentInChildren<Text>();
+        //title = this.GetComponentInChildren<Text>();
         textToShow = workerDescription;
         feedbackPic.SetActive(false);
         title.enabled = false;
@@ -27,7 +29,14 @@ public class ShowTitleAndDescription : MonoBehaviour
         speechbubble.SetActive(false);
         
     }
-    
+
+    private void Update()
+    {
+        if(title.enabled == false)
+        {
+            timesHovered = 0;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Hand")
@@ -36,8 +45,7 @@ public class ShowTitleAndDescription : MonoBehaviour
             // appears. Title is permanently enabled afterwards.
             if(timesHovered == 0)
             {
-                title.enabled = true;
-                timesHovered++;
+                StartCoroutine(DelayTitle());
             }
 
             // If the title is already enabled, show the worker description.
@@ -54,9 +62,9 @@ public class ShowTitleAndDescription : MonoBehaviour
                 {
                     textToShow = workerDescription;
                 }
-                feedback.text = textToShow;
-                speechbubble.SetActive(true);
-                drawLine = true;
+
+                StartCoroutine(DelayFeedback());
+                
             }
         }
     }
@@ -65,24 +73,32 @@ public class ShowTitleAndDescription : MonoBehaviour
     {
         if(other.gameObject.tag == "Hand")
         {
-        // Worker description disappears when hand leaves worker.
+            StopAllCoroutines();
+            // Worker description disappears when hand leaves worker.
             if (timesHovered == 1)
             {
-                feedback.text = "";
                 speechbubble.SetActive(false);
-                drawLine = false;
-            }
-        }
-    }
-    private void OnDrawGizmos()
-    {
-        if(drawLine)
-        {
-            Gizmos.color = Color.black;
-            Gizmos.DrawLine(speechbubble.transform.position, this.transform.position);
-        }
-    }
 
+                if (feedbackPic.activeSelf)
+                {
+                    if (feedbackPic.GetComponent<SpriteRenderer>().sprite.name == "Wrong")
+                    {
+                        feedback.text = "Oops! Some of your answers were wrong. Press the reset button to try again.";
+
+                    }
+                    else
+                    {
+                        feedback.text = "";
+                    }
+                }
+                else
+                {
+                    feedback.text = "";
+                }
+            }
+
+        }
+    }
     public void ChangeFeedback(bool readyToCheck)
     {
         if(readyToCheck)
@@ -92,6 +108,49 @@ public class ShowTitleAndDescription : MonoBehaviour
         else
         {
             textToShow = workerDescription;
+        }
+    }
+
+    IEnumerator DelayTitle()
+    {
+        yield return new WaitForSeconds(1);
+
+        title.enabled = true;
+
+        timesHovered++;
+    }
+
+    IEnumerator DelayFeedback()
+    {
+        yield return new WaitForSeconds(1);
+        feedback.text = textToShow;
+        speechbubble.SetActive(true);
+    }
+    
+    // Next 4 functions receive values from LoadGameInfo, which reads Project#.txt
+    public void ReceiveTitle(string newTitle)
+    {
+        title.text = newTitle;
+    }
+    public void ReceiveDescription(string newDescript)
+    {
+        workerDescription = newDescript;
+    }
+
+    public void ReceiveFeedback(string newFB)
+    {
+        workerFeedback = newFB;
+    }
+
+    public void ReceiveStatus(bool isCorrect)
+    {
+        if(isCorrect)
+        {
+            feedbackPic.GetComponent<SpriteRenderer>().sprite = Resources.Load("Images/WorkerGameImages/Right", typeof(Sprite)) as Sprite;
+        }
+        else
+        {
+            feedbackPic.GetComponent<SpriteRenderer>().sprite = Resources.Load("Images/WorkerGameImages/Wrong", typeof(Sprite)) as Sprite;
         }
     }
 }

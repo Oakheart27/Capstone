@@ -998,7 +998,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1537340502}
     m_Modifications:
     - target: {fileID: 7742926235630082070, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -1008,17 +1008,17 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.96
+      value: -439.78668
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.87
+      value: 165.80667
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 99.75
+      value: -22.166668
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -1043,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -1063,17 +1063,17 @@ PrefabInstance:
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 13.300001
       objectReference: {fileID: 0}
     - target: {fileID: 6242605957480299803, guid: 8c40d19e53a69704395d5e7abf71ea8b,
         type: 3}
@@ -1087,6 +1087,18 @@ PrefabInstance:
       objectReference: {fileID: 50009438}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c40d19e53a69704395d5e7abf71ea8b, type: 3}
+--- !u!4 &919467611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7742926235630082056, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 919467610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &919467612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742926235630082070, guid: 8c40d19e53a69704395d5e7abf71ea8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 919467610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947048569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1538,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2141,6 +2153,7 @@ GameObject:
   - component: {fileID: 1537340504}
   - component: {fileID: 1537340503}
   - component: {fileID: 1537340505}
+  - component: {fileID: 1537340506}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2226,6 +2239,7 @@ RectTransform:
   - {fileID: 1081108784}
   - {fileID: 1967032489}
   - {fileID: 485561761}
+  - {fileID: 919467611}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2294,6 +2308,24 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &1537340506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537340498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a4e6a79c6dff64facb4955709b350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1238732901}
+  rightHand: {fileID: 1385546629}
+  leftHand: {fileID: 50009438}
+  star: {fileID: 919467612}
+  otherObjectsNotOnCanvas: []
+  StarOnCanvas: 1
 --- !u!1 &1722047080
 GameObject:
   m_ObjectHideFlags: 0
