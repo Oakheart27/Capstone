@@ -1273,8 +1273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.099979, y: -5.7}
-  m_SizeDelta: {x: 1398.5, y: 369.9}
+  m_AnchoredPosition: {x: -28.2, y: -0.55001}
+  m_SizeDelta: {x: 1421.5, y: 359.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181675588
 MonoBehaviour:
@@ -1309,16 +1309,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tWildlife Intern\nData collection on a
-    wide variety of wildlife takes place year round, all\r\nrelated to wildlife ecology,
-    conservation, and research. Activities include setting up and\r\ntaking down small
-    animal traps, radio-tracking wildlife, operating trail cameras, placing\r\nacoustic
-    monitoring equipment, and managing data collected in the field following specific\r\nprotocols.
-    Data collection on a wide variety of wildlife takes place year round, all\r\nrelated
-    to wildlife ecology, conservation, and research. Activities include setting up
-    and\r\ntaking down small animal traps, radio-tracking wildlife, operating trail
-    cameras, placing\r\nacoustic monitoring equipment, and managing data collected
-    in the field following specific\r\nprotocols."
+  m_Text: "Wildlife Intern\r\nData collection on a wide variety of wildlife takes
+    place year round, all related to wildlife ecology, conservation, and research.
+    Activities include setting up and taking down small animal traps, radio-tracking
+    wildlife, operating trail cameras, placing acoustic monitoring equipment, and
+    managing data collected in the field following specific protocols. Data collection
+    on a wide variety of wildlife takes place year round, all related to wildlife
+    ecology, conservation, and research. Activities include setting up and taking
+    down small animal traps, radio-tracking wildlife, operating trail cameras, placing
+    acoustic monitoring equipment, and managing data collected in the field following
+    specific protocols\r."
 --- !u!222 &181675589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2971,7 +2971,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &651334668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3216,7 +3216,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &720964531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7070,7 +7070,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1670427499
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7992,7 +7992,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809631733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dd62923beb0ab9479399e98533335c1, type: 3}
   m_Name: 
@@ -8062,7 +8062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 646, y: -53}
+  m_AnchoredPosition: {x: 751, y: -53}
   m_SizeDelta: {x: 94.3, y: -123.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813678366
@@ -8890,7 +8890,7 @@ MonoBehaviour:
   - 'Describe your level familiarity with any of the following: setting up and taking
     down small animal traps, radio-tracking wildlife, operating trail cameras, placing
     acoustic monitoring equipment, and managing data collected in the field following
-    specific protocols.'
+    specific protocols. Abcdefghijklmnopqr'
   - Choose who you would hire, then click the results button.
   userChoice: 
   gregAns:
@@ -8906,7 +8906,8 @@ MonoBehaviour:
     ended up staying up all night before the due date in order to finish. Although
     we got a good grade, I learned that when it comes to group work - more time is
     needed to coordinate for a good final product than how much time it'd take me
-    to do a project on my own.
+    to do a project on my own. abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.
+    a1234567890
   - Well, I have collected data in some of my lab classes as a part of assignments...
     but I have never done any of the other techniques.
   lisaAns:
@@ -9031,8 +9032,6 @@ MonoBehaviour:
   result: {fileID: 651334667}
   feedback: {fileID: 1865440084}
   feedFinal: {fileID: 2119508687}
-  proconSum: {fileID: 1628367327}
-  proconFinal: {fileID: 1466844505}
   pro: {fileID: 720964530}
   con: {fileID: 1670427498}
 --- !u!1 &1883269819 stripped
