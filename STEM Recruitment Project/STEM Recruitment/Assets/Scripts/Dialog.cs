@@ -420,6 +420,7 @@ public class Dialog : MonoBehaviour
     // determines what happens when the mouse moves over characters
     public void gregOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         gregR.enabled = true; //enables text response to answer
         gregsp.SetActive(true); // shows speech bubble image
         Debug.Log(anscount);
@@ -430,6 +431,7 @@ public class Dialog : MonoBehaviour
 
     public void lisaOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         lisaR.enabled = true;
         lisasp.SetActive(true);
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
@@ -438,6 +440,7 @@ public class Dialog : MonoBehaviour
 
     public void tyroneOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         tyroneR.enabled = true;
         tyronesp.SetActive(true);
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
@@ -446,6 +449,7 @@ public class Dialog : MonoBehaviour
 
     public void gsOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         jresp.SetActive(true); // shows critisim speech bubble
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
         jtext.GetComponent<Text>().text = gfeed[cClick]; // displays jude repsonse text
@@ -454,6 +458,7 @@ public class Dialog : MonoBehaviour
 
     public void lsOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         jresp.SetActive(true); // shows critisim speech bubble
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
         jtext.GetComponent<Text>().text = lfeed[cClick]; // displays jude repsonse text
@@ -461,6 +466,7 @@ public class Dialog : MonoBehaviour
 
     public void tsOver()
     {
+        System.Threading.Thread.Sleep(1000); // delays display of text 
         jresp.SetActive(true); // shows critisim speech bubble
         if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
         jtext.GetComponent<Text>().text = tfeed[cClick]; // displays jude repsonse text
