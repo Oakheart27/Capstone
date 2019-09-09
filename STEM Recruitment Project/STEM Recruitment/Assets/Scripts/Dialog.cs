@@ -222,6 +222,13 @@ public class Dialog : MonoBehaviour
         tscored.SetActive(false); */
     }
 
+    public void disappper()
+    {
+        gscored.SetActive(false);
+        lscored.SetActive(false);
+        tscored.SetActive(false);
+    }
+
     /*
     public void finalCount(Button btn)
     {
@@ -420,7 +427,8 @@ public class Dialog : MonoBehaviour
     // determines what happens when the mouse moves over characters
     public void gregOver()
     {
-        System.Threading.Thread.Sleep(1000); // delays display of text 
+        System.Threading.Thread.Sleep(1500); // delays display of text 
+        //System.Threading.Thread.Sleep(1000); // delays display of text 
         gregR.enabled = true; //enables text response to answer
         gregsp.SetActive(true); // shows speech bubble image
         Debug.Log(anscount);
@@ -431,6 +439,7 @@ public class Dialog : MonoBehaviour
 
     public void lisaOver()
     {
+
         System.Threading.Thread.Sleep(1000); // delays display of text 
         lisaR.enabled = true;
         lisasp.SetActive(true);
