@@ -28,7 +28,6 @@ public class readScript : MonoBehaviour
     while (!inp_stm.EndOfStream)
     {
         string inp_ln = inp_stm.ReadLine();
-        // Do Something with the input. 
     }
 
     inp_stm.Close();

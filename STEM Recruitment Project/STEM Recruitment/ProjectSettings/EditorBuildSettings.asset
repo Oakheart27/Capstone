@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WorkerGameV2.unity
     guid: ae3cbc1ce8cd68a47a3b577051455208
+  - enabled: 1
+    path: Assets/Scenes/SplashScreens/interviewQuestions.unity
+    guid: e965429202cbd1146939fb684b62b22d
   m_configObjects: {}

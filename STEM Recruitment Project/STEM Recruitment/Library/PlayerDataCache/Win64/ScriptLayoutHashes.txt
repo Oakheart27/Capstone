@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/Work/Repository3/Capstone/Standalone Project/STEM Recruitment.exe
+C:/Users/Gwen M/Documents/GitHub/CapstoneBuilds/STEM Recruitment.exe
 SceneListBegin?
 Assets/Scenes/SplashScreens/SplashTutorial.unity
 Assets/Scenes/CalibrationGame.unity
@@ -13,11 +13,12 @@ Assets/Scenes/Settings.unity
 Assets/Scenes/k5.unity
 Assets/Scenes/5_6.unity
 Assets/Scenes/CC.unity
-Assets/Scenes/SplashScreens/interviewSplash.unity
+Assets/Scenes/SplashScreens/interviewJob.unity
 Assets/Scenes/mcq.unity
 Assets/Scenes/SplashScreens/MathGameTutorial.unity
 Assets/Scenes/MathGame.unity
 Assets/Scenes/WorkerGameV2.unity
+Assets/Scenes/SplashScreens/interviewQuestions.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 6952f41b6d0bbc969d7c8ed5ff40e337 Assembly-CSharp.dll:.copyDialog
@@ -47,7 +48,6 @@ c23e3a3e221d5d321e3e309ad3959511 Assembly-CSharp.dll:.SensorPointReplacer
 1b5cf9928ba69d015b46e4a7dc67076b Assembly-CSharp.dll:.ClickByHovering
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.TMP_PhoneNumberValidator
 cd12fd43c7443dcec8812264ec0ca8f7 Assembly-CSharp.dll:.PointerPassing
-1ff0aa4132395bd3b4de18e8f1174426 Assembly-CSharp.dll:.interviewSplash
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -292,6 +292,7 @@ fe2d355deb0ca31d59a0a7cf4d141fc3 Assembly-CSharp.dll:TMPro.Examples.Benchmark04
 998ca758b5e6cd33222eb14c140693f4 Assembly-CSharp.dll:.HandTrackerVisualization
 093f7063beedf65227b9a24d60c251d5 Assembly-CSharp.dll:.WorkerLeftChair
 62a6e127e7b6e8aeef26cb0da3d919f1 Assembly-CSharp.dll:.MathGameTutorial
+059f5323707a12caabfb020a7eee11c3 Assembly-CSharp.dll:.readScript
 7932ceb95ed3f24bcad30f092ff0c540 Assembly-CSharp.dll:.MatchingGameDB
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
 8fb7422014b84a0a44f81ab4b76c0a2c Assembly-CSharp.dll:.MoveWithHands
@@ -339,4 +340,4 @@ fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.GameProgress
 1e6fc008d4d0361539bb8f5518b7099c Assembly-CSharp.dll:.RGBCalibrationVisualizer
 70dbd0b7a41739fe419a16854c5ed7a6 Assembly-CSharp.dll:.panelChange
 eaac10e5307947527438a3b83605c81d Assembly-CSharp.dll:.CameraRotation
-c83f69af66c283c726c4a6274d57f80b Assembly-CSharp.dll:.Dialog
+cddcabd14b373ff40d923926f336ae12 Assembly-CSharp.dll:.Dialog
