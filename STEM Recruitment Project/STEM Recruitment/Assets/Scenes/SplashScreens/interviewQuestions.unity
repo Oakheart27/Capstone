@@ -366,9 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b7eae166bfe6842a8a0667aa542e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jobdes: {fileID: 0}
-  questions: {fileID: 537476741}
-  newScene: mcq
 --- !u!1 &537476739
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,8 +400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.012474, y: 37.7}
-  m_SizeDelta: {x: 928, y: 434}
+  m_AnchoredPosition: {x: 9.6, y: 84.3}
+  m_SizeDelta: {x: 1213.7, y: 527.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537476741
 MonoBehaviour:
