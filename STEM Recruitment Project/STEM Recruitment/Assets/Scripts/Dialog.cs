@@ -45,6 +45,7 @@ public class Dialog : MonoBehaviour
     public GameObject score2, gscoreF, lscoreF, tscoreF;
     public GameObject gscored, lscored, tscored;  // minijuge scores
     public GameObject jresp, jtext;
+    public GameObject quitBtn; 
     
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies
@@ -138,6 +139,7 @@ public class Dialog : MonoBehaviour
             p2Btn.SetActive(false);
             p3Btn.SetActive(false);
 
+            quitBtn.SetActive(true); 
             p1B2.SetActive(true);
             p2B2.SetActive(true);
             p3B2.SetActive(true);
@@ -220,6 +222,8 @@ public class Dialog : MonoBehaviour
         gscored.SetActive(false);
         lscored.SetActive(false);
         tscored.SetActive(false); */
+
+        quitBtn.SetActive(false); 
     }
 
     public void disappper()
