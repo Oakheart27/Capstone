@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 931
-  m_MinSize: {x: 681, y: 474}
+  m_MinSize: {x: 683, y: 474}
   m_MaxSize: {x: 14002, y: 14024}
   vertical: 0
-  controlID: 4439
+  controlID: 8956
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,10 +126,10 @@ MonoBehaviour:
     y: 0
     width: 1518
     height: 931
-  m_MinSize: {x: 404, y: 474}
+  m_MinSize: {x: 406, y: 474}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 4440
+  controlID: 8957
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,10 +151,10 @@ MonoBehaviour:
     y: 0
     width: 1518
     height: 563
-  m_MinSize: {x: 404, y: 224}
-  m_MaxSize: {x: 8004, y: 4024}
+  m_MinSize: {x: 406, y: 224}
+  m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 4441
+  controlID: 8958
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,10 +209,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 66}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d4fbffff3c1a0000741a0000061b0000401b0000
+      m_ExpandedIDs: 0ac8ffff14c9ffff24c9ffff32ccffffd6ceffff3ecffffff0cfffff0ed0ffff50d1ffffacd1ffff64d2ffff04d5ffff66d5ffff7ad5ffff8ad5ffff98d5ffff6cd6ffff8cd6ffff36d8ffffeedbffff20ddffffcedeffffd4fbffffe018000094190000da1900000a1a0000421a0000a61a0000f61a00000e1b0000804d0000a04d00002e5200008e5200007c5300001a54000042550000c6550000565800007e580000f8580000265900004659000074590000c25b00006a620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -296,9 +296,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.24708317, y: 0.037802406, z: 0}
+    m_Target: {x: 469.02658, y: 245.2315, z: 0}
     speed: 2
-    m_Value: {x: -0.24708317, y: 0.037802406, z: 0}
+    m_Value: {x: 469.02658, y: 245.2315, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -330,9 +330,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: -1}
   m_Size:
-    m_Target: 6.2945504
+    m_Target: 729.22614
     speed: 2
-    m_Value: 6.2945504
+    m_Value: 729.22614
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -389,8 +389,8 @@ MonoBehaviour:
     y: 563
     width: 1518
     height: 368
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 274}
+  m_MaxSize: {x: 10002, y: 10024}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -435,20 +435,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Images
+    - Assets/Scenes/SplashScreens
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Images
+  - Assets/Scenes/SplashScreens
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Gwen M\Documents\GitHub\Capstone\STEM Recruitment Project\STEM
     Recruitment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 405}
-    m_SelectedIDs: ac130000
-    m_LastClickedID: 5036
+    scrollPos: {x: 0, y: 485}
+    m_SelectedIDs: 0e120000
+    m_LastClickedID: 4622
     m_ExpandedIDs: 000000009a0b0000a00b0000b60b0000ec0c0000b40d0000c00e00003a1000003e11000042110000aa1100009a1200006e130000ac130000da130000e2130000fe13000020160000d2160000ea16000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -502,9 +502,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 76620000
+    m_LastClickedInstanceID: 25206
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300003c29000068390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

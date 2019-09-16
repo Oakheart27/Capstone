@@ -156,11 +156,11 @@
      <Compile Include="Assets\Scripts\Module.cs" />
      <Compile Include="Assets\Scripts\MoveHandsWithSkeleton.cs" />
      <Compile Include="Assets\Scripts\panelChange.cs" />
+     <Compile Include="Assets\Scripts\readScript.cs" />
      <Compile Include="Assets\Scripts\Registration.cs" />
      <Compile Include="Assets\Scripts\Reset.cs" />
      <Compile Include="Assets\Scripts\SensitivitySettings.cs" />
      <Compile Include="Assets\Scripts\Settings.cs" />
-     <Compile Include="Assets\Scripts\SplashScreenScripts\interviewSplash.cs" />
      <Compile Include="Assets\Scripts\SplashScreenScripts\MathGameTutorial.cs" />
      <Compile Include="Assets\Scripts\SplashScreenScripts\SplashScene.cs" />
      <Compile Include="Assets\Scripts\SplashScreenScripts\SplashTutorialScene.cs" />

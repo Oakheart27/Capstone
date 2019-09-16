@@ -501,8 +501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 80, y: 154}
-  m_SizeDelta: {x: -331.65, y: -521.6}
+  m_AnchoredPosition: {x: 89.20001, y: 92.29999}
+  m_SizeDelta: {x: -313.2, y: -398.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51910066
 MonoBehaviour:
@@ -1116,8 +1116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.2, y: -0.55001}
-  m_SizeDelta: {x: 1421.5, y: 359.6}
+  m_AnchoredPosition: {x: 5.625, y: 27.1}
+  m_SizeDelta: {x: 1253.6, y: 414.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181675588
 MonoBehaviour:
@@ -2129,7 +2129,7 @@ GameObject:
   - component: {fileID: 466758772}
   m_Layer: 5
   m_Name: person 3
-  m_TagString: Button
+  m_TagString: p3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,7 +2152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 615, y: -30}
+  m_AnchoredPosition: {x: 612, y: -15}
   m_SizeDelta: {x: 334.1, y: 324.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466758769
@@ -2267,8 +2267,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 190, y: 230, z: 1}
+  m_Center: {x: 0, y: 30, z: 0}
 --- !u!1001 &467374279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2393,7 +2393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 59.013, y: -2}
+  m_AnchoredPosition: {x: 59, y: -2}
   m_SizeDelta: {x: -373.63, y: -209.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587097700
@@ -2449,11 +2449,11 @@ GameObject:
   - component: {fileID: 598869742}
   m_Layer: 5
   m_Name: gScore
-  m_TagString: Button
+  m_TagString: j1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &598869738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2471,7 +2471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -737, y: 0}
+  m_AnchoredPosition: {x: -663, y: -7}
   m_SizeDelta: {x: 215.6, y: 224.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598869739
@@ -2586,7 +2586,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 150, y: 224, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &651334665
 GameObject:
@@ -3197,7 +3197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1014856881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3215,7 +3215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 417, y: 7}
+  m_AnchoredPosition: {x: 395, y: 7}
   m_SizeDelta: {x: 215.6, y: 224.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014856882
@@ -3314,7 +3314,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 150, y: 224, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1014856886
 Rigidbody:
@@ -3710,7 +3710,7 @@ GameObject:
   - component: {fileID: 1113149061}
   m_Layer: 5
   m_Name: person 1
-  m_TagString: Button
+  m_TagString: p1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3733,7 +3733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -64.999985}
+  m_AnchoredPosition: {x: -411, y: -61}
   m_SizeDelta: {x: 348.7, y: 389.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113149057
@@ -3860,8 +3860,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 200, y: 240, z: 1}
+  m_Center: {x: 0, y: 75, z: 0}
 --- !u!1 &1146253340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5383,7 @@ GameObject:
   - component: {fileID: 1461804145}
   m_Layer: 5
   m_Name: person 2
-  m_TagString: Untagged
+  m_TagString: p2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5406,7 +5406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: -37}
+  m_AnchoredPosition: {x: 144, y: -25}
   m_SizeDelta: {x: 318.4, y: 329.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461804142
@@ -5505,8 +5505,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 150, y: 215, z: 1}
+  m_Center: {x: 0, y: 38, z: 0}
 --- !u!54 &1461804146
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6595,11 +6595,11 @@ GameObject:
   - component: {fileID: 1677071013}
   m_Layer: 5
   m_Name: lScore
-  m_TagString: Button
+  m_TagString: j2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1677071009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6617,7 +6617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153, y: 5}
+  m_AnchoredPosition: {x: -103, y: 7}
   m_SizeDelta: {x: 215.6, y: 224.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677071010
@@ -6716,7 +6716,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 145, y: 224, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1677071014
 Rigidbody:
@@ -7430,8 +7430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 751, y: -53}
-  m_SizeDelta: {x: 94.3, y: -123.7}
+  m_AnchoredPosition: {x: 589, y: -87}
+  m_SizeDelta: {x: 86.9, y: -185.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813678366
 MonoBehaviour:

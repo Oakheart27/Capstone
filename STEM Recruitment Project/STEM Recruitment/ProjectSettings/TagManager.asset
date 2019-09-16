@@ -12,6 +12,12 @@ TagManager:
   - Floor
   - Table
   - Button
+  - j1
+  - j2
+  - j3
+  - p1
+  - p2
+  - p3
   layers:
   - Default
   - TransparentFX
