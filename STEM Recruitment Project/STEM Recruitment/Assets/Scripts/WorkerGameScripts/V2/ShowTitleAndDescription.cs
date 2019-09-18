@@ -16,8 +16,12 @@ public class ShowTitleAndDescription : MonoBehaviour
    // private Text title;
     private string textToShow;
     private GameObject speechbubble;
-    private bool drawLine = false;
-
+    //private bool drawLine = false;
+    private bool oneIsWrong = false;
+    private bool setTextOnce = false;
+    private bool descriptionIsShowing = false;
+    private bool workersWereChecked = false;
+   // private bool resetPressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,31 @@ public class ShowTitleAndDescription : MonoBehaviour
         {
             timesHovered = 0;
         }
+        
+        if(setTextOnce)
+        {
+            if (oneIsWrong)
+            {
+                feedback.text = "Oops! Looks like at least one worker here doesn't belong. Hover over" +
+                    " each worker to see why, and press the reset button when you're ready to try again.";
+            }
+
+            else
+            {
+                feedback.text = "Yay! Everyone here plays an important role in this project. Click the X to " +
+                    "close out of the game.";
+            }
+
+            setTextOnce = false;
+        }
+
+        if(descriptionIsShowing)
+        {
+            feedback.text = "";
+            
+        }
+        
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -64,7 +93,6 @@ public class ShowTitleAndDescription : MonoBehaviour
                 }
 
                 StartCoroutine(DelayFeedback());
-                
             }
         }
     }
@@ -78,23 +106,26 @@ public class ShowTitleAndDescription : MonoBehaviour
             if (timesHovered == 1)
             {
                 speechbubble.SetActive(false);
-
-                if (feedbackPic.activeSelf)
+                
+                if(workersWereChecked)
                 {
-                    if (feedbackPic.GetComponent<SpriteRenderer>().sprite.name == "Wrong")
+                    if(oneIsWrong)
                     {
-                        feedback.text = "Oops! Some of your answers were wrong. Press the reset button to try again.";
-
+                        feedback.text = "Oops! Looks like at least one worker here doesn't belong. Hover over" +
+                            " each worker to see why, and press the reset button when you're ready to try again.";
                     }
+
                     else
                     {
-                        feedback.text = "";
+                        feedback.text = "Yay! Everyone here plays an important role in this project. Click the X to " +
+                    "close out of the game.";
                     }
                 }
                 else
                 {
                     feedback.text = "";
                 }
+
             }
 
         }
@@ -113,7 +144,7 @@ public class ShowTitleAndDescription : MonoBehaviour
 
     IEnumerator DelayTitle()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         title.enabled = true;
 
@@ -122,8 +153,10 @@ public class ShowTitleAndDescription : MonoBehaviour
 
     IEnumerator DelayFeedback()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+
         feedback.text = textToShow;
+
         speechbubble.SetActive(true);
     }
     
@@ -153,4 +186,28 @@ public class ShowTitleAndDescription : MonoBehaviour
             feedbackPic.GetComponent<SpriteRenderer>().sprite = Resources.Load("Images/WorkerGameImages/Wrong", typeof(Sprite)) as Sprite;
         }
     }
+
+    // Functions gets called from CheckWorkersV2
+    public void ReceiveCorrectness(bool status)
+    {
+        oneIsWrong = !status;
+    }
+    public void ShowOverallFeedback(bool status)
+    {
+        if(feedbackPic.activeSelf)
+        {
+            setTextOnce = status;
+        }
+    }
+    public void SetWorkersAreChecked(bool status)
+    {
+        workersWereChecked = status;
+    }
+
+    // Function gets called from ShowJobDescription
+    public void ReceiveDescriptBubbleStatus(bool status)
+    {
+        descriptionIsShowing = status;
+    }
+    
 }

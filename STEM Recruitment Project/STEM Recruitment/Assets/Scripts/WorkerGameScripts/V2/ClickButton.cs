@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ClickButton : MonoBehaviour
 {
     public int timeToClick = 3;
+    public bool hoverToClick = false;
     private bool okToClick = true;
     private string originalText;
 
@@ -14,7 +15,7 @@ public class ClickButton : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Button")
+        if(other.gameObject.tag == "Button" && hoverToClick)
         {
             Button button = other.GetComponent<Button>();
             Text buttonText = button.GetComponentInChildren<Text>();
@@ -28,7 +29,7 @@ public class ClickButton : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Button")
+        if(other.gameObject.tag == "Button" && hoverToClick)
         {
             StopAllCoroutines();
             

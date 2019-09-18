@@ -1,10 +1,9 @@
-JOB_INFO;
-Smartphone Development;
-I'm trying to create a new smartphone and I want to sell it in 12 months. Creating and selling smartphones require a lot of different workers with different skills. Some of the tasks that is required in this project is
-- hardware development
+﻿JOB_INFO;
+Project Headquarters - Today Recruiting for…Smartphone Development;
+I'm trying to create a new smartphone and I want to sell it in 12 months. Creating and selling smartphones require a lot of different workers with different skills. Some of the tasks that are required in this project are
+- hardware development and testing
 - software development
-- advertising
-- etc..;
+- advertising;
 I'm building a smartphone and I need your help!:This project will include designing and building the device, creating software for it...:and getting it on the market in 12 months.;
 JOB_END;
 WORKER_INFO;
@@ -17,7 +16,7 @@ Worker2;
 Elementary School Teacher;
 Elementary school teachers provide foundational skills to children from ages five through eleven. They teach academic, social, and life lessons to help students.;
 NO;
-Although all of the required workers probably had an elementary school teacher help them at some point, this particuar project does not need one.;
+Although all of the required workers probably had an elementary school teacher help them at some point, this particular project does not need one.;
 Worker3;
 Project Manager;
 Project managers (PMs) oversee the planning and execution of given project for a company or client by managing a team of workers, scheduling deadlines, and acting as the point of contact for any outsourced resources.;

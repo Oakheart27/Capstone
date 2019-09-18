@@ -12,6 +12,7 @@ public class ScaleScene : MonoBehaviour
     public GameObject[] otherObjectsNotOnCanvas;
     //public GameObject starAnchor = null;
     public bool StarOnCanvas = true;
+    public bool alreadyScaled = false;
 
     private float[] allOtherSizes;
     private float originalHandSize, originalStarSize, originalCamSize;
@@ -45,9 +46,12 @@ public class ScaleScene : MonoBehaviour
 
             cam.orthographicSize = floatList[0];
             
-            rightHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
+            if(!alreadyScaled)
+            {
+                rightHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
 
-            leftHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
+                leftHand.transform.localScale = new Vector3(newHandSize, newHandSize, newHandSize);
+            }
 
             // If the star is on the canvas, it will automatically resize stay in place.
             if(!StarOnCanvas)

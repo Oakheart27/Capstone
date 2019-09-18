@@ -8,26 +8,25 @@ public class LiftWorkerAndDrag : MonoBehaviour
     public int totalNumOfWorkers = 6;
 
     private GameObject workerRightArm, workerLeftArm;
-    private bool isFalling, touchedTable, sendWorkerBack;
+    private bool isFalling, touchedChair, sendWorkerBack;
     private Vector3 originalPos;
     private float t = 0.0f;
     private float minX, maxX, minY, maxY;
-    private GameObject tableTop;
-    private bool otherWorkerIsGrabbed = false;
-
+    //private GameObject tableTop;
+    // private bool otherWorkerIsGrabbed = false;
     // Start is called before the first frame update
     void Start()
     {
         workerRightArm = this.transform.Find("RightArm").gameObject;
         workerLeftArm = this.transform.Find("LeftArm").gameObject;
         isFalling = false;
-        touchedTable = false;
+        touchedChair = false;
         sendWorkerBack = false;
 
         this.transform.Find("FeedbackPic").gameObject.SetActive(false);
         originalPos = this.transform.position;
 
-        tableTop = GameObject.Find("/WholeGame/WorkerScreen/Table/Top");
+        //tableTop = GameObject.Find("/WholeGame/WorkerScreen/Table/Top");
     }
 
     // Update is called once per frame
@@ -52,10 +51,10 @@ public class LiftWorkerAndDrag : MonoBehaviour
             AllWorkersCanMove(false);
 
             // Let the star selection know that a worker is grabbed so it doesn't undo the block
-            GameObject star = GameObject.Find("/WholeGame/WorkerScreen/YellowStar3");
+            GameObject star = GameObject.Find("/WholeGame/WorkerScreen/Canvas/YellowStar3");
 
-            star.SendMessage("WorkerIsGrabbed", true);
-
+            star.SendMessage("WorkerIsGrabbed", true); // block all other workers
+            star.SendMessage("BlockStar", true); // block star
             if (UserLetGo())
             {
                 LetArmGo(workerRightArm);
@@ -65,10 +64,12 @@ public class LiftWorkerAndDrag : MonoBehaviour
 
                 // Let star know that a worker was let go
                 star.SendMessage("WorkerIsGrabbed", false);
-                
+
+                // Unblock star
+                star.SendMessage("BlockStar", false);
                 // If the user hasn't touched the table, send user back using Mathf.Lerp. 
                 // Here I'm getting all the needed variables for lerp.
-                if (!touchedTable)
+                if (!touchedChair)
                 {
                     minX = this.transform.position.x;
                     minY = this.transform.position.y;
@@ -78,13 +79,13 @@ public class LiftWorkerAndDrag : MonoBehaviour
 
                     sendWorkerBack = true;
 
-                    tableTop.SendMessage("RemoveWorkerFromChair", this.gameObject);
+                    //tableTop.SendMessage("RemoveWorkerFromChair", this.gameObject);
                 }
 
                 // If the user did touch the table, send worker over to FillChairsV2
                 else
                 {
-                    tableTop.SendMessage("AssignWorkerToChair", this.gameObject);
+                   // tableTop.SendMessage("AssignWorkerToChair", this.gameObject);
 
                     sendWorkerBack = false; // making sure worker won't go back to original position.
                 }
@@ -101,7 +102,9 @@ public class LiftWorkerAndDrag : MonoBehaviour
             {
                 t = 0.0f;
 
-                sendWorkerBack = false; 
+                sendWorkerBack = false;
+
+                BlockAllOtherChairs(false);
             }
         }
 
@@ -119,19 +122,19 @@ public class LiftWorkerAndDrag : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Table")
+        if (other.gameObject.tag == "Chair")
         {
            // Debug.Log("Touched table!!");
-            touchedTable = true;
+            touchedChair = true;
         }
         
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Table")
+        if(other.gameObject.tag == "Chair")
         {
-            touchedTable = false;
+            touchedChair = false;
         }
     }
     
@@ -210,57 +213,18 @@ public class LiftWorkerAndDrag : MonoBehaviour
         }
     }
 
-    /*
-    void BlockAllWorkers()
+    public void SendBack(bool status)
     {
-        string thisName = this.name;
+        minX = this.transform.position.x;
+        minY = this.transform.position.y;
 
-        for(int i = 1; i <= totalNumOfWorkers; i++)
-        {
-            string workerName = "Worker" + i.ToString();
+        maxX = originalPos.x;
+        maxY = originalPos.y;
 
-            if(workerName != thisName)
-            {
-                string fullPath = "/WholeGame/WorkerScreen" + workerName;
-
-                GameObject worker = GameObject.Find(fullPath);
-
-                GameObject rightArm = worker.transform.Find("RightArm").gameObject;
-
-                GameObject leftArm = worker.transform.Find("LeftArm").gameObject;
-
-                rightArm.GetComponent<BoxCollider>().enabled = false;
-
-                leftArm.GetComponent<BoxCollider>().enabled = false;
-
-            }
-        }
+        sendWorkerBack = status;
     }
-    void UnblockAllWorkers()
-    {
-        string thisName = this.name;
-
-        for (int i = 1; i <= totalNumOfWorkers; i++)
-        {
-            string workerName = "Worker" + i.ToString();
-
-            if (workerName != thisName)
-            {
-                string fullPath = "/WholeGame/WorkerScreen" + workerName;
-
-                GameObject worker = GameObject.Find(fullPath);
-
-                GameObject rightArm = worker.transform.Find("RightArm").gameObject;
-
-                GameObject leftArm = worker.transform.Find("LeftArm").gameObject;
-
-                rightArm.GetComponent<BoxCollider>().enabled = false;
-
-                leftArm.GetComponent<BoxCollider>().enabled = false;
-
-            }
-        }
-    }*/
+    
+    
     bool UserLetGo()
     {
         if (rightHand.transform.position.x - leftHand.transform.position.x > 350)
@@ -275,5 +239,20 @@ public class LiftWorkerAndDrag : MonoBehaviour
         }
 
         return false;
+    }
+
+    void BlockAllOtherChairs(bool status)
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            string otherChairStr = "Chair" + i.ToString();
+
+            GameObject otherChair = GameObject.Find("/WholeGame/WorkerScreen/" + otherChairStr);
+
+            if (otherChair != this.gameObject)
+            {
+                otherChair.SendMessage("BlockThisChair", status);
+            }
+        }
     }
 }

@@ -16,19 +16,17 @@ public class BasicDialog : MonoBehaviour
     
     void Start()
     {
-        dialogBox.text = "";
-        sentenceDone = false;
-        allSentences = sentences.Length;
-
-        StartCoroutine(TypeText());
-
-        nextButton.gameObject.SetActive(false);
-        nextButton.enabled = false;
-
-        nextScreenButton.gameObject.SetActive(false);
-        nextScreenButton.enabled = false;
+     //   StartDialog();  
     }
-    
+
+    // Receives messages from LoadGameInfo
+    public void ReceiveDialog(string[] dialog)
+    {
+        sentences = dialog;
+
+        StartDialog();
+    }
+
     void Update()
     {
         if (sentenceDone)
@@ -60,10 +58,6 @@ public class BasicDialog : MonoBehaviour
         }
     }
 
-    public void ReceiveDialog(string[] dialog)
-    {
-        sentences = dialog;
-    }
 
     IEnumerator TypeText()
     {
@@ -86,5 +80,22 @@ public class BasicDialog : MonoBehaviour
 
         StartCoroutine(TypeText());
     }
+    // Can be called elsewhere
+    public void StartDialog()
+    {
+        index = 0;
+        StopAllCoroutines();
+        
+        dialogBox.text = "";
+        sentenceDone = false;
+        allSentences = sentences.Length;
 
+        StartCoroutine(TypeText());
+
+        nextButton.gameObject.SetActive(false);
+        nextButton.enabled = false;
+
+        nextScreenButton.gameObject.SetActive(false);
+        nextScreenButton.enabled = false;
+    }
 }

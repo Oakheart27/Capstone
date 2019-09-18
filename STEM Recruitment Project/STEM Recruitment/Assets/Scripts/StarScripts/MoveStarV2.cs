@@ -13,6 +13,7 @@ public class MoveStarV2 : MonoBehaviour
     private Button button = null;
     private Vector3 originalPos;
     private Animator anim;
+    private bool starBlocked = false;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class MoveStarV2 : MonoBehaviour
         rightImage = rightHalf.GetComponent<SpriteRenderer>();
         leftImage = leftHalf.GetComponent<SpriteRenderer>();
 
-        originalPos = this.transform.position;
+        originalPos = this.transform.localPosition;
 
         anim = this.GetComponent<Animator>();
     }
@@ -33,7 +34,7 @@ public class MoveStarV2 : MonoBehaviour
     void Update()
     {
 
-        if (IsGrabbed(rightImage) && IsGrabbed(leftImage))
+        if ((IsGrabbed(rightImage) && IsGrabbed(leftImage)) && !starBlocked)
         {
             //using the position of the right and left hands to move the whole object
             Vector3 pos1 = leftHand.transform.position;
@@ -42,7 +43,7 @@ public class MoveStarV2 : MonoBehaviour
             Vector3 midPoint = (pos2 - pos1) / 2;
 
             this.transform.position = midPoint + pos1;
-
+            
             if (UserLetGo())
             {
                 // If the user let go over a button, click the button
@@ -55,6 +56,11 @@ public class MoveStarV2 : MonoBehaviour
                 DisableImage(leftImage);
 
             }
+        }
+        if(starBlocked)
+        {
+            DisableImage(rightImage);
+            DisableImage(leftImage);
         }
 
         if (IsGrabbed(rightImage) && !IsGrabbed(leftImage) && UserLetGo())
@@ -141,10 +147,15 @@ public class MoveStarV2 : MonoBehaviour
 
         thisButton.onClick.Invoke(); // Click button
 
-        this.transform.position = originalPos;
+        this.transform.localPosition = originalPos;
 
         button = null;
 
+    }
+
+    public void BlockStar(bool status)
+    {
+        starBlocked = status;
     }
 
 }

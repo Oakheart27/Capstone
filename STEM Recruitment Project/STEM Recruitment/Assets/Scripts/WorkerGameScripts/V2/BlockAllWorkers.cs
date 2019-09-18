@@ -55,7 +55,7 @@ public class BlockAllWorkers : MonoBehaviour
             {
                 string workerName = "Worker" + i.ToString();
 
-                string fullPath = "/WholeGame/WorkerScreen/" + workerName;
+                string fullPath = "/WorkerCanvas/WorkerScreen/" + workerName;
 
                 GameObject worker = GameObject.Find(fullPath);
 
@@ -76,7 +76,7 @@ public class BlockAllWorkers : MonoBehaviour
             {
                 string workerName = "Worker" + i.ToString();
 
-                string fullPath = "/WholeGame/WorkerScreen/" + workerName;
+                string fullPath = "/WorkerCanvas/WorkerScreen/" + workerName;
 
                 GameObject worker = GameObject.Find(fullPath);
 

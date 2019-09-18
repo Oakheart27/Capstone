@@ -21,7 +21,7 @@ public class ShowJobDescription : MonoBehaviour
     {
         if(other.gameObject.tag == "Hand")
         {
-            Debug.Log("Hand collided with tab, calling DelayBubble()");
+           // Debug.Log("Hand collided with tab, calling DelayBubble()");
             StartCoroutine(DelayBubble());
         }
     }
@@ -32,29 +32,70 @@ public class ShowJobDescription : MonoBehaviour
         {
             StopAllCoroutines();
 
-            Debug.Log("DelayBubble stopped");
+           // Debug.Log("DelayBubble stopped");
 
             bubble.SetActive(false);
 
             jobDescription.text = "";
+
+            SendDescriptionStatus(false);
+
+            ShowFeedback(true);
         }
     }
 
     IEnumerator DelayBubble()
     {
-        Debug.Log("DelayBubble called");
+        //Debug.Log("DelayBubble called");
 
-        yield return new WaitForSeconds(1);
-        
+        yield return new WaitForSeconds(0.5f);
+
+        SendDescriptionStatus(true);
+
         bubble.SetActive(true);
 
         jobDescription.enabled = true;
 
         jobDescription.text = textToShow;
+        
+    }
+
+    private void SendDescriptionStatus(bool status)
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            string workerName = "Worker" + i.ToString();
+
+            string fullPath = "/WholeGame/WorkerScreen/" + workerName;
+
+            GameObject worker = GameObject.Find(fullPath);
+
+            GameObject canvas = worker.transform.Find("Canvas").gameObject;
+
+            canvas.SendMessage("ReceiveDescriptBubbleStatus", status);
+        }
+    }
+
+    private void ShowFeedback(bool status)
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            string workerName = "Worker" + i.ToString();
+
+            string fullPath = "/WholeGame/WorkerScreen/" + workerName;
+
+            GameObject worker = GameObject.Find(fullPath);
+
+            GameObject canvas = worker.transform.Find("Canvas").gameObject;
+
+            canvas.SendMessage("ShowOverallFeedback", status);
+        }
     }
 
     public void ReceiveDescript(string newDescript)
     {
         textToShow = newDescript;
     }
+    
+    
 }

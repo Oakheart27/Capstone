@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // MUST BE PLACED ON WHOLE GAME PARENT OBJECT
 public class LoadGameInfo : MonoBehaviour
@@ -10,6 +11,9 @@ public class LoadGameInfo : MonoBehaviour
     public GameObject[] allWorkers;
     private Job jobInfo;
     private Worker[] allWorkerInfo;
+    private int[] randomArray;
+    private int randArrIndex = 0;
+    private int numOfJobs;
 
     // Start is called before the first frame update
     void Start()
@@ -20,29 +24,44 @@ public class LoadGameInfo : MonoBehaviour
 
         TextAsset[] allJobs = Resources.LoadAll<TextAsset>(path); // Get all files in directory
 
-        int numOfJobs = allJobs.Length; // Count number of available files to pick from
+        numOfJobs = allJobs.Length; // Count number of available files to pick from
 
-        string jobStr;
+        randomArray = new int[numOfJobs];
 
-        // Randomly choose a job to start with.
-        if (numOfJobs == 1)
-        {
-            jobStr = "Project1";
-        }
+        RandomizeArray();
 
-        else
-        {
-            System.Random rand = new System.Random();
+        StartParsingFile(); 
+    }
 
-            int job = rand.Next(1, numOfJobs + 1);
+    void StartParsingFile()
+    {
+        string path = "ProjectGameInfo/";
 
-            jobStr = "Project" + job.ToString();
-        }
+        string jobStr = "Project" + randomArray[randArrIndex].ToString();
+
+        /* string jobStr;
+        
+         // Randomly choose a job to start with.
+         if (numOfJobs == 1)
+         {
+             jobStr = "Project1";
+         }
+
+         else
+         {
+             System.Random rand = new System.Random();
+
+             int job = rand.Next(1, numOfJobs + 1);
+
+             jobStr = "Project" + job.ToString();
+         }*/
 
         // Load chosen project file
         TextAsset txtFile = Resources.Load<TextAsset>(path + jobStr);
 
         string[] txtFileInfo = txtFile.text.Split(';');
+
+        Debug.Log("Loaded " + jobStr);
 
         // Get rid of all newlines EXCEPT for job description - I'm allowing newlines here.
         for (int i = 0; i < txtFileInfo.Length; i++)
@@ -53,7 +72,13 @@ public class LoadGameInfo : MonoBehaviour
             }
 
         }
+        Debug.Log("Length: " + txtFileInfo.Length);
 
+       /* for (int i = 0; i < txtFileInfo.Length; i++)
+        {
+            Debug.Log(txtFileInfo[i]);
+        }
+        */
         OrganizeProjectInfo(txtFileInfo);
 
         OrganizeWorkers(txtFileInfo);
@@ -61,9 +86,26 @@ public class LoadGameInfo : MonoBehaviour
         SendJobDescription();
 
         SendWorkersToScreen();
-    
     }
 
+    void RandomizeArray()
+    {
+        System.Random rand = new System.Random();
+
+        int i = 0;
+        while(i != numOfJobs)
+        {
+            int randFile = rand.Next(1, numOfJobs + 1);
+
+            if (!randomArray.Contains(randFile))
+            {
+                Debug.Log("Adding Project" + randFile + " to index " + i);
+                randomArray[i] = randFile;
+
+                i++;
+            }
+        }
+    }
     // Organize all of the information for the project (job description & boss blurbs) & send to boss screen
     void OrganizeProjectInfo(string[] txtFileInfo)
     {
@@ -193,7 +235,27 @@ public class LoadGameInfo : MonoBehaviour
         }
 
     }
+    public void RestartScene()
+    {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (randArrIndex == numOfJobs - 1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            randArrIndex++;
+            StartParsingFile();
+        }
+    }
 
+    void ClearArray()
+    {
+        for(int i = 0; i < randomArray.Length; i++)
+        {
+            randomArray[i] = 0;
+        }
+    }
     // Job node for boss screen and job description panel
     public class Job
     {
