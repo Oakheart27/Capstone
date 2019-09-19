@@ -33,7 +33,6 @@ public class MoveStarV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if ((IsGrabbed(rightImage) && IsGrabbed(leftImage)) && !starBlocked)
         {
             //using the position of the right and left hands to move the whole object
@@ -43,7 +42,8 @@ public class MoveStarV2 : MonoBehaviour
             Vector3 midPoint = (pos2 - pos1) / 2;
 
             this.transform.position = midPoint + pos1;
-            
+
+           // Debug.Log(this.transform.position);
             if (UserLetGo())
             {
                 // If the user let go over a button, click the button

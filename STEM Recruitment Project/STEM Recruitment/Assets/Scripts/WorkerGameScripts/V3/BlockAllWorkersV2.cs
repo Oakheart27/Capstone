@@ -27,14 +27,17 @@ public class BlockAllWorkersV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((IsGrabbed(rightImage) && IsGrabbed(leftImage)) || workerGrabbed)
+        if(this.isActiveAndEnabled)
         {
-            BlockWorkers(true);
-        }
+            if ((IsGrabbed(rightImage) && IsGrabbed(leftImage)) || workerGrabbed)
+            {
+                BlockWorkers(true);
+            }
 
-        else
-        {
-            BlockWorkers(false);
+            else
+            {
+                BlockWorkers(false);
+            }
         }
     }
 

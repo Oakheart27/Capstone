@@ -228,7 +228,6 @@ public class LiftWorkerAndDragV2 : MonoBehaviour
 
     bool UserLetGo()
     {
-        Debug.Log("Checking if user let go");
         if (rightHand.transform.position.x - leftHand.transform.position.x > 350)
         {
             // Debug.Log("DragWithHandlebars -> User let go with distance at " + 

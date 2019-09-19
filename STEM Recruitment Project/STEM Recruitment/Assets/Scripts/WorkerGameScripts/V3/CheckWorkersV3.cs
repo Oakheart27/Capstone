@@ -75,15 +75,15 @@ public class CheckWorkersV3 : MonoBehaviour
 
             Debug.Log(newWorker.name + " has been added");
         }
-
-        /* Debug.Log("Workers in list after ADD: ");
+    
+         Debug.Log("Workers in list after ADD: ");
          for(int i = 0; i < workersToCheck.Length; i++)
          {
             if(workersToCheck[i] != null)
              {
                  Debug.Log(workersToCheck[i].name);
              }
-         }*/
+         }
     }
 
     public void DeleteWorker(GameObject newWorker)
@@ -108,14 +108,14 @@ public class CheckWorkersV3 : MonoBehaviour
             }
         }
 
-        /*Debug.Log("Workers in list after DELETE: ");
+        Debug.Log("Workers in list after DELETE: ");
         for (int i = 0; i < workersToCheck.Length; i++)
         {
             if (workersToCheck[i] != null)
             {
                 Debug.Log(workersToCheck[i].name);
             }
-        }*/
+        }
     }
 
     public void CallShowFeedback()
@@ -125,9 +125,18 @@ public class CheckWorkersV3 : MonoBehaviour
 
     public IEnumerator ShowFeedback()
     {
+        GameObject workerScreen = GameObject.Find("/WorkerCanvas/WorkerScreen/");
+        GameObject loadingScreen = GameObject.Find("/LoadingCanvas");
+
+        workerScreen.SetActive(false);
+        loadingScreen.SetActive(true);
+
         BlockWorkers(true);
 
-        yield return new WaitForSeconds(2);
+        workerScreen.SetActive(true);
+        loadingScreen.SetActive(false);
+
+        yield return new WaitForSeconds(5);
 
         for (int i = 0; i < workersToCheck.Length; i++)
         {
@@ -267,5 +276,6 @@ public class CheckWorkersV3 : MonoBehaviour
             workerCanvas.SendMessage("SetWorkersAreChecked", status);
         }
     }
+    
 
 }

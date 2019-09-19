@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Home.unity
+- path: Assets/Scenes/WorkerGameScenes/WorkerGameV3.unity
   isLoaded: 1
   isActive: 1
