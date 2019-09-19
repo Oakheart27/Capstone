@@ -208,6 +208,7 @@
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\HandleWorkerV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LiftWorkerAndDragV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LoadGameInfoV2.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LoadingScreenV3.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\MoveScreenV3.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\ShowJobDescriptionV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\ShowTitleAndDescriptionV2.cs" />

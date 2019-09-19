@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CheckWorkersV3 : MonoBehaviour
 {
-    public GameObject exitButton, nextButton, resetButton;
+    public GameObject exitButton, nextButton, resetButton, loadingCircle;
     public Text feedback;
     private GameObject[] workersToCheck = new GameObject[3];
     private bool okToCheck = false;
@@ -17,7 +18,7 @@ public class CheckWorkersV3 : MonoBehaviour
     {
         exitButton.SetActive(false);
         nextButton.SetActive(false);
-
+        loadingCircle.SetActive(false);
     }
     private void Update()
     {
@@ -35,6 +36,10 @@ public class CheckWorkersV3 : MonoBehaviour
             resetButton.SetActive(false);
             SendStatusMessageToAllWorkers(true);
             allIsCorrect = false;
+        }
+        if(!AllChairsFull())
+        {
+            nextButton.SetActive(false);
         }
     }
 
@@ -125,19 +130,14 @@ public class CheckWorkersV3 : MonoBehaviour
 
     public IEnumerator ShowFeedback()
     {
-        GameObject workerScreen = GameObject.Find("/WorkerCanvas/WorkerScreen/");
-        GameObject loadingScreen = GameObject.Find("/LoadingCanvas");
-
-        workerScreen.SetActive(false);
-        loadingScreen.SetActive(true);
-
         BlockWorkers(true);
 
-        workerScreen.SetActive(true);
-        loadingScreen.SetActive(false);
+        loadingCircle.SetActive(true);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5.0f);
 
+        loadingCircle.SetActive(false);
+        
         for (int i = 0; i < workersToCheck.Length; i++)
         {
             GameObject feedbackPic = workersToCheck[i].transform.Find("FeedbackPic").gameObject;
@@ -277,5 +277,12 @@ public class CheckWorkersV3 : MonoBehaviour
         }
     }
     
-
+    bool AllChairsFull()
+    {
+        if(Array.Exists(workersToCheck, null))
+        {
+            return false;
+        }
+        return true;
+    }
 }

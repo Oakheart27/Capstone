@@ -12,12 +12,15 @@ public class BlockAllWorkersV2 : MonoBehaviour
 
     private SpriteRenderer rightImage, leftImage;
     private bool workerGrabbed = false;
+    private GameObject workerScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject rightHalf = this.transform.Find("RightHalfStar").gameObject;
         GameObject leftHalf = this.transform.Find("LeftHalfStar").gameObject;
+
+        workerScreen = GameObject.Find("/WorkerCanvas/WorkerScreen");
 
         rightImage = rightHalf.GetComponent<SpriteRenderer>();
         leftImage = leftHalf.GetComponent<SpriteRenderer>();
@@ -27,7 +30,7 @@ public class BlockAllWorkersV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.isActiveAndEnabled)
+        if(workerScreen.activeSelf)
         {
             if ((IsGrabbed(rightImage) && IsGrabbed(leftImage)) || workerGrabbed)
             {
