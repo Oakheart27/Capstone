@@ -13,7 +13,7 @@ public class ShowJobDescriptionV2 : MonoBehaviour
     {
         bubble.SetActive(false);
 
-        jobDescription = bubble.transform.Find("Text").GetComponent<Text>();
+        jobDescription = bubble.transform.Find("Canvas/Text").GetComponent<Text>();
 
     }
 

@@ -51,3 +51,6 @@ TagManager:
   - name: Background
     uniqueID: 2917683263
     locked: 0
+  - name: Bubble
+    uniqueID: 4116678331
+    locked: 0

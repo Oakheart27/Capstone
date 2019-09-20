@@ -1774,6 +1774,21 @@ PrefabInstance:
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.7607844
       objectReference: {fileID: 0}
+    - target: {fileID: 3706504503512245630, guid: 15d2011f0f0846d4d88c4c501aa1cec2,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.11764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706504503512245630, guid: 15d2011f0f0846d4d88c4c501aa1cec2,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706504503512245630, guid: 15d2011f0f0846d4d88c4c501aa1cec2,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.30980393
+      objectReference: {fileID: 0}
     - target: {fileID: 3706504502978530203, guid: 15d2011f0f0846d4d88c4c501aa1cec2,
         type: 3}
       propertyPath: m_havePropertiesChanged

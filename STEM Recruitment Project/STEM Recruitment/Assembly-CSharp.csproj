@@ -132,9 +132,12 @@
     <Compile Include="Assets\NuitrackSDK\VicoVRCalibrationRGB\Scripts\SensorDisconnectChecker.cs" />
     <Compile Include="Assets\Scripts\aReturn.cs" />
     <Compile Include="Assets\Scripts\BackCollider.cs" />
-    <Compile Include="Assets\Scripts\CalibrationScripts\CalibrateCamera.cs" />
-    <Compile Include="Assets\Scripts\CalibrationScripts\SaveCameraSize.cs" />
-    <Compile Include="Assets\Scripts\CalibrationScripts\ScaleScene.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\CalibrateCamera.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\CheckZPosition.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\MoveButtonAgain.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\SaveCameraSize.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\ScaleScene.cs" />
+    <Compile Include="Assets\Scripts\CalibrationAndTutorial\TestGameScript.cs" />
     <Compile Include="Assets\Scripts\ClickByHovering.cs" />
     <Compile Include="Assets\Scripts\CustomCursor.cs" />
     <Compile Include="Assets\Scripts\DBManager.cs" />
@@ -171,6 +174,7 @@
     <Compile Include="Assets\Scripts\SplashScreenScripts\MathGameTutorial.cs" />
     <Compile Include="Assets\Scripts\SplashScreenScripts\SplashScene.cs" />
     <Compile Include="Assets\Scripts\SplashScreenScripts\SplashTutorialScene.cs" />
+    <Compile Include="Assets\Scripts\SplashScreenScripts\TrainingSplashScreen.cs" />
     <Compile Include="Assets\Scripts\StarScripts\HalfStarCollider2D.cs" />
     <Compile Include="Assets\Scripts\StarScripts\HalfStarCollider2DV2.cs" />
     <Compile Include="Assets\Scripts\StarScripts\MoveStarV2.cs" />
