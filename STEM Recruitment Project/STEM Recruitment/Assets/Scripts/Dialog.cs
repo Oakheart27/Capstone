@@ -33,12 +33,13 @@ public class Dialog : MonoBehaviour
     public int temp = 1;
 
     // Objects in Unity
+    public GameObject rightHand, leftHand;
     public GameObject continueBtn;
     public GameObject choiceBtn;
     public GameObject p1Btn, p2Btn, p3Btn;
     public GameObject p1B2, p2B2, p3B2;
     public GameObject gregsp, lisasp, tyronesp;
-    public GameObject p1, p2;
+    public GameObject p1, p2, p3;
     public GameObject jobdescription;
     public GameObject jobPanel, scorePanel, resultsPanel;
     public GameObject feedBtn;
@@ -46,8 +47,8 @@ public class Dialog : MonoBehaviour
     public GameObject gscored, lscored, tscored;  // minijuge scores
     public GameObject jresp, jtext;
     public GameObject quitBtn;
-    public GameObject starcord; 
-    
+    public GameObject starcord;
+
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies
     public Text crit; // responses to the answers for each interview question
@@ -123,7 +124,7 @@ public class Dialog : MonoBehaviour
             p2Btn.SetActive(false);
             p3Btn.SetActive(false);
 
-            quitBtn.SetActive(true); 
+            quitBtn.SetActive(true);
             p1B2.SetActive(true);
             p2B2.SetActive(true);
             p3B2.SetActive(true);
@@ -146,22 +147,24 @@ public class Dialog : MonoBehaviour
             //totalcount =+ 1;
         }
 
-        //if (starcord )
-        /*
-        p1Btn.SetActive(true);
-        p2Btn.SetActive(true);
-        p3Btn.SetActive(true);
-
-        if (sentences[index] == "Choose who you would hire, then click the results button.")
+        if (starcord.transform.position.x > -674.35 && starcord.transform.position.x < -325.65)
         {
-        continueBtn.SetActive(false);
-        continueBtn.GetComponent<Button>().interactable = false;
-        resultsBtn.SetActive(true);
-        feedBtn.SetActive(true);
-        //endGame();
-        }*/
+            Debug.Log("hellow in GREEEGGG");
+            Debug.Log(starcord.transform.position.x);
+            Debug.Log(starcord.transform.position.x);
+            gregOver();
 
-        //}
+
+        }
+
+        if (rightHand.transform.position.x > -674.35 && rightHand.transform.position.x < -325.65)
+        {
+            Debug.Log("hellow in RightHand");
+            Debug.Log(starcord.transform.position.x);
+            Debug.Log(starcord.transform.position.x);
+            gregOver();
+        }
+
     }
 
     IEnumerator Type()
@@ -208,7 +211,7 @@ public class Dialog : MonoBehaviour
         lscored.SetActive(false);
         tscored.SetActive(false); */
 
-        quitBtn.SetActive(false); 
+        quitBtn.SetActive(false);
     }
 
     public void disappper()
@@ -218,70 +221,18 @@ public class Dialog : MonoBehaviour
         tscored.SetActive(false);
     }
 
-    /*
-    public void finalCount(Button btn)
+    public void OnTriggerEnter(Collider other)
     {
-    Button currentbtn = btn;
-    while (sentences[index] != "Thank you for your time. Click on the results button.")
-    {
-    ButtonClick(currentbtn);
-  }
-  if (sentences[index] == "Thank you for your time. Click on the results button.")
-  {
-  if (btn.name == "p1Btn")
-  {
-  final1 += 10;
-  Debug.Log("Updated player 1 FINAL");
-  }
-  else if (btn.name == "p2Btn")
-  {
-  final2 += 10;
-  Debug.Log("Updated Player 2 FINAL");
-  }
-  else if (btn.name == "p3Btn")
-  {
-  final3 += 10;
-  Debug.Log("Updated Player 3 FINAL");
-  }
-  else
-  {
-  Debug.Log("No button press detected FINAL");
-  }
-  Debug.Log(" Count of FINAL: Final1 " + final1 + " final2 " + final2 + " final3 " + final3);
-  }
+        if (other.gameObject.tag == "per1")
+        {
+            Debug.Log("GREG OVER ON TIRGGER");
+            gregOver();
 
-  }*/
+        }
+    }
 
     public void ButtonClick(Button btn)
     {
-        // Checks if user is choosing the person to hire
-        /*
-        if (sentences[index] == "Choose who you would hire.")
-        {
-        if (btn.name == "p1Btn")
-        {
-        final1 += 10;
-        Debug.Log("Updated player 1 FINAL");
-      }
-      else if (btn.name == "p2Btn")
-      {
-      final2 += 10;
-      Debug.Log("Updated Player 2 FINAL");
-      }
-      else if (btn.name == "p3Btn")
-      {
-      final3 += 10;
-      Debug.Log("Updated Player 3 FINAL");
-      }
-      else
-      {
-      Debug.Log("No button press detected FINAL");
-      }
-      //Debug.Log(" Count of FINAL: Final1 " + final1 + " final2 " + final2 + " final3 " + final3);
-      }*/
-        // Checks if choosing who answered question best
-        //else
-        // {
         winner = 0;
 
         if (btn.name == "p1Btn")
@@ -410,7 +361,7 @@ public class Dialog : MonoBehaviour
         }
         //endGame();
 
-        feedBtn.SetActive(true); 
+        feedBtn.SetActive(true);
     }
 
     // determines what happens when the mouse moves over characters
@@ -560,7 +511,6 @@ public class Dialog : MonoBehaviour
             gscoreF.GetComponentInChildren<Text>().text = gScore2[cClick];
             gscored.SetActive(true);  // displays minijudge
                                       //score3.GetComponentInChildren<Text>().text = gScore3[cClick];
-
         }
 
         else if (winner == 10) //Lisa
