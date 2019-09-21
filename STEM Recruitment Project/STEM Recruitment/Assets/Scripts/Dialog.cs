@@ -45,7 +45,8 @@ public class Dialog : MonoBehaviour
     public GameObject score2, gscoreF, lscoreF, tscoreF;
     public GameObject gscored, lscored, tscored;  // minijuge scores
     public GameObject jresp, jtext;
-    public GameObject quitBtn; 
+    public GameObject quitBtn;
+    public GameObject starcord; 
     
     public Text textDisplay; // Questions
     public Text gregR, lisaR, tyroneR; //  Responses of interviewies
@@ -93,24 +94,7 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //feedBtn.GetComponent<Button>().interactable = false;
-        // Check if text displayed is current sentence index
         displayScore();
-        // if (textDisplay.text == sentences[index])
-        //{
-        /* if (sentences[index] == "Choose who you would hire after looking at the summary above.") // checks if prompting for question
-        {
-        continueBtn.GetComponent<Button>().interactable = false; // hides continue button
-        // allows name buttons to be ineractable for choice
-        p1Btn.GetComponent<Button>().interactable = true;
-        p2Btn.GetComponent<Button>().interactable = true;
-        p3Btn.GetComponent<Button>().interactable = true;
-        }*/
-
-        // else
-        // {
-        //continueBtn.SetActive(true);
-        //continueBtn.GetComponent<Button>().interactable = true;
 
         // name buttons uninteractable with user when not prompting person choice
         p1Btn.GetComponent<Button>().interactable = true;
@@ -162,6 +146,7 @@ public class Dialog : MonoBehaviour
             //totalcount =+ 1;
         }
 
+        //if (starcord )
         /*
         p1Btn.SetActive(true);
         p2Btn.SetActive(true);
@@ -204,80 +189,6 @@ public class Dialog : MonoBehaviour
             textDisplay.text = "";
             continueBtn.SetActive(false); // hide continue button
             continueBtn.GetComponentInChildren<Text>().text = "Continue";
-        }
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "p1")
-        {
-            System.Threading.Thread.Sleep(1500); // delays display of text 
-                                                 //System.Threading.Thread.Sleep(1000); // delays display of text 
-            gregR.enabled = true; //enables text response to answer
-            gregsp.SetActive(true); // shows speech bubble image
-            Debug.Log(anscount);
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            gregR.GetComponent<Text>().text = gregAns[cClick];
-        }
-
-        if (other.gameObject.tag == "p2")
-        {
-            System.Threading.Thread.Sleep(1000); // delays display of text 
-            lisaR.enabled = true;
-            lisasp.SetActive(true);
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            lisaR.GetComponent<Text>().text = lisaAns[cClick];
-        }
-
-        if (other.gameObject.tag == "p3")
-        {
-            System.Threading.Thread.Sleep(1000); // delays display of text 
-            tyroneR.enabled = true;
-            tyronesp.SetActive(true);
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            tyroneR.GetComponent<Text>().text = tyroneAns[cClick];
-        }
-
-        if (other.gameObject.tag == "j1")
-        {
-            System.Threading.Thread.Sleep(1000); // delays display of text 
-            jresp.SetActive(true); // shows critisim speech bubble
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            jtext.GetComponent<Text>().text = gfeed[cClick]; // displays jude repsonse text
-
-        }
-
-        if (other.gameObject.tag == "j2")
-        {
-            System.Threading.Thread.Sleep(1000); // delays display of text 
-            jresp.SetActive(true); // shows critisim speech bubble
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            jtext.GetComponent<Text>().text = lfeed[cClick]; // displays jude repsonse text
-        }
-
-        if (other.gameObject.tag == "j2")
-        {
-            System.Threading.Thread.Sleep(1000); // delays display of text 
-            jresp.SetActive(true); // shows critisim speech bubble
-            if (cClick > 2) { cClick = 2; } // Stops array out of bounds error
-            jtext.GetComponent<Text>().text = tfeed[cClick]; // displays jude repsonse text
-        }
-
-
-
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "p1" || other.gameObject.tag == "p2" || other.gameObject.tag == "p3")
-        {
-            // hides speech bubble image
-            gregsp.SetActive(false);
-            lisasp.SetActive(false);
-            tyronesp.SetActive(false);
-
-            // hides minijudge response
-            jresp.SetActive(false);
         }
     }
 
@@ -378,6 +289,8 @@ public class Dialog : MonoBehaviour
             person1 += 1;
             winner += 5;
             Debug.Log("Updated player 1");
+            //   totalcount += 1;
+            //feedBtn.GetComponent<Button>().interactable = true;
             p1Btn.GetComponent<Button>().interactable = false;
             p2Btn.GetComponent<Button>().interactable = false;
             p3Btn.GetComponent<Button>().interactable = false;
@@ -515,6 +428,7 @@ public class Dialog : MonoBehaviour
 
     public void lisaOver()
     {
+
         System.Threading.Thread.Sleep(1000); // delays display of text 
         lisaR.enabled = true;
         lisasp.SetActive(true);
@@ -578,14 +492,14 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    /* removes critisizim text from screen
+    // removes critisizim text from screen
     public void endfeed()
     {
         crit.enabled = false;
         crit.enabled = false;
         crit.enabled = false;
         // totalcount = +1;
-    }*/
+    }
 
     public void mouseLeave()
     {
@@ -608,11 +522,6 @@ public class Dialog : MonoBehaviour
 
     public void readJob()
     {
-        // hides minijudges 
-        gscored.SetActive(false);
-        lscored.SetActive(false);
-        tscored.SetActive(false);
-
         //finalPanel.SetActive(false);
         jobPanel.SetActive(true);
         scorePanel.SetActive(false);
