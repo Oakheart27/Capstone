@@ -92,7 +92,7 @@ public class MathGameProgress : MonoBehaviour
             currentScore.text = "Your Score: " + score.ToString();
             //// Adding score to database ///////
             // If the user is logged in...
-            if (dbManage.getStatus())
+           /* if (dbManage.getStatus())
             {
                 int userID = dbManage.getID();
                 int gameID = SceneManager.GetActiveScene().buildIndex;
@@ -105,7 +105,7 @@ public class MathGameProgress : MonoBehaviour
                     // Display new high score
                     highScore.text = DisplayHighScore(userID, gameID);
                 }
-            }
+            }*/
             StartCoroutine(TimeStop());
             //responseText.text = "";
             //CreateEquation();
