@@ -6245,12 +6245,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1335355995}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1985531801}
         m_MethodName: RestartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6996193504672204613}
+        m_MethodName: LoadSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7311,6 +7322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6996193504672204611}
   - component: {fileID: 6996193504672204610}
+  - component: {fileID: 6996193504672204613}
   m_Layer: 0
   m_Name: BossPic
   m_TagString: Untagged
@@ -7318,6 +7330,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6996193504672204613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996193504672204612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2417fed65ef17554a83d1a95935b194a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6996193504800589312
 Transform:
   m_ObjectHideFlags: 0

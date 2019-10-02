@@ -163,6 +163,7 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MathGameProgress.cs" />
+    <Compile Include="Assets\Scripts\MathGameScripts\SegmentPaintV2.cs" />
     <Compile Include="Assets\Scripts\Module.cs" />
     <Compile Include="Assets\Scripts\MoveHandsWithSkeleton.cs" />
     <Compile Include="Assets\Scripts\panelChange.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\CheckWorkersV3.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\HandleWorkerV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LiftWorkerAndDragV2.cs" />
+    <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LoadBossSprite.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LoadGameInfoV2.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\LoadingScreenV3.cs" />
     <Compile Include="Assets\Scripts\WorkerGameScripts\V3\MoveScreenV3.cs" />
