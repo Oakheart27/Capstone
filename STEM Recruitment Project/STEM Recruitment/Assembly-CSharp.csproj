@@ -164,6 +164,8 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MathGameProgress.cs" />
+    <Compile Include="Assets\Scripts\MathGameScripts\MathGame.cs" />
+    <Compile Include="Assets\Scripts\MathGameScripts\NumberCollider.cs" />
     <Compile Include="Assets\Scripts\MathGameScripts\SegmentPaintV2.cs" />
     <Compile Include="Assets\Scripts\Module.cs" />
     <Compile Include="Assets\Scripts\MoveHandsWithSkeleton.cs" />
