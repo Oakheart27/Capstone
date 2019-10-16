@@ -46,13 +46,13 @@ public class CheckWorkersV3 : MonoBehaviour
     public void AddWorker(GameObject newWorker)
     {
         Debug.Log("AddWorker called");
-        if (numOfWorkers < 3)
+        if (!workerAlreadyInArray(newWorker))
         {
             for (int i = 0; i < 3; i++)
             {
                 if (workersToCheck[i] != null)
                 {
-                    Debug.Log("Looking at " + workersToCheck[i].name);
+                    Debug.Log(workersToCheck[i].name + " is already in index " + i);
                 }
 
                 if (workersToCheck[i] == null)
@@ -284,5 +284,17 @@ public class CheckWorkersV3 : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    bool workerAlreadyInArray(GameObject worker) {
+        for (int i = 0; i < 3; i++)
+        {
+            if (workersToCheck[i] == worker)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

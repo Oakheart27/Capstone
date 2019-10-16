@@ -8,12 +8,12 @@ public class HandleWorkerV2 : MonoBehaviour
 
     private bool isFilled = false; // worker is/isn't in chair
     private bool readyToPlace = false;
-    private bool readyToRemove = false;
     private bool blocked = false;
     private GameObject worker = null; //worker in chair
     private GameObject newWorker = null; //temporary worker that touched chair
     private GameObject placementCube;
     private GameObject workerScreen;
+
     void Start()
     {
         // Get the cube, so I know where to place workers.
@@ -51,6 +51,7 @@ public class HandleWorkerV2 : MonoBehaviour
         if (other.gameObject.tag == "Worker")
         {
             Debug.Log("Worker left meh!!");
+            readyToPlace = false;
             WorkerLeftChair(other.gameObject);
         }
     }
